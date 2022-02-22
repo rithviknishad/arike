@@ -99,7 +99,7 @@ class Patient(models.Model):
     address = models.CharField(max_length=255)
     landmark = models.CharField(max_length=255)
     phone = models.CharField(max_length=15)
-    gender = models.CharField(choices=Genders.choices)
+    gender = models.CharField(max_length=2, choices=Genders.choices)
     emergency_phone_number = models.CharField(max_length=15)
     expired_time = models.DateTimeField()
     ward = models.ForeignKey(Ward, on_delete=models.PROTECT)
