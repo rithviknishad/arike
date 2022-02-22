@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.forms import IntegerField
 
 
 class State(models.Model):
@@ -72,3 +73,34 @@ class Facility(models.Model):
     phone = models.CharField(max_length=15)
 
     ward = models.ForeignKey(Ward, on_delete=models.PROTECT)
+
+
+class Genders(models.TextChoices):
+    MALE = "M", "Male"
+    FEMALE = "F", "FEMALE"
+
+
+UserRole = models.IntegerChoices(
+    "UserRole",
+    "DISTRICT_ADMIN PRIMARY_NURSE SECONDARY_NURSE",
+)
+
+
+class User(AbstractUser):
+    role = models.IntegerField(choices=UserRole.choices)
+    phone = models.CharField(max_length=15)
+    is_verified = models.BooleanField(default=False)
+    district = models.ForeignKey(District, on_delete=models.PROTECT)
+    facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
+
+
+class Patient(models.Model):
+    date_of_birth = models.DateField()
+    address = models.CharField(max_length=255)
+    landmark = models.CharField(max_length=255)
+    phone = models.CharField(max_length=15)
+    gender = models.CharField(choices=Genders.choices)
+    emergency_phone_number = models.CharField(max_length=15)
+    expired_time = models.DateTimeField()
+    ward = models.ForeignKey(Ward, on_delete=models.PROTECT)
+    facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
