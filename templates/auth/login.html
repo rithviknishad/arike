@@ -3,5 +3,31 @@
 {% block head_title %}Sign In{% endblock %}
 
 {% block inner %}
-<p>Hello</p>
+
+<div>
+  <div class="py-8">
+    <p class="text-4xl">Authorized Login</p>
+  </div>
+  <div class="max-w-md">
+    <form action="" method="post">
+      {% for field in form %}
+      <div class="py-2">
+        {{ field }}
+        {% for error in field.errors %}
+        <p class="m-2 text-[14px] text-red-500">{{error}}</p>
+        {% endfor %}
+      </div>
+      {% endfor %}
+      <div>
+        {% for error in form.non_field_errors %}
+        <p class="text-red-500 max-w-md">{{error}}</p>
+        {% endfor %}
+      </div>
+      {%csrf_token%}
+      <button type="submit" class="mt-4 w-80 h-14 text-white bg-slate-900 hover:bg-slate-800 focus:ring-4 font-medium rounded-xl text-sm text-center">
+        <p class="text-lg">Sign In</p> 
+      </button>
+    </form>
+  </div>
+</div>
 {% endblock inner %}

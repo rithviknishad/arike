@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{% block head_title %}Dashboard{% endblock head_title %} | Arike{% endblock title %}
+
+{% block content %}
+<div class="flex">
+  <div class="flex-none min-h-screen container w-[300px] bg-white px-6 py-3">
+    <p class="font-bold text-2xl py-2 text-slate-800">Arike</p>
+  </div>
+  <div class="flex-1">
+    {% block inner %}
+    <div class="flex items-center justify-center min-h-screen bg-red-300">
+      <div>No Tab Selected</div>
+    </div>
+    {% endblock inner %}
+  </div>
+</div>
+{% endblock content %}
