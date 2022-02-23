@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "tailwind",
+    "theme",
+    "django_browser_reload",
     "arike_app",
 ]
 
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "arike.urls"
@@ -124,3 +128,13 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "arike_app.User"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = "/auth/login"
+LOGOUT_REDIRECT_URL = "/auth/logout"
+
+TAILWIND_APP_NAME = "theme"
