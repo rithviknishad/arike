@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{% block head_title %}{% endblock head_title %} | Arike{% endblock title %}
+
+{% block content %}
+<div class="columns-2 gap-0">
+  <div class="bg-[#333333] flex items-center justify-center min-h-screen text-white">
+    <div class="max-w-md">
+      <p class="font-bold text-6xl py-2">Arike</p>
+      <p class="text-xl py-2">caters to a system of specialized medical staff tending to patients under palliative care.</p>
+    </div>
+  </div>
+  <div class="bg-blue-200 flex items-center justify-center min-h-screen text-black">
+    {% block inner %}{% endblock inner %}
+  </div>
+</div>
+{% endblock content %}

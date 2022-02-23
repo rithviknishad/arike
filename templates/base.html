@@ -6,9 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>{{ page_title }}</title>
+        <title>{% block title %}Arike{% endblock title %}</title>
+        {% comment %} <title>{{ page_title }}</title> {% endcomment %}
         {% comment %} {% tailwind_css %} {% endcomment %}
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body></body>
+    <body class="leading-normal tracking-normal font-sans text-gray-900 flex flex-col min-h-screen">
+        {% block content %}{% endblock content %}
+    </body>
 </html>
