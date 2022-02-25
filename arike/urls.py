@@ -21,7 +21,15 @@ from arike_app import views
 urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("admin/", admin.site.urls),
+    # Authentication
     path("auth/login/", views.UserLoginView.as_view()),
+    # Home
     path("home/", views.HomeView.as_view()),
+    # Facilities
+    # path("facilities/", views.FacilitiesView.as_view()),
+    # Profile
+    path("profile/", views.ProfileUpdateView.as_view()),
+    # Users
+    path("users/", views.UsersListView.as_view()),
     # path("auth/logout"),
 ]
