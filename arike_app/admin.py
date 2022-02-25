@@ -1,11 +1,15 @@
 from django.contrib import admin
 
-from arike_app.models import *
+from arike_app import models
 
-admin.sites.site.register(State)
-admin.sites.site.register(District)
-admin.sites.site.register(LsgBody)
-admin.sites.site.register(Ward)
-admin.sites.site.register(Facility)
-admin.sites.site.register(User)
-admin.sites.site.register(Patient)
+admin.sites.site.register(
+    [
+        models.State,
+        models.District,
+        models.LsgBody,
+        models.Ward,
+        models.Facility,
+        models.User,
+        models.Patient,
+    ]
+)
