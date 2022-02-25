@@ -87,11 +87,11 @@ UserRole = models.IntegerChoices(
 
 
 class User(AbstractUser):
-    role = models.IntegerField(choices=UserRole.choices)
-    phone = models.CharField(max_length=15)
+    role = models.IntegerField(choices=UserRole.choices, null=True, blank=False)
+    phone = models.CharField(max_length=15, null=True, blank=False)
     is_verified = models.BooleanField(default=False)
-    district = models.ForeignKey(District, on_delete=models.PROTECT)
-    facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
+    district = models.ForeignKey(District, on_delete=models.PROTECT, null=True, blank=False)
+    facility = models.ForeignKey(Facility, on_delete=models.PROTECT, null=True, blank=False)
 
 
 class Patient(models.Model):
