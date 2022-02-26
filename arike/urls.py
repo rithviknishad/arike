@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth.views import LogoutView
 from django.urls import path, include
+from django.shortcuts import redirect
 
 from arike_app import views
 
@@ -23,13 +25,15 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # Authentication
     path("auth/login/", views.UserLoginView.as_view()),
+    path("auth/logout/", LogoutView.as_view()),
     # Home
+    path("", lambda req: redirect("/home/")),
     path("home/", views.HomeView.as_view()),
     # Facilities
     # path("facilities/", views.FacilitiesView.as_view()),
     # Profile
     path("profile/", views.ProfileUpdateView.as_view()),
     # Users
-    path("users/", views.UsersListView.as_view()),
-    # path("auth/logout"),
+    path("users/", views.ListUsersView.as_view()),
+    path("users/create", views.CreateUserView.as_view()),
 ]

@@ -84,6 +84,9 @@ class Facility(ArikeModelMixin, models.Model):
 
     ward = models.ForeignKey(Ward, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Genders(models.TextChoices):
     MALE = "M", "Male"
@@ -92,7 +95,7 @@ class Genders(models.TextChoices):
 
 UserRole = models.IntegerChoices(
     "UserRole",
-    "DISTRICT_ADMIN PRIMARY_NURSE SECONDARY_NURSE",
+    "DISTRICT_ADMIN DOCTOR PRIMARY_NURSE SECONDARY_NURSE",
 )
 
 
@@ -128,6 +131,9 @@ class Patient(ArikeModelMixin, models.Model):
     ward = models.ForeignKey(Ward, on_delete=models.PROTECT)
     facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f"{self.full_name}"
+
 
 class FamilyDetail(ArikeModelMixin, models.Model):
     full_name = models.CharField(max_length=255)
@@ -142,16 +148,25 @@ class FamilyDetail(ArikeModelMixin, models.Model):
     is_primary = models.BooleanField()
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f"{self.full_name}"
+
 
 class Disease(ArikeModelMixin, models.Model):
     name = models.CharField(max_length=255)
     icds_code = models.CharField(max_length=8)
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class PatientDisease(ArikeModelMixin, models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
     disease = models.ForeignKey(Disease, on_delete=models.PROTECT)
     note = models.TextField()
+
+    def __str__(self):
+        return f"{self.note}"
 
 
 class TreatmentNotes(ArikeModelMixin, models.Model):
@@ -173,6 +188,9 @@ class VisitSchedule(ArikeModelMixin, models.Model):
     schedule_time = models.DateTimeField()
     duration = models.DurationField()
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f"{self.schedule_time} for duration {self.duration}"
 
 
 class VisitDetails(ArikeModelMixin, models.Model):

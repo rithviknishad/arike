@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+{% block head_title %}Users{% endblock head_title %}
+
+{% block inner %}
+<div class="px-10 py-6">
+    <div class="flex flex-row">
+        <div class="flex-none text-3xl font-bold">Users</div>
+        <div class="flex-1"></div>
+        <button onClick="location.href='create'" class="flex-none text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-sm px-7 py-2.5 text-center">New</button>
+    </div>
+    <div class="py-10">
+        Search Bar
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+        {% for user in users %}
+        <div>{{user}}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock inner %}

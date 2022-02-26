@@ -135,6 +135,6 @@ INTERNAL_IPS = [
 
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "/auth/login"
-LOGOUT_REDIRECT_URL = "/auth/logout"
+LOGOUT_REDIRECT_URL = "/auth/login"
 
 TAILWIND_APP_NAME = "theme"
