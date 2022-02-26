@@ -9,10 +9,16 @@
   </div>
   {% block search_and_filter_section %}
   <div class="my-8 flex flex-row">
-    {% include 'generic/search_bar.html' %}
+    <div class="p-1">
+      {% include 'generic/search_bar.html' %}
+    </div>
     <div class="flex-1"></div>
-    <div>Filters</div>
-    <div>Sort</div>
+    <div class="p-1">
+      {% include 'generic/expand_button.html' with label="Filters" %}
+    </div>
+    <div class="p-1">
+      {% include 'generic/expand_button.html' with label="Sort" %}
+    </div>
   </div>
   {% endblock search_and_filter_section %}
   {% block list_content %}

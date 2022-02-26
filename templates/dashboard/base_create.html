@@ -1,0 +1,19 @@
+{% extends 'dashboard/base.html' %}
+{% block inner %}
+<div class="flex h-screen">
+  <div class="px-10 py-10 mx-auto">
+    <div class="text-3xl font-bold">{% block head_title %}Create Base{% endblock head_title %}</div>
+    <div class="px-1">
+      <form action="" method="post">
+        {% block form_view %}{% endblock form_view %}
+        {% csrf_token %}
+        {% block submit_button %}
+        <div class="mt-16">
+          {% include 'generic/button.html' with label="Create" %}
+        </div>
+        {% endblock submit_button %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock inner %}

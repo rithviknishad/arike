@@ -1,30 +1,17 @@
-{% extends 'dashboard/base.html' %}
-{% block head_title %}Users{% endblock head_title %}
+{% extends 'dashboard/base_create.html' %}
 
-{% block inner %}
-<div class="flex h-screen">
-  <div class="px-10 py-10 mx-auto">
-    <div class="text-3xl font-bold">New User</div>
-    <div class="px-1">
-      <form action="" method="post">
-        <div class="pt-8 pb-5 text-2xl font-bold">Profile</div>
-        <div class="grid grid-cols-2 gap-x-8 gap-y-6">
-          {{ form.first_name }}
-          {{ form.last_name }}
-          {{ form.email }}
-          {{ form.phone }}
-        </div>
-        <div class="pt-8 pb-5 text-2xl font-bold">Facility</div>
-        {{ form.facility }}
-        <div class="pt-8 pb-5 text-2xl font-bold">Role</div>
-        {{ form.role }}
-        
-        {% csrf_token %}
-        <div class="mt-8">
-          <button type="submit" class="mt-8 text-white bg-slate-900 hover:bg-slate-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-sm px-12 py-2.5 text-center">Save</button>
-        </div>
-      </form>
-    </div>
-  </div>
+{% block head_title %}New User{% endblock head_title %}
+
+{% block form_view %}
+<div class="pt-8 pb-5 text-2xl font-bold">Profile</div>
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+  {{ form.first_name }}
+  {{ form.last_name }}
+  {{ form.email }}
+  {{ form.phone }}
 </div>
-{% endblock inner %}
+<div class="pt-8 pb-5 text-2xl font-bold">Facility</div>
+{{ form.facility }}
+<div class="pt-8 pb-5 text-2xl font-bold">Role</div>
+{{ form.role }}
+{% endblock form_view %}
