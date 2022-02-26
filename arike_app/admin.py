@@ -11,5 +11,12 @@ admin.sites.site.register(
         models.Facility,
         models.User,
         models.Patient,
+        models.FamilyDetail,
+        models.Disease,
+        models.PatientDisease,
+        models.Treatment,
+        models.TreatmentNotes,
+        models.VisitSchedule,
+        models.VisitDetails,
     ]
 )
