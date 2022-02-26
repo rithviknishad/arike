@@ -55,21 +55,14 @@ class FacilitiesView(DashboardViewMixin, ListView):
         return Facility.objects.all()
 
 
-class ProfileUpdateView(DashboardViewMixin, UpdateView):
-    template_name = "dashboard/profile.html"
-
-
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = [
-            "first_name",
-            "last_name",
-            "email",
-            "phone",
-            "facility",
-            "role",
-        ]
+        fields = ["first_name", "last_name", "email", "phone", "facility", "role"]
+
+
+class ProfileUpdateView(DashboardViewMixin, UpdateView):
+    template_name = "dashboard/profile.html"
 
 
 class CreateUserView(DashboardViewMixin, CreateView):
