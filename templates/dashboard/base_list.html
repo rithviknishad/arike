@@ -1,0 +1,23 @@
+{% extends 'dashboard/base.html' %}
+
+{% block inner %}
+<div class="px-10 py-6">
+  <div class="flex flex-row">
+    <div class="flex-none text-3xl font-bold">{% block head_title %}List Base{% endblock head_title %}</div>
+    <div class="flex-1"></div>
+    <button onClick="location.href='create'" class="flex-none text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-sm px-7 py-2.5 text-center">New</button>
+  </div>
+  {% block search_and_filter_section %}
+  <div class="py-10">
+    Search Bar
+  </div>
+  {% endblock search_and_filter_section %}
+  {% block list_content %}
+  <div class="grid grid-cols-2 gap-4">
+    {% for object in object_list %}
+      {{object}}
+    {% endfor %}
+  </div>
+  {% endblock list_content %}
+</div>
+{% endblock inner %}

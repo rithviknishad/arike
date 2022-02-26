@@ -76,7 +76,7 @@ class CreateUserView(DashboardViewMixin, CreateView):
 
 class ListUsersView(DashboardViewMixin, ListView):
     template_name = "dashboard/users/list.html"
-    context_object_name = "users"
+    # context_object_name = "users"
 
     def get_queryset(self):
         # TODO: show only current district users.
