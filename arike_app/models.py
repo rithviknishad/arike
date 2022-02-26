@@ -1,11 +1,16 @@
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 
+from datetime import datetime
 
-class ArikeModelMixin:
+
+class ArikeModelMixin(models.Model):
     created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField()
+    updated_at = models.DateTimeField(default=datetime.now)
     deleted = models.BooleanField(default=False)
+
+    class Meta:
+        abstract = True
 
 
 class State(ArikeModelMixin, models.Model):
@@ -98,17 +103,17 @@ class CustomUserManager(UserManager):
     def create_superuser(self, username, email, password, **extra_fields):
         extra_fields["phone"] = "+919696969696"
         extra_fields["is_verified"] = True
-        extra_fields["district"] = District.objects.all()[0]
-        extra_fields["facility"] = Facility.objects.all()[0]
         return super().create_superuser(username, email, password, **extra_fields)
 
 
-class User(AbstractUser):
+class User(ArikeModelMixin, AbstractUser):
     role = models.IntegerField(choices=UserRole.choices, null=True, blank=False)
     phone = models.CharField(max_length=15, blank=False)
     is_verified = models.BooleanField(default=False)
-    district = models.ForeignKey(District, on_delete=models.PROTECT, blank=False)
-    facility = models.ForeignKey(Facility, on_delete=models.PROTECT, blank=False)
+    district = models.ForeignKey(District, on_delete=models.PROTECT, blank=False, null=True)
+    facility = models.ForeignKey(Facility, on_delete=models.PROTECT, blank=False, null=True)
+
+    objects = CustomUserManager()
 
 
 class Patient(ArikeModelMixin, models.Model):
