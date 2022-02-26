@@ -5,11 +5,14 @@
   <div class="flex flex-row">
     <div class="flex-none text-3xl font-bold">{% block head_title %}List Base{% endblock head_title %}</div>
     <div class="flex-1"></div>
-    <button onClick="location.href='create'" class="flex-none text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-sm px-7 py-2.5 text-center">New</button>
+    {% include 'generic/button.html' with label="New" onClick="location.href='create'" %}
   </div>
   {% block search_and_filter_section %}
-  <div class="py-10">
-    Search Bar
+  <div class="my-8 flex flex-row">
+    {% include 'generic/search_bar.html' %}
+    <div class="flex-1"></div>
+    <div>Filters</div>
+    <div>Sort</div>
   </div>
   {% endblock search_and_filter_section %}
   {% block list_content %}
