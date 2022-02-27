@@ -38,7 +38,7 @@ class PatientsFilter(FilterSet):
         ]
 
 
-class LsgBodyForm(FilterSet):
+class LsgBodyFilter(FilterSet):
     class Meta:
         model = LsgBody
         fields = ["kind", "name", "lsg_body_code", "district"]
