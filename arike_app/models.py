@@ -90,7 +90,8 @@ class Facility(ArikeModelMixin, models.Model):
 
 class Genders(models.TextChoices):
     MALE = "M", "Male"
-    FEMALE = "F", "FEMALE"
+    FEMALE = "F", "Female"
+    OTHER = "O", "Other"
 
 
 UserRole = models.IntegerChoices(
