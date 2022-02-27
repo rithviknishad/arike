@@ -96,6 +96,7 @@ class UsersViews:
     class _ViewMixin:
         model = User
         name = "users"
+        filterset_class = UsersFilter
 
     class Create(_ViewMixin, CustomCreateView):
         form_class = UserCreationForm
@@ -141,6 +142,7 @@ class WardsViews:
         model = Ward
         name = "wards"
         form_class = WardForm
+        filterset_class = WardsFilter
 
     class Create(_ViewMixin, CustomCreateView):
         pass
@@ -163,6 +165,7 @@ class PatientsViews:
         model = Patient
         name = "patients"
         form_class = PatientForm
+        filterset_class = PatientsFilter
 
     class Create(_ViewMixin, CustomCreateView):
         pass
@@ -184,7 +187,7 @@ class LsgBodiesViews:
     class _ViewMixin:
         model = LsgBody
         name = "lsg-bodies"
-        form_class = LsgBodyForm
+        form_class = LsgBodyFilter
 
     class Create(_ViewMixin, CustomCreateView):
         pass
