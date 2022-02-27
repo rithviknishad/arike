@@ -1,46 +1,46 @@
-from django_filters import FilterSet, OrderingFilter
+from django_filters import FilterSet, OrderingFilter, CharFilter
 
 from arike_app.models import *
 
 
 class UsersFilter(FilterSet):
+    search = CharFilter("first_name", lookup_expr="icontains")
     o = OrderingFilter(fields=["first_name", "facility", "role"])
 
     class Meta:
         model = User
-        fields = ["first_name", "facility", "role"]
+        fields = ["facility", "role"]
 
 
 class FacilitiesFilter(FilterSet):
+    search = CharFilter("name", lookup_expr="icontains")
     o = OrderingFilter(fields=["name", "ward", "kind"])
 
     class Meta:
         model = Facility
-        fields = ["kind", "name", "ward"]
+        fields = ["kind", "ward"]
 
 
 class WardsFilter(FilterSet):
-    o = OrderingFilter(fields=["name", "number", "lsg_body"])
+    search = CharFilter("name", lookup_expr="icontains")
+    o = OrderingFilter(fields=("name", "number", "lsg_body"))
 
     class Meta:
         model = Ward
-        fields = ["name", "lsg_body"]
+        fields = ["lsg_body"]
 
 
 class PatientsFilter(FilterSet):
+    search = CharFilter("irst_name", lookup_expr="icontains")
     o = OrderingFilter(fields=["first_name", "date_of_birth", "ward", "facility"])
 
     class Meta:
         model = Patient
-        fields = [
-            "first_name",
-            "ward",
-            "facility",
-            "gender",
-        ]
+        fields = ["ward", "facility", "gender"]
 
 
 class LsgBodyFilter(FilterSet):
+    search = CharFilter("name", lookup_expr="icontains")
     o = OrderingFilter(fields=["name", "kind", "lsg_body_code"])
 
     class Meta:
