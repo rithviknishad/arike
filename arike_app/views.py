@@ -117,10 +117,10 @@ class ListUsersView(UsersViewMixin, CustomListView):
 class FacilitiesViewMixin:
     model = Facility
     name = "facilities"
+    form_class = FacilityForm
 
 
 class CreateFacilityView(FacilitiesViewMixin, CustomCreateView):
-    form_class = UserCreationForm
     success_url = "../"
 
 
@@ -133,7 +133,6 @@ class FacilityDetailsView(FacilitiesViewMixin, CustomDetailView):
 
 
 class FacilityEditView(FacilitiesViewMixin, CustomUpdateView):
-    form_class = UserChangeForm
     success_url = "../"
 
 
@@ -144,10 +143,10 @@ class ListFacilitiesView(FacilitiesViewMixin, CustomListView):
 class WardsViewMixin:
     model = Ward
     name = "wards"
+    form_class = FacilityForm
 
 
 class CreateWardView(WardsViewMixin, CustomCreateView):
-    form_class = UserCreationForm
     success_url = "../"
 
 
@@ -160,7 +159,6 @@ class WardDetailsView(WardsViewMixin, CustomDetailView):
 
 
 class WardEditView(WardsViewMixin, CustomUpdateView):
-    form_class = UserChangeForm
     success_url = "../"
 
 
@@ -171,10 +169,10 @@ class ListWardsView(WardsViewMixin, CustomListView):
 class PatientsViewMixin:
     model = Patient
     name = "patients"
+    form_class = FacilityForm
 
 
 class CreatePatientView(PatientsViewMixin, CustomCreateView):
-    form_class = UserCreationForm
     success_url = "../"
 
 
@@ -187,7 +185,6 @@ class PatientDetailsView(PatientsViewMixin, CustomDetailView):
 
 
 class PatientEditView(PatientsViewMixin, CustomUpdateView):
-    form_class = UserChangeForm
     success_url = "../"
 
 
@@ -198,10 +195,10 @@ class ListPatientsView(PatientsViewMixin, CustomListView):
 class LsgBodiesViewMixin:
     model = LsgBody
     name = "lsg-bodies"
+    form_class = FacilityForm
 
 
 class CreateLsgBodyView(LsgBodiesViewMixin, CustomCreateView):
-    form_class = UserCreationForm
     success_url = "../"
 
 
@@ -214,7 +211,6 @@ class LsgBodyDetailsView(LsgBodiesViewMixin, CustomDetailView):
 
 
 class LsgBodyEditView(LsgBodiesViewMixin, CustomUpdateView):
-    form_class = UserChangeForm
     success_url = "../"
 
 
