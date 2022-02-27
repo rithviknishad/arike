@@ -134,6 +134,8 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "/auth/login"
 LOGOUT_REDIRECT_URL = "/auth/login"

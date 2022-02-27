@@ -2,7 +2,7 @@
 
 {% block head_title %}New User{% endblock head_title %}
 
-{% block form_view %}
+{% comment %} {% block form_view %}
 <div class="pt-8 pb-5 text-2xl font-bold">Credentials</div>
 <div class="grid grid-cols-2 gap-x-8 gap-y-6">
   {{ form.username }}
@@ -21,4 +21,4 @@
 {{ form.facility }}
 <div class="pt-8 pb-5 text-2xl font-bold">Role</div>
 {{ form.role }}
-{% endblock form_view %}
+{% endblock form_view %} {% endcomment %}
