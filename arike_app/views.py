@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from django.contrib.auth.views import LoginView
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 from django.forms import ModelForm
 from django.views.generic import View, CreateView, DeleteView, DetailView, UpdateView, TemplateView
 from django.views.generic.base import ContextMixin
@@ -54,29 +54,28 @@ class FacilitiesView(DashboardViewMixin, ListView):
         return Facility.objects.all()
 
 
-class CustomUserCreationForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = [
-            "username",
-            "password1",
-            "password2",
-            "first_name",
-            "last_name",
-            "email",
-            "phone",
-            "facility",
-            "role",
-        ]
-
-
 class ProfileUpdateView(DashboardViewMixin, UpdateView):
     template_name = "dashboard/profile.html"
 
 
 class CreateUserView(DashboardViewMixin, CreateView):
+    class UserCreationForm(UserCreationForm):
+        class Meta:
+            model = User
+            fields = [
+                "username",
+                "password1",
+                "password2",
+                "first_name",
+                "last_name",
+                "email",
+                "phone",
+                "facility",
+                "role",
+            ]
+
     template_name = "dashboard/users/create.html"
-    form_class = CustomUserCreationForm
+    form_class = UserCreationForm
     success_url = "../"
 
     def get_success_url(self) -> str:
@@ -104,5 +103,12 @@ class UserDeleteView(DashboardViewMixin, DeleteView):
 
 
 class UserEditView(DashboardViewMixin, UpdateView):
+    class UserChangeForm(UserChangeForm):
+        class Meta:
+            model = User
+            fields = ["first_name", "last_name", "email", "phone", "facility", "role"]
+
     model = User
+    form_class = UserChangeForm
+    success_url = "../"
     template_name = "dashboard/users/edit.html"

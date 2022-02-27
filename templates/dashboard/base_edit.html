@@ -3,14 +3,14 @@
 {% block inner %}
 <div class="flex h-screen">
   <div class="px-10 py-10 mx-auto">
-    <div class="text-3xl font-bold">{% block head_title %}Create Base{% endblock head_title %}</div>
-    <div class="px-1">
+    <div class="text-3xl font-bold">{% block head_title %}Update {{object}}{% endblock head_title %}</div>
+    <div class="px-1 py-10">
       <form action="" method="post">
         {% block form_view %}{{form.as_p}}{% endblock form_view %}
         {% csrf_token %}
         {% block submit_button %}
         <div class="mt-16">
-          {% include 'generic/button.html' with label="Create" %}
+          {% include 'generic/button.html' with label="Update" %}
         </div>
         {% endblock submit_button %}
       </form>
