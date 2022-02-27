@@ -1,4 +1,3 @@
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.forms import ModelForm
@@ -51,16 +50,6 @@ class CustomDeleteView(DashboardViewMixin, DeleteView):
 class CustomCreateView(DashboardViewMixin, CreateView):
     view_type = "create"
     success_url = "../"
-
-
-class LoginForm(AuthenticationForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.label_suffix = ""
-        text_field_style = "bg-gray-200 rounded-xl w-full py-2 px-4"
-        for field in ["username", "password"]:
-            self.fields[field].widget.attrs["class"] = text_field_style
-            self.fields[field].widget.attrs["placeholder"] = self.fields[field].label
 
 
 class UserLoginView(LoginView):

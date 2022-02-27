@@ -1,7 +1,18 @@
 from dataclasses import field
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import forms as auth_forms
 from django.forms import ModelForm
 from arike_app.models import *
+
+
+class LoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+        text_field_style = "bg-gray-200 rounded-xl w-full py-2 px-4"
+        for field in ["username", "password"]:
+            self.fields[field].widget.attrs["class"] = text_field_style
+            self.fields[field].widget.attrs["placeholder"] = self.fields[field].label
 
 
 class FacilityForm(ModelForm):
