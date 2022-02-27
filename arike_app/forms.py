@@ -15,6 +15,12 @@ class LoginForm(AuthenticationForm):
             self.fields[field].widget.attrs["placeholder"] = self.fields[field].label
 
 
+class ProfileForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]
+
+
 class FacilityForm(ModelForm):
     class Meta:
         model = Facility

@@ -63,12 +63,6 @@ class HomeView(DashboardViewMixin, TemplateView):
         self.template_name = "dashboard/home.html"
 
 
-class ProfileForm(ModelForm):
-    class Meta:
-        model = User
-        fields = ["first_name", "last_name", "email"]
-
-
 class FacilitiesView(DashboardViewMixin, ListView):
     template_name = "dashboard/facilities.html"
 
