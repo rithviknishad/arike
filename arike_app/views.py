@@ -196,3 +196,30 @@ class PatientEditView(PatientsViewMixin, CustomUpdateView):
 
 class ListPatientsView(PatientsViewMixin, CustomListView):
     pass
+
+
+class LsgBodiesViewMixin:
+    model = LsgBody
+    name = "lsg-bodies"
+
+
+class CreateLsgBodyView(LsgBodiesViewMixin, CustomCreateView):
+    form_class = UserCreationForm
+    success_url = "../"
+
+
+class LsgBodyDeleteView(LsgBodiesViewMixin, CustomDeleteView):
+    success_url = "/LsgBodies"
+
+
+class LsgBodyDetailsView(LsgBodiesViewMixin, CustomDetailView):
+    pass
+
+
+class LsgBodyEditView(LsgBodiesViewMixin, CustomUpdateView):
+    form_class = UserChangeForm
+    success_url = "../"
+
+
+class ListLsgBodiesView(LsgBodiesViewMixin, CustomListView):
+    pass
