@@ -1,9 +1,11 @@
-from django_filters import FilterSet
+from django_filters import FilterSet, OrderingFilter
 
 from arike_app.models import *
 
 
 class UsersFilter(FilterSet):
+    o = OrderingFilter(fields=["first_name", "facility", "role"])
+
     class Meta:
         model = User
         fields = ["first_name", "facility", "role"]
