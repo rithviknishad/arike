@@ -21,6 +21,7 @@ class DashboardViewMixin(LoginRequiredMixin, ContextMixin):
     context_object_name = "object"
 
     def __init__(self) -> None:
+        super().__init__()
         self.template_name = f"dashboard/{self.name}/{self.view_type}.html"
 
     def get_context_data(self, **kwargs):
@@ -66,7 +67,9 @@ class UserLoginView(LoginView):
 
 
 class HomeView(DashboardViewMixin, TemplateView):
-    template_name = "dashboard/home.html"
+    def __init__(self) -> None:
+        super().__init__()
+        self.template_name = "dashboard/home.html"
 
 
 class ProfileForm(ModelForm):
