@@ -118,6 +118,9 @@ class User(ArikeModelMixin, AbstractUser):
 
     objects = CustomUserManager()
 
+    def __str__(self):
+        return self.get_full_name() or self.username
+
 
 class Patient(ArikeModelMixin, models.Model):
     full_name = models.CharField(max_length=255)

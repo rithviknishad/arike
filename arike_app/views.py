@@ -1,9 +1,8 @@
 from dataclasses import dataclass
-from typing import List
 from django.contrib.auth.views import LoginView
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.forms import ModelForm
-from django.views.generic import View, CreateView, DeleteView, UpdateView, TemplateView
+from django.views.generic import View, CreateView, DeleteView, DetailView, UpdateView, TemplateView
 from django.views.generic.base import ContextMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
@@ -55,10 +54,20 @@ class FacilitiesView(DashboardViewMixin, ListView):
         return Facility.objects.all()
 
 
-class UserForm(ModelForm):
+class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email", "phone", "facility", "role"]
+        fields = [
+            "username",
+            "password1",
+            "password2",
+            "first_name",
+            "last_name",
+            "email",
+            "phone",
+            "facility",
+            "role",
+        ]
 
 
 class ProfileUpdateView(DashboardViewMixin, UpdateView):
@@ -67,7 +76,7 @@ class ProfileUpdateView(DashboardViewMixin, UpdateView):
 
 class CreateUserView(DashboardViewMixin, CreateView):
     template_name = "dashboard/users/create.html"
-    form_class = UserForm
+    form_class = CustomUserCreationForm
     success_url = "../"
 
     def get_success_url(self) -> str:
@@ -76,8 +85,16 @@ class CreateUserView(DashboardViewMixin, CreateView):
 
 class ListUsersView(DashboardViewMixin, ListView):
     template_name = "dashboard/users/list.html"
-    # context_object_name = "users"
 
     def get_queryset(self):
         # TODO: show only current district users.
         return User.objects.all()
+
+
+class UserDetailsView(DashboardViewMixin, DetailView):
+    template_name = "dashboard/users/details.html"
+    context_object_name = (
+        "object"  # Do not specify as 'user', as it'll conflict with authenticated user's data in context
+    )
+    model = User
+    slug_field = "username"

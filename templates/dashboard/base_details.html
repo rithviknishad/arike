@@ -1,0 +1,13 @@
+{% extends './base.html' %}
+{% block inner %}
+<div class="px-10 py-6">
+  <div class="flex flex-row">
+    <div class="flex-none text-3xl font-bold">{% block head_title %}Details Base{% endblock head_title %}</div>
+    <div class="flex-1"></div>
+    <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" %}</div>
+    <div class="px-1">{% include 'generic/button.html' with label="Edit" onClick="location.href='edit'" %}</div>
+  </div>
+  {% block details %}{% endblock details %}
+</div>
+{% endblock inner %}
+
