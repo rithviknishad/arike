@@ -8,7 +8,16 @@
     <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" %}</div>
     <div class="px-1">{% include 'generic/button.html' with label="Edit" onClick="location.href='edit'" %}</div>
   </div>
-  {% block details %}{% endblock details %}
+  {% block details %}
+  <table>
+    {% for label, value in object.get_fields %}
+      <tr>
+        <td>{{ label }}</td>
+        <td>{{ value }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% endblock details %}  
 </div>
 {% endblock inner %}
 
