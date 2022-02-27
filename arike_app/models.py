@@ -123,7 +123,9 @@ class User(ArikeModelMixin, AbstractUser):
 
 
 class Patient(ArikeModelMixin, models.Model):
-    full_name = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, blank=True)
+    email = models.CharField(max_length=255, blank=True)
     date_of_birth = models.DateField()
     address = models.CharField(max_length=255)
     landmark = models.CharField(max_length=255)
