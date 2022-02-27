@@ -26,3 +26,21 @@ class LsgBodyForm(ModelForm):
     class Meta:
         model = LsgBody
         fields = ["kind", "name", "lsg_body_code", "district"]
+
+
+class PatientForm(ModelForm):
+    class Meta:
+        model = Patient
+        fields = [
+            "first_name",
+            "last_name",
+            "email",
+            "date_of_birth",
+            "phone_number",
+            "emergency_phone_number",
+            "address",
+            "landmark",
+            "ward",
+            "facility",
+            "gender",
+        ]
