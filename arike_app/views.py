@@ -1,17 +1,14 @@
-from dataclasses import dataclass
-from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import AuthenticationForm
-from django.forms import ModelForm
-from django.views.generic import View, CreateView, DeleteView, DetailView, UpdateView, TemplateView
-from django.views.generic.base import ContextMixin
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
+from django.forms import ModelForm
+from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView
+from django.views.generic.base import ContextMixin
+from django.views.generic.list import ListView
 
-from arike_app.models import *
 from arike_app.dashboard import DASHBOARD_PAGES
 from arike_app.forms import *
+from arike_app.models import *
 
 
 class DashboardViewMixin(LoginRequiredMixin, ContextMixin):
