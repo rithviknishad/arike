@@ -91,109 +91,109 @@ class ProfileUpdateView(DashboardViewMixin, UpdateView):
 
 
 class UsersViews:
-    class __ViewMixin:
+    class _ViewMixin:
         model = User
         name = "users"
 
-    class Create(__ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, CustomCreateView):
         form_class = UserCreationForm
 
-    class Delete(__ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, CustomDeleteView):
         pass
 
-    class Details(__ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(__ViewMixin, CustomUpdateView):
+    class Edit(_ViewMixin, CustomUpdateView):
         form_class = UserChangeForm
 
-    class List(__ViewMixin, CustomListView):
+    class List(_ViewMixin, CustomListView):
         pass
 
 
 class FacilitiesViews:
-    class __ViewMixin:
+    class _ViewMixin:
         model = Facility
         name = "facilities"
         form_class = FacilityForm
 
-    class Create(__ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, CustomCreateView):
         pass
 
-    class Delete(__ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, CustomDeleteView):
         pass
 
-    class Details(__ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(__ViewMixin, CustomUpdateView):
+    class Edit(_ViewMixin, CustomUpdateView):
         pass
 
-    class List(__ViewMixin, CustomListView):
+    class List(_ViewMixin, CustomListView):
         pass
 
 
 class WardsViews:
-    class __ViewMixin:
+    class _ViewMixin:
         model = Ward
         name = "wards"
         form_class = FacilityForm
 
-    class Create(__ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, CustomCreateView):
         pass
 
-    class Delete(__ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, CustomDeleteView):
         pass
 
-    class Details(__ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(__ViewMixin, CustomUpdateView):
+    class Edit(_ViewMixin, CustomUpdateView):
         pass
 
-    class List(__ViewMixin, CustomListView):
+    class List(_ViewMixin, CustomListView):
         pass
 
 
 class PatientsViews:
-    class __ViewMixin:
+    class _ViewMixin:
         model = Patient
         name = "patients"
         form_class = PatientForm
 
-    class Create(__ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, CustomCreateView):
         pass
 
-    class Delete(__ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, CustomDeleteView):
         pass
 
-    class Details(__ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(__ViewMixin, CustomUpdateView):
+    class Edit(_ViewMixin, CustomUpdateView):
         pass
 
-    class List(__ViewMixin, CustomListView):
+    class List(_ViewMixin, CustomListView):
         pass
 
 
 class LsgBodiesViews:
-    class __ViewMixin:
+    class _ViewMixin:
         model = LsgBody
         name = "lsg-bodies"
         form_class = LsgBodyForm
 
-    class Create(__ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, CustomCreateView):
         pass
 
-    class Delete(__ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, CustomDeleteView):
         pass
 
-    class Details(__ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(__ViewMixin, CustomUpdateView):
+    class Edit(_ViewMixin, CustomUpdateView):
         pass
 
-    class List(__ViewMixin, CustomListView):
+    class List(_ViewMixin, CustomListView):
         pass
