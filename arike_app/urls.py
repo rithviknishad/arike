@@ -20,7 +20,7 @@ from django.shortcuts import redirect
 from django.urls import path
 from django.views.generic import View
 
-from views import *
+from arike_app.views import *
 
 
 def _(name: str, list: View, create: View, detail: View, edit: View, delete: View) -> List:
