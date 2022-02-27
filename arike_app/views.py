@@ -112,3 +112,30 @@ class UserEditView(UsersViewMixin, CustomUpdateView):
 
 class ListUsersView(UsersViewMixin, CustomListView):
     pass
+
+
+class FacilitiesViewMixin:
+    model = User
+    name = "facilities"
+
+
+class CreateFacilityView(FacilitiesViewMixin, CustomCreateView):
+    form_class = UserCreationForm
+    success_url = "../"
+
+
+class FacilityDeleteView(FacilitiesViewMixin, CustomDeleteView):
+    success_url = "/facilities"
+
+
+class FacilityDetailsView(FacilitiesViewMixin, CustomDetailView):
+    pass
+
+
+class FacilityEditView(FacilitiesViewMixin, CustomUpdateView):
+    form_class = UserChangeForm
+    success_url = "../"
+
+
+class ListFacilitiesView(FacilitiesViewMixin, CustomListView):
+    pass
