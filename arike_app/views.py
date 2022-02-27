@@ -115,7 +115,7 @@ class ListUsersView(UsersViewMixin, CustomListView):
 
 
 class FacilitiesViewMixin:
-    model = User
+    model = Facility
     name = "facilities"
 
 
