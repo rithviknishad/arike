@@ -5,8 +5,10 @@ from django.forms import ModelForm
 from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView
 from django.views.generic.base import ContextMixin
 from django.views.generic.list import ListView
+from django_filters.views import FilterView
 
 from arike_app.dashboard import DASHBOARD_PAGES
+from arike_app.filters import *
 from arike_app.forms import *
 from arike_app.models import *
 
@@ -28,7 +30,7 @@ class DashboardViewMixin(LoginRequiredMixin, ContextMixin):
         return context
 
 
-class CustomListView(DashboardViewMixin, ListView):
+class CustomListView(DashboardViewMixin, FilterView):
     view_type = "list"
 
 
@@ -116,6 +118,7 @@ class FacilitiesViews:
         model = Facility
         name = "facilities"
         form_class = FacilityForm
+        filterset_class = FacilitiesFilter
 
     class Create(_ViewMixin, CustomCreateView):
         pass
