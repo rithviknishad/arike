@@ -90,130 +90,110 @@ class ProfileUpdateView(DashboardViewMixin, UpdateView):
     template_name = "dashboard/profile.html"
 
 
-class UsersViewMixin:
-    model = User
-    name = "users"
+class UsersViews:
+    class __ViewMixin:
+        model = User
+        name = "users"
+
+    class Create(__ViewMixin, CustomCreateView):
+        form_class = UserCreationForm
+
+    class Delete(__ViewMixin, CustomDeleteView):
+        pass
+
+    class Details(__ViewMixin, CustomDetailView):
+        pass
+
+    class Edit(__ViewMixin, CustomUpdateView):
+        form_class = UserChangeForm
+
+    class List(__ViewMixin, CustomListView):
+        pass
 
 
-class CreateUserView(UsersViewMixin, CustomCreateView):
-    form_class = UserCreationForm
+class FacilitiesViews:
+    class __ViewMixin:
+        model = Facility
+        name = "facilities"
+        form_class = FacilityForm
+
+    class Create(__ViewMixin, CustomCreateView):
+        pass
+
+    class Delete(__ViewMixin, CustomDeleteView):
+        pass
+
+    class Details(__ViewMixin, CustomDetailView):
+        pass
+
+    class Edit(__ViewMixin, CustomUpdateView):
+        pass
+
+    class List(__ViewMixin, CustomListView):
+        pass
 
 
-class UserDeleteView(UsersViewMixin, CustomDeleteView):
-    pass
+class WardsViews:
+    class __ViewMixin:
+        model = Ward
+        name = "wards"
+        form_class = FacilityForm
+
+    class Create(__ViewMixin, CustomCreateView):
+        pass
+
+    class Delete(__ViewMixin, CustomDeleteView):
+        pass
+
+    class Details(__ViewMixin, CustomDetailView):
+        pass
+
+    class Edit(__ViewMixin, CustomUpdateView):
+        pass
+
+    class List(__ViewMixin, CustomListView):
+        pass
 
 
-class UserDetailsView(UsersViewMixin, CustomDetailView):
-    pass
+class PatientsViews:
+    class __ViewMixin:
+        model = Patient
+        name = "patients"
+        form_class = PatientForm
+
+    class Create(__ViewMixin, CustomCreateView):
+        pass
+
+    class Delete(__ViewMixin, CustomDeleteView):
+        pass
+
+    class Details(__ViewMixin, CustomDetailView):
+        pass
+
+    class Edit(__ViewMixin, CustomUpdateView):
+        pass
+
+    class List(__ViewMixin, CustomListView):
+        pass
 
 
-class UserEditView(UsersViewMixin, CustomUpdateView):
-    form_class = UserChangeForm
+class LsgBodiesViews:
+    class __ViewMixin:
+        model = LsgBody
+        name = "lsg-bodies"
+        form_class = LsgBodyForm
 
+    class Create(__ViewMixin, CustomCreateView):
+        pass
 
-class ListUsersView(UsersViewMixin, CustomListView):
-    pass
+    class Delete(__ViewMixin, CustomDeleteView):
+        pass
 
+    class Details(__ViewMixin, CustomDetailView):
+        pass
 
-class FacilitiesViewMixin:
-    model = Facility
-    name = "facilities"
-    form_class = FacilityForm
+    class Edit(__ViewMixin, CustomUpdateView):
+        pass
 
-
-class CreateFacilityView(FacilitiesViewMixin, CustomCreateView):
-    pass
-
-
-class FacilityDeleteView(FacilitiesViewMixin, CustomDeleteView):
-    pass
-
-
-class FacilityDetailsView(FacilitiesViewMixin, CustomDetailView):
-    pass
-
-
-class FacilityEditView(FacilitiesViewMixin, CustomUpdateView):
-    pass
-
-
-class ListFacilitiesView(FacilitiesViewMixin, CustomListView):
-    pass
-
-
-class WardsViewMixin:
-    model = Ward
-    name = "wards"
-    form_class = FacilityForm
-
-
-class CreateWardView(WardsViewMixin, CustomCreateView):
-    pass
-
-
-class WardDeleteView(WardsViewMixin, CustomDeleteView):
-    pass
-
-
-class WardDetailsView(WardsViewMixin, CustomDetailView):
-    pass
-
-
-class WardEditView(WardsViewMixin, CustomUpdateView):
-    pass
-
-
-class ListWardsView(WardsViewMixin, CustomListView):
-    pass
-
-
-class PatientsViewMixin:
-    model = Patient
-    name = "patients"
-    form_class = PatientForm
-
-
-class CreatePatientView(PatientsViewMixin, CustomCreateView):
-    pass
-
-
-class PatientDeleteView(PatientsViewMixin, CustomDeleteView):
-    pass
-
-
-class PatientDetailsView(PatientsViewMixin, CustomDetailView):
-    pass
-
-
-class PatientEditView(PatientsViewMixin, CustomUpdateView):
-    pass
-
-
-class ListPatientsView(PatientsViewMixin, CustomListView):
-    pass
-
-
-class LsgBodiesViewMixin:
-    model = LsgBody
-    name = "lsg-bodies"
-    form_class = LsgBodyForm
-
-
-class CreateLsgBodyView(LsgBodiesViewMixin, CustomCreateView):
-    pass
-
-
-class LsgBodyDeleteView(LsgBodiesViewMixin, CustomDeleteView):
-    pass
-
-
-class LsgBodyDetailsView(LsgBodiesViewMixin, CustomDetailView):
-    pass
-
-
-class LsgBodyEditView(LsgBodiesViewMixin, CustomUpdateView):
-    pass
-
-
-class ListLsgBodiesView(LsgBodiesViewMixin, CustomListView):
-    pass
+    class List(__ViewMixin, CustomListView):
+        pass

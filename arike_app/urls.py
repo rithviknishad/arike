@@ -23,13 +23,13 @@ from django.views.generic import View
 from arike_app.views import *
 
 
-def _(name: str, list: View, create: View, detail: View, edit: View, delete: View) -> List:
+def _(name: str, views_cls) -> List:
     return [
-        path(f"{name}/", list.as_view()),
-        path(f"{name}/create/", create.as_view()),
-        path(f"{name}/<pk>/", detail.as_view()),
-        path(f"{name}/<pk>/edit/", edit.as_view()),
-        path(f"{name}/<pk>/delete/", delete.as_view()),
+        path(f"{name}/", views_cls.List.as_view()),
+        path(f"{name}/create/", views_cls.Create.as_view()),
+        path(f"{name}/<pk>/", views_cls.Details.as_view()),
+        path(f"{name}/<pk>/edit/", views_cls.Edit.as_view()),
+        path(f"{name}/<pk>/delete/", views_cls.Delete.as_view()),
     ]
 
 
@@ -41,13 +41,11 @@ urlpatterns = [
     path("", lambda req: redirect("/home/")),
     path("home/", HomeView.as_view()),
     # Models CRUD urls
-    *_("users", ListUsersView, CreateUserView, UserDetailsView, UserEditView, UserDeleteView),
-    *_(
-        "facilities", ListFacilitiesView, CreateFacilityView, FacilityDetailsView, FacilityEditView, FacilityDeleteView
-    ),
-    *_("patients", ListPatientsView, CreatePatientView, PatientDetailsView, PatientEditView, PatientDeleteView),
-    *_("lsg-bodies", ListLsgBodiesView, CreateLsgBodyView, LsgBodyDetailsView, LsgBodyEditView, LsgBodyDeleteView),
-    *_("wards", ListWardsView, CreateWardView, WardDetailsView, WardEditView, WardDeleteView),
+    *_("users", UsersViews),
+    *_("facilities", FacilitiesViews),
+    *_("patients", PatientsViews),
+    *_("lsg-bodies", LsgBodiesViews),
+    *_("wards", WardsViews),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]
