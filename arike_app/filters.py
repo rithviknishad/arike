@@ -12,18 +12,24 @@ class UsersFilter(FilterSet):
 
 
 class FacilitiesFilter(FilterSet):
+    o = OrderingFilter(fields=["name", "ward", "kind"])
+
     class Meta:
         model = Facility
         fields = ["kind", "name", "ward"]
 
 
 class WardsFilter(FilterSet):
+    o = OrderingFilter(fields=["name", "number", "lsg_body"])
+
     class Meta:
         model = Ward
         fields = ["name", "lsg_body"]
 
 
 class PatientsFilter(FilterSet):
+    o = OrderingFilter(fields=["first_name", "date_of_birth", "ward", "facility"])
+
     class Meta:
         model = Patient
         fields = [
@@ -35,6 +41,8 @@ class PatientsFilter(FilterSet):
 
 
 class LsgBodyFilter(FilterSet):
+    o = OrderingFilter(fields=["name", "kind", "lsg_body_code"])
+
     class Meta:
         model = LsgBody
         fields = ["kind", "district"]
