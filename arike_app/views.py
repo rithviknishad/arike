@@ -169,7 +169,7 @@ class ListWardsView(WardsViewMixin, CustomListView):
 class PatientsViewMixin:
     model = Patient
     name = "patients"
-    form_class = FacilityForm
+    form_class = PatientForm
 
 
 class CreatePatientView(PatientsViewMixin, CustomCreateView):
