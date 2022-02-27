@@ -38,14 +38,17 @@ class CustomDetailView(DashboardViewMixin, DetailView):
 
 class CustomUpdateView(DashboardViewMixin, UpdateView):
     view_type = "edit"
+    success_url = "../"
 
 
 class CustomDeleteView(DashboardViewMixin, DeleteView):
     view_type = "delete"
+    success_url = "../../"
 
 
 class CustomCreateView(DashboardViewMixin, CreateView):
     view_type = "create"
+    success_url = "../"
 
 
 class LoginForm(AuthenticationForm):
@@ -94,11 +97,10 @@ class UsersViewMixin:
 
 class CreateUserView(UsersViewMixin, CustomCreateView):
     form_class = UserCreationForm
-    success_url = "../"
 
 
 class UserDeleteView(UsersViewMixin, CustomDeleteView):
-    success_url = "/users"
+    pass
 
 
 class UserDetailsView(UsersViewMixin, CustomDetailView):
@@ -107,7 +109,6 @@ class UserDetailsView(UsersViewMixin, CustomDetailView):
 
 class UserEditView(UsersViewMixin, CustomUpdateView):
     form_class = UserChangeForm
-    success_url = "../"
 
 
 class ListUsersView(UsersViewMixin, CustomListView):
@@ -121,11 +122,11 @@ class FacilitiesViewMixin:
 
 
 class CreateFacilityView(FacilitiesViewMixin, CustomCreateView):
-    success_url = "../"
+    pass
 
 
 class FacilityDeleteView(FacilitiesViewMixin, CustomDeleteView):
-    success_url = "/facilities"
+    pass
 
 
 class FacilityDetailsView(FacilitiesViewMixin, CustomDetailView):
@@ -133,7 +134,7 @@ class FacilityDetailsView(FacilitiesViewMixin, CustomDetailView):
 
 
 class FacilityEditView(FacilitiesViewMixin, CustomUpdateView):
-    success_url = "../"
+    pass
 
 
 class ListFacilitiesView(FacilitiesViewMixin, CustomListView):
@@ -147,11 +148,11 @@ class WardsViewMixin:
 
 
 class CreateWardView(WardsViewMixin, CustomCreateView):
-    success_url = "../"
+    pass
 
 
 class WardDeleteView(WardsViewMixin, CustomDeleteView):
-    success_url = "/Wards"
+    pass
 
 
 class WardDetailsView(WardsViewMixin, CustomDetailView):
@@ -159,7 +160,7 @@ class WardDetailsView(WardsViewMixin, CustomDetailView):
 
 
 class WardEditView(WardsViewMixin, CustomUpdateView):
-    success_url = "../"
+    pass
 
 
 class ListWardsView(WardsViewMixin, CustomListView):
@@ -173,11 +174,11 @@ class PatientsViewMixin:
 
 
 class CreatePatientView(PatientsViewMixin, CustomCreateView):
-    success_url = "../"
+    pass
 
 
 class PatientDeleteView(PatientsViewMixin, CustomDeleteView):
-    success_url = "/Patients"
+    pass
 
 
 class PatientDetailsView(PatientsViewMixin, CustomDetailView):
@@ -185,7 +186,7 @@ class PatientDetailsView(PatientsViewMixin, CustomDetailView):
 
 
 class PatientEditView(PatientsViewMixin, CustomUpdateView):
-    success_url = "../"
+    pass
 
 
 class ListPatientsView(PatientsViewMixin, CustomListView):
@@ -199,11 +200,11 @@ class LsgBodiesViewMixin:
 
 
 class CreateLsgBodyView(LsgBodiesViewMixin, CustomCreateView):
-    success_url = "../"
+    pass
 
 
 class LsgBodyDeleteView(LsgBodiesViewMixin, CustomDeleteView):
-    success_url = "/LsgBodies"
+    pass
 
 
 class LsgBodyDetailsView(LsgBodiesViewMixin, CustomDetailView):
@@ -211,7 +212,7 @@ class LsgBodyDetailsView(LsgBodiesViewMixin, CustomDetailView):
 
 
 class LsgBodyEditView(LsgBodiesViewMixin, CustomUpdateView):
-    success_url = "../"
+    pass
 
 
 class ListLsgBodiesView(LsgBodiesViewMixin, CustomListView):
