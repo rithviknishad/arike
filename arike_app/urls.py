@@ -1,0 +1,53 @@
+"""arike URL Configuration
+
+The `urlpatterns` list routes URLs to  For more information please see:
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from typing import List
+
+from django.contrib.auth.views import LogoutView
+from django.shortcuts import redirect
+from django.urls import path
+from django.views.generic import View
+
+from views import *
+
+
+def _(name: str, list: View, create: View, detail: View, edit: View, delete: View) -> List:
+    return [
+        path(f"{name}/", list.as_view()),
+        path(f"{name}/create/", create.as_view()),
+        path(f"{name}/<pk>/", detail.as_view()),
+        path(f"{name}/<pk>/edit/", edit.as_view()),
+        path(f"{name}/<pk>/delete/", delete.as_view()),
+    ]
+
+
+urlpatterns = [
+    # Authentication
+    path("auth/login/", UserLoginView.as_view()),
+    path("auth/logout/", LogoutView.as_view()),
+    # Home
+    path("", lambda req: redirect("/home/")),
+    path("home/", HomeView.as_view()),
+    # Models CRUD urls
+    *_("users", ListUsersView, CreateUserView, UserDetailsView, UserEditView, UserDeleteView),
+    *_(
+        "facilities", ListFacilitiesView, CreateFacilityView, FacilityDetailsView, FacilityEditView, FacilityDeleteView
+    ),
+    *_("patients", ListPatientsView, CreatePatientView, PatientDetailsView, PatientEditView, PatientDeleteView),
+    *_("lsg-bodies", ListLsgBodiesView, CreateLsgBodyView, LsgBodyDetailsView, LsgBodyEditView, LsgBodyDeleteView),
+    *_("wards", ListWardsView, CreateWardView, WardDetailsView, WardEditView, WardDeleteView),
+    # Profile
+    path("profile/", ProfileUpdateView.as_view()),
+]
