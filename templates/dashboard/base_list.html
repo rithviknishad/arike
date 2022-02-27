@@ -22,9 +22,7 @@
           {% include 'generic/expand_button.html' with label="Sort" %}
         </div>
       </div>
-      <div class="py-2 flex flex-row">
-        {{ filter.form.as_p }}
-      </div>
+      {{ filter.form.as_p }}
     </div>
   </form>
   {% endblock search_and_filter_section %}

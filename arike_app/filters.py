@@ -31,7 +31,7 @@ class WardsFilter(FilterSet):
 
 
 class PatientsFilter(FilterSet):
-    search = CharFilter("irst_name", lookup_expr="icontains")
+    search = CharFilter("first_name", lookup_expr="icontains")
     o = OrderingFilter(fields=["first_name", "date_of_birth", "ward", "facility"])
 
     class Meta:
