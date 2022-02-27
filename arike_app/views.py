@@ -170,7 +170,8 @@ class LsgBodiesViews:
     class _ViewMixin:
         model = LsgBody
         name = "lsg-bodies"
-        form_class = LsgBodyFilter
+        form_class = LsgBodyForm
+        filterset_class = LsgBodyFilter
 
     class Create(_ViewMixin, CustomCreateView):
         pass
