@@ -29,18 +29,24 @@ urlpatterns = [
     # Home
     path("", lambda req: redirect("/home/")),
     path("home/", views.HomeView.as_view()),
-    # Facilities
-    path("facilities/", views.ListFacilitiesView.as_view()),
-    path("facilities/create/", views.CreateFacilityView.as_view()),
-    path("facilities/<pk>/", views.FacilityDetailsView.as_view()),
-    path("facilities/<pk>/edit/", views.FacilityEditView.as_view()),
-    path("facilities/<pk>/delete/", views.FacilityDeleteView.as_view()),
-    # Profile
-    path("profile/", views.ProfileUpdateView.as_view()),
     # Users
     path("users/", views.ListUsersView.as_view()),
     path("users/create/", views.CreateUserView.as_view()),
     path("users/<pk>/", views.UserDetailsView.as_view()),
     path("users/<pk>/edit/", views.UserEditView.as_view()),
     path("users/<pk>/delete/", views.UserDeleteView.as_view()),
+    # Facilities
+    path("facilities/", views.ListFacilitiesView.as_view()),
+    path("facilities/create/", views.CreateFacilityView.as_view()),
+    path("facilities/<pk>/", views.FacilityDetailsView.as_view()),
+    path("facilities/<pk>/edit/", views.FacilityEditView.as_view()),
+    path("facilities/<pk>/delete/", views.FacilityDeleteView.as_view()),
+    # Wards
+    path("wards/", views.ListWardsView.as_view()),
+    path("wards/create/", views.CreateWardView.as_view()),
+    path("wards/<pk>/", views.WardDetailsView.as_view()),
+    path("wards/<pk>/edit/", views.WardEditView.as_view()),
+    path("wards/<pk>/delete/", views.WardDeleteView.as_view()),
+    # Profile
+    path("profile/", views.ProfileUpdateView.as_view()),
 ]
