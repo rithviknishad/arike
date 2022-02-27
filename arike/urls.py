@@ -42,17 +42,13 @@ urlpatterns = [
     # Home
     path("", lambda req: redirect("/home/")),
     path("home/", HomeView.as_view()),
-    # Users
+    # Model CRUD urls
     *_("users", ListUsersView, CreateUserView, UserDetailsView, UserEditView, UserDeleteView),
-    # Facilities
     *_(
         "facilities", ListFacilitiesView, CreateFacilityView, FacilityDetailsView, FacilityEditView, FacilityDeleteView
     ),
-    # Patients
     *_("patients", ListPatientsView, CreatePatientView, PatientDetailsView, PatientEditView, PatientDeleteView),
-    # LSG Bodies
     *_("lsg-bodies", ListLsgBodiesView, CreateLsgBodyView, LsgBodyDetailsView, LsgBodyEditView, LsgBodyDeleteView),
-    # Wards
     *_("wards", ListWardsView, CreateWardView, WardDetailsView, WardEditView, WardDeleteView),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),

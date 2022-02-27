@@ -12,10 +12,10 @@ DASHBOARD_PAGES = [
     for tab_details in [
         ("Home", "/home"),
         ("Users", "/users"),
-        ("Facility", "/facilities"),
+        ("Facilities", "/facilities"),
         ("Patients", "/patients"),
-        ("LSG Body", "/lsg-bodies"),
-        ("Ward", "/wards"),
+        ("LSG Bodies", "/lsg-bodies"),
+        ("Wards", "/wards"),
         ("Profile", "/profile"),
     ]
 ]
