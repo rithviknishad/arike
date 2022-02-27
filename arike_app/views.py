@@ -117,12 +117,10 @@ class ListUsersView(UsersViewMixin, CustomListView):
 
 
 class UserDetailsView(UsersViewMixin, CustomDetailView):
-    model = User
     context_object_name = "object"  # Voluntarily overriding as it'll conflict with `user` in context
 
 
 class UserDeleteView(UsersViewMixin, CustomDeleteView):
-    model = User
     success_url = "/users"
 
 
@@ -132,6 +130,5 @@ class UserEditView(UsersViewMixin, CustomUpdateView):
             model = User
             fields = ["first_name", "last_name", "email", "phone", "facility", "role"]
 
-    model = User
     form_class = UserChangeForm
     success_url = "../"
