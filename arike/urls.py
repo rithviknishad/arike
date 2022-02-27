@@ -23,7 +23,7 @@ from django.urls import include, path
 from django.views.generic import View
 
 
-def arike_model_page_urls(name: str, list: View, create: View, detail: View, edit: View, delete: View) -> List:
+def _(name: str, list: View, create: View, detail: View, edit: View, delete: View) -> List:
     return [
         path(f"{name}/", list.as_view()),
         path(f"{name}/create/", create.as_view()),
@@ -43,21 +43,17 @@ urlpatterns = [
     path("", lambda req: redirect("/home/")),
     path("home/", HomeView.as_view()),
     # Users
-    *arike_model_page_urls("users", ListUsersView, CreateUserView, UserDetailsView, UserEditView, UserDeleteView),
+    *_("users", ListUsersView, CreateUserView, UserDetailsView, UserEditView, UserDeleteView),
     # Facilities
-    *arike_model_page_urls(
+    *_(
         "facilities", ListFacilitiesView, CreateFacilityView, FacilityDetailsView, FacilityEditView, FacilityDeleteView
     ),
     # Patients
-    *arike_model_page_urls(
-        "patients", ListPatientsView, CreatePatientView, PatientDetailsView, PatientEditView, PatientDeleteView
-    ),
+    *_("patients", ListPatientsView, CreatePatientView, PatientDetailsView, PatientEditView, PatientDeleteView),
     # LSG Bodies
-    *arike_model_page_urls(
-        "lsg-bodies", ListLsgBodiesView, CreateLsgBodyView, LsgBodyDetailsView, LsgBodyEditView, LsgBodyDeleteView
-    ),
+    *_("lsg-bodies", ListLsgBodiesView, CreateLsgBodyView, LsgBodyDetailsView, LsgBodyEditView, LsgBodyDeleteView),
     # Wards
-    *arike_model_page_urls("wards", ListWardsView, CreateWardView, WardDetailsView, WardEditView, WardDeleteView),
+    *_("wards", ListWardsView, CreateWardView, WardDetailsView, WardEditView, WardDeleteView),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]
