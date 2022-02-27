@@ -195,7 +195,7 @@ class ListPatientsView(PatientsViewMixin, CustomListView):
 class LsgBodiesViewMixin:
     model = LsgBody
     name = "lsg-bodies"
-    form_class = FacilityForm
+    form_class = LsgBodyForm
 
 
 class CreateLsgBodyView(LsgBodiesViewMixin, CustomCreateView):

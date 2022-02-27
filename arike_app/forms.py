@@ -20,3 +20,9 @@ class FacilityForm(ModelForm):
     class Meta:
         model = Facility
         fields = ["kind", "name", "address", "ward", "pincode", "phone"]
+
+
+class LsgBodyForm(ModelForm):
+    class Meta:
+        model = LsgBody
+        fields = ["kind", "name", "lsg_body_code", "district"]
