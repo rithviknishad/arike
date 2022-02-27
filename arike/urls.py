@@ -30,11 +30,11 @@ urlpatterns = [
     path("", lambda req: redirect("/home/")),
     path("home/", views.HomeView.as_view()),
     # Facilities
-    # path("facilities/", views.ListFacilitiesView.as_view()),
-    # path("facilities/create/", views.CreatFacilitiesView.as_view()),
-    # path("facilities/<pk>/", views.FacilityDetailsView.as_view()),
-    # path("facilities/<pk>/edit/", views.FacilityEditView.as_view()),
-    # path("facilities/<pk>/delete/", views.FacilityDeleteView.as_view()),
+    path("facilities/", views.ListFacilitiesView.as_view()),
+    path("facilities/create/", views.CreatFacilitiesView.as_view()),
+    path("facilities/<pk>/", views.FacilityDetailsView.as_view()),
+    path("facilities/<pk>/edit/", views.FacilityEditView.as_view()),
+    path("facilities/<pk>/delete/", views.FacilityDeleteView.as_view()),
     # Profile
     path("profile/", views.ProfileUpdateView.as_view()),
     # Users
