@@ -92,9 +92,17 @@ class ListUsersView(DashboardViewMixin, ListView):
 
 
 class UserDetailsView(DashboardViewMixin, DetailView):
-    template_name = "dashboard/users/details.html"
-    context_object_name = (
-        "object"  # Do not specify as 'user', as it'll conflict with authenticated user's data in context
-    )
     model = User
-    slug_field = "username"
+    template_name = "dashboard/users/details.html"
+    context_object_name = "object"  # Voluntarily overriding as it'll conflict with `user` in context
+
+
+class UserDeleteView(DashboardViewMixin, DeleteView):
+    model = User
+    template_name = "dashboard/users/delete.html"
+    success_url = "/users"
+
+
+class UserEditView(DashboardViewMixin, UpdateView):
+    model = User
+    template_name = "dashboard/users/edit.html"

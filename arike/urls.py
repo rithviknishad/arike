@@ -35,8 +35,8 @@ urlpatterns = [
     path("profile/", views.ProfileUpdateView.as_view()),
     # Users
     path("users/", views.ListUsersView.as_view()),
-    path("users/create", views.CreateUserView.as_view()),
-    path("users/<pk>", views.UserDetailsView.as_view()),
-    # path("users/<pk>/edit", views.UserEditView.as_view()),
-    # path("users/<pk>/delete", views.UserDeleteView.as_view()),
+    path("users/create/", views.CreateUserView.as_view()),
+    path("users/<pk>/", views.UserDetailsView.as_view()),
+    path("users/<pk>/edit/", views.UserEditView.as_view()),
+    path("users/<pk>/delete/", views.UserDeleteView.as_view()),
 ]
