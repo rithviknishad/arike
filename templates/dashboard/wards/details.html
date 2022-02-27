@@ -1,0 +1,17 @@
+{% extends 'dashboard/base_details.html' %}
+
+{% block head_title %}{{ object }}{% endblock head_title %}
+
+{% block details %}
+<div class="pt-8 pb-5 text-2xl font-bold">Profile</div>
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+  {{ object.first_name }}
+  {{ object.last_name }}
+  {{ object.email }}
+  {{ object.phone }}
+</div>
+<div class="pt-8 pb-5 text-2xl font-bold">Facility</div>
+{{ object.facility }}
+<div class="pt-8 pb-5 text-2xl font-bold">Role</div>
+{{ object.get_role_display }}
+{% endblock details %}
