@@ -166,3 +166,30 @@ class WardEditView(WardsViewMixin, CustomUpdateView):
 
 class ListWardsView(WardsViewMixin, CustomListView):
     pass
+
+
+class PatientsViewMixin:
+    model = Patient
+    name = "patients"
+
+
+class CreatePatientView(PatientsViewMixin, CustomCreateView):
+    form_class = UserCreationForm
+    success_url = "../"
+
+
+class PatientDeleteView(PatientsViewMixin, CustomDeleteView):
+    success_url = "/Patients"
+
+
+class PatientDetailsView(PatientsViewMixin, CustomDetailView):
+    pass
+
+
+class PatientEditView(PatientsViewMixin, CustomUpdateView):
+    form_class = UserChangeForm
+    success_url = "../"
+
+
+class ListPatientsView(PatientsViewMixin, CustomListView):
+    pass
