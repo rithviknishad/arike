@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from django.contrib.auth.views import LoginView
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.forms import ModelForm
 from django.views.generic import View, CreateView, DeleteView, DetailView, UpdateView, TemplateView
 from django.views.generic.base import ContextMixin
@@ -11,12 +11,14 @@ from django.contrib.auth.views import LoginView
 
 from arike_app.models import *
 from arike_app.dashboard import DASHBOARD_PAGES
+from arike_app.forms import *
 
 
 class DashboardViewMixin(LoginRequiredMixin, ContextMixin):
 
     name = None
     view_type = None
+    context_object_name = "object"
 
     def __init__(self) -> None:
         self.template_name = f"dashboard/{self.name}/{self.view_type}.html"
@@ -91,44 +93,22 @@ class UsersViewMixin:
 
 
 class CreateUserView(UsersViewMixin, CustomCreateView):
-    class UserCreationForm(UserCreationForm):
-        class Meta:
-            model = User
-            fields = [
-                "username",
-                "password1",
-                "password2",
-                "first_name",
-                "last_name",
-                "email",
-                "phone",
-                "facility",
-                "role",
-            ]
-
     form_class = UserCreationForm
     success_url = "../"
-
-
-class ListUsersView(UsersViewMixin, CustomListView):
-    def get_queryset(self):
-        # TODO: show only current district users.
-        return User.objects.all()
-
-
-class UserDetailsView(UsersViewMixin, CustomDetailView):
-    context_object_name = "object"  # Voluntarily overriding as it'll conflict with `user` in context
 
 
 class UserDeleteView(UsersViewMixin, CustomDeleteView):
     success_url = "/users"
 
 
-class UserEditView(UsersViewMixin, CustomUpdateView):
-    class UserChangeForm(UserChangeForm):
-        class Meta:
-            model = User
-            fields = ["first_name", "last_name", "email", "phone", "facility", "role"]
+class UserDetailsView(UsersViewMixin, CustomDetailView):
+    pass
 
+
+class UserEditView(UsersViewMixin, CustomUpdateView):
     form_class = UserChangeForm
     success_url = "../"
+
+
+class ListUsersView(UsersViewMixin, CustomListView):
+    pass
