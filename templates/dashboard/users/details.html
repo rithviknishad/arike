@@ -1,12 +1,8 @@
 {% extends 'dashboard/base_details.html' %}
 
-{% block head_title %}{{user}}{% endblock head_title %}
+{% block head_title %}{{ object.username }}{% endblock head_title %}
 
 {% block details %}
-<div class="pt-8 pb-5 text-2xl font-bold">Credentials</div>
-<div class="grid grid-cols-2 gap-x-8 gap-y-6">
-  {{ object.username }}
-</div>
 <div class="pt-8 pb-5 text-2xl font-bold">Profile</div>
 <div class="grid grid-cols-2 gap-x-8 gap-y-6">
   {{ object.first_name }}
@@ -17,5 +13,5 @@
 <div class="pt-8 pb-5 text-2xl font-bold">Facility</div>
 {{ object.facility }}
 <div class="pt-8 pb-5 text-2xl font-bold">Role</div>
-{{ object.role }}
+{{ object.get_role_display }}
 {% endblock details %}
