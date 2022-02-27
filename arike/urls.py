@@ -47,6 +47,12 @@ urlpatterns = [
     path("patients/<pk>/", views.PatientDetailsView.as_view()),
     path("patients/<pk>/edit/", views.PatientEditView.as_view()),
     path("patients/<pk>/delete/", views.PatientDeleteView.as_view()),
+    # LSG Bodies
+    path("lsg-bodies/", views.ListLsgBodiesView.as_view()),
+    path("lsg-bodies/create/", views.CreateLsgBodyView.as_view()),
+    path("lsg-bodies/<pk>/", views.LsgBodyDetailsView.as_view()),
+    path("lsg-bodies/<pk>/edit/", views.LsgBodyEditView.as_view()),
+    path("lsg-bodies/<pk>/delete/", views.LsgBodyDeleteView.as_view()),
     # Wards
     path("wards/", views.ListWardsView.as_view()),
     path("wards/create/", views.CreateWardView.as_view()),
