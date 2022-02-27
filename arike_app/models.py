@@ -127,14 +127,14 @@ class Patient(ArikeModelMixin, models.Model):
     last_name = models.CharField(max_length=255, blank=True)
     email = models.CharField(max_length=255, blank=True)
     date_of_birth = models.DateField()
+    phone_number = models.CharField(max_length=15)
+    emergency_phone_number = models.CharField(max_length=15)
     address = models.CharField(max_length=255)
     landmark = models.CharField(max_length=255)
-    phone = models.CharField(max_length=15)
-    gender = models.CharField(max_length=2, choices=Genders.choices)
-    emergency_phone_number = models.CharField(max_length=15)
-    expired_time = models.DateTimeField(null=True, blank=True)
     ward = models.ForeignKey(Ward, on_delete=models.PROTECT)
     facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
+    gender = models.CharField(max_length=2, choices=Genders.choices)
+    expired_time = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.full_name}"
