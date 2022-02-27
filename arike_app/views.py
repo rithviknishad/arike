@@ -139,3 +139,30 @@ class FacilityEditView(FacilitiesViewMixin, CustomUpdateView):
 
 class ListFacilitiesView(FacilitiesViewMixin, CustomListView):
     pass
+
+
+class WardsViewMixin:
+    model = Ward
+    name = "wards"
+
+
+class CreateWardView(WardsViewMixin, CustomCreateView):
+    form_class = UserCreationForm
+    success_url = "../"
+
+
+class WardDeleteView(WardsViewMixin, CustomDeleteView):
+    success_url = "/Wards"
+
+
+class WardDetailsView(WardsViewMixin, CustomDetailView):
+    pass
+
+
+class WardEditView(WardsViewMixin, CustomUpdateView):
+    form_class = UserChangeForm
+    success_url = "../"
+
+
+class ListWardsView(WardsViewMixin, CustomListView):
+    pass
