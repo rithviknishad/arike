@@ -137,7 +137,7 @@ class WardsViews:
     class _ViewMixin:
         model = Ward
         name = "wards"
-        form_class = FacilityForm
+        form_class = WardForm
 
     class Create(_ViewMixin, CustomCreateView):
         pass
