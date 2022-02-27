@@ -31,7 +31,7 @@ urlpatterns = [
     path("home/", views.HomeView.as_view()),
     # Facilities
     path("facilities/", views.ListFacilitiesView.as_view()),
-    path("facilities/create/", views.CreatFacilitiesView.as_view()),
+    path("facilities/create/", views.CreateFacilityView.as_view()),
     path("facilities/<pk>/", views.FacilityDetailsView.as_view()),
     path("facilities/<pk>/edit/", views.FacilityEditView.as_view()),
     path("facilities/<pk>/delete/", views.FacilityDeleteView.as_view()),
