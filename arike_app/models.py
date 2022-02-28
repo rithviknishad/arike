@@ -21,6 +21,24 @@ class ArikeModelMixin(models.Model):
         self.deleted = True
         self.save()
 
+    @staticmethod
+    def has_create_permission(request: HttpRequest):
+        return True
+
+    @staticmethod
+    def has_read_permission(request: HttpRequest):
+        return True
+
+    def has_object_read_permission(self, request: HttpRequest):
+        return True
+
+    def has_object_update_permission(self, request: HttpRequest):
+        return True
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return True
+
 
 class State(ArikeModelMixin, models.Model):
     name = models.CharField(max_length=255)
@@ -96,6 +114,24 @@ class Facility(ArikeModelMixin, models.Model):
     def __str__(self):
         return f"{self.name}"
 
+    @staticmethod
+    def has_create_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
+    @staticmethod
+    def has_read_permission(request: HttpRequest):
+        return True
+
+    def has_object_read_permission(self, request: HttpRequest):
+        return request.user.is_superuser or self.district == request.user.district
+
+    def has_object_update_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
 
 class Genders(models.TextChoices):
     MALE = "M", "Male"
@@ -162,7 +198,7 @@ class User(ArikeModelMixin, AbstractUser):
     def has_object_read_permission(self, request: HttpRequest):
         return request.user.is_superuser or self.district == request.user.district
 
-    def has_object_write_permission(self, request: HttpRequest):
+    def has_object_update_permission(self, request: HttpRequest):
         return request.user.is_superuser or self == request.user
 
     @staticmethod
