@@ -34,6 +34,7 @@ pickleshare==0.7.5
 platformdirs==2.5.0
 poyo==0.5.0
 prompt-toolkit==3.0.28
+psycopg2-binary==2.9.3
 ptyprocess==0.7.0
 pure-eval==0.2.2
 Pygments==2.11.2
