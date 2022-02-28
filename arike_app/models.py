@@ -27,10 +27,10 @@ class ArikeModelMixin(models.Model):
 
     @staticmethod
     def has_read_permission(request: HttpRequest):
-        return request.user.is_superuser
+        return True
 
     def has_object_read_permission(self, request: HttpRequest):
-        return request.user.is_superuser
+        return True
 
     def has_object_update_permission(self, request: HttpRequest):
         return request.user.is_superuser
