@@ -17,6 +17,10 @@ class ArikeModelMixin(models.Model):
     def get_fields(self):
         return [(field.verbose_name, field.value_from_object(self)) for field in self.__class__._meta.fields]
 
+    def delete(self, *args, **kwargs):
+        self.deleted = True
+        self.save()
+
 
 class State(ArikeModelMixin, models.Model):
     name = models.CharField(max_length=255)
