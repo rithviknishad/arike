@@ -28,7 +28,7 @@ def _(name: str, views_cls) -> List:
         path(f"{name}/", views_cls.List.as_view()),
         path(f"{name}/create/", views_cls.Create.as_view()),
         path(f"{name}/<pk>/", views_cls.Details.as_view()),
-        path(f"{name}/<pk>/edit/", views_cls.Edit.as_view()),
+        path(f"{name}/<pk>/edit/", views_cls.Update.as_view()),
         path(f"{name}/<pk>/delete/", views_cls.Delete.as_view()),
     ]
 
