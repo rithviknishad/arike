@@ -80,6 +80,7 @@ class UsersViews:
         model = User
         name = "users"
         filterset_class = UsersFilter
+        queryset = User.objects.filter(deleted=False)
 
     class Create(_ViewMixin, CustomCreateView):
         form_class = UserCreationForm
@@ -94,6 +95,9 @@ class UsersViews:
         form_class = UserChangeForm
 
     class List(_ViewMixin, CustomListView):
+        def get_queryset(self):
+            return super().get_queryset().filter(district=self.request.user.district)
+
         pass
 
 
