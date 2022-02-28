@@ -160,14 +160,14 @@ class User(ArikeModelMixin, AbstractUser):
         return True
 
     def has_object_read_permission(self, request: HttpRequest):
-        return request.user.is_superuser or self == request.user or self.district == request.user.district
-
-    @staticmethod
-    def has_write_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_district_admin
+        return request.user.is_superuser or self.district == request.user.district
 
     def has_object_write_permission(self, request: HttpRequest):
         return request.user.is_superuser or self == request.user
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
 
 
 class Patient(ArikeModelMixin, models.Model):

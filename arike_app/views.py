@@ -1,6 +1,6 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.views import LoginView
-from django.forms import ModelForm
+from django.http import HttpResponse
 from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView
 from django.views.generic.base import ContextMixin
 from django.views.generic.list import ListView
@@ -12,11 +12,12 @@ from arike_app.forms import *
 from arike_app.models import *
 
 
-class DashboardViewMixin(LoginRequiredMixin, ContextMixin):
+class DashboardViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
 
     name = None
     view_type = None
     context_object_name = "object"
+    permission_required = []
 
     def __init__(self) -> None:
         super().__init__()
@@ -84,6 +85,16 @@ class UsersViews:
 
     class Create(_ViewMixin, CustomCreateView):
         form_class = UserCreationForm
+
+        def form_valid(self, form) -> HttpResponse:
+            """Injects district of district admin's district."""
+            res = super().form_valid(form)
+            self.object.district = self.request.user.district
+            self.object.save()
+            return res
+
+        def has_permission(self) -> bool:
+            return super().has_permission() and self.model.has_create_permission(self.request)
 
     class Delete(_ViewMixin, CustomDeleteView):
         pass
