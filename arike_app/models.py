@@ -21,25 +21,23 @@ class ArikeModelMixin(models.Model):
         self.deleted = True
         self.save()
 
-    __DEFAULT_PERMISSIONS = False
-
     @staticmethod
     def has_create_permission(request: HttpRequest):
-        return ArikeModelMixin.__DEFAULT_PERMISSIONS
+        return request.user.is_superuser
 
     @staticmethod
     def has_read_permission(request: HttpRequest):
-        return ArikeModelMixin.__DEFAULT_PERMISSIONS
+        return request.user.is_superuser
 
     def has_object_read_permission(self, request: HttpRequest):
-        return ArikeModelMixin.__DEFAULT_PERMISSIONS
+        return request.user.is_superuser
 
     def has_object_update_permission(self, request: HttpRequest):
-        return ArikeModelMixin.__DEFAULT_PERMISSIONS
+        return request.user.is_superuser
 
     @staticmethod
     def has_delete_permission(request: HttpRequest):
-        return ArikeModelMixin.__DEFAULT_PERMISSIONS
+        return request.user.is_superuser
 
 
 class State(ArikeModelMixin, models.Model):
@@ -216,7 +214,27 @@ class User(ArikeModelMixin, AbstractUser):
         return request.user.is_superuser or request.user.is_district_admin
 
 
-class Patient(ArikeModelMixin, models.Model):
+class PatientDetailsPermsMixin:
+    @staticmethod
+    def has_create_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
+    @staticmethod
+    def has_read_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+
+    def has_object_read_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+
+    def has_object_update_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
+
+class Patient(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255, blank=True)
     email = models.CharField(max_length=255, blank=True)
@@ -233,26 +251,8 @@ class Patient(ArikeModelMixin, models.Model):
     def __str__(self):
         return f"{self.full_name}"
 
-    @staticmethod
-    def has_create_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
 
-    @staticmethod
-    def has_read_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
-
-    def has_object_read_permission(self, request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
-
-    def has_object_update_permission(self, request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
-
-    @staticmethod
-    def has_delete_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
-
-
-class FamilyDetail(ArikeModelMixin, models.Model):
+class FamilyDetail(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     full_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=15)
     date_of_birth = models.DateField(blank=True)
@@ -268,24 +268,6 @@ class FamilyDetail(ArikeModelMixin, models.Model):
     def __str__(self):
         return f"{self.full_name}"
 
-    @staticmethod
-    def has_create_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
-
-    @staticmethod
-    def has_read_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
-
-    def has_object_read_permission(self, request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
-
-    def has_object_update_permission(self, request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
-
-    @staticmethod
-    def has_delete_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
-
 
 class Disease(ArikeModelMixin, models.Model):
     name = models.CharField(max_length=255)
@@ -295,7 +277,7 @@ class Disease(ArikeModelMixin, models.Model):
         return f"{self.name}"
 
 
-class PatientDisease(ArikeModelMixin, models.Model):
+class PatientDisease(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
     disease = models.ForeignKey(Disease, on_delete=models.PROTECT)
     note = models.TextField()
@@ -304,14 +286,14 @@ class PatientDisease(ArikeModelMixin, models.Model):
         return f"{self.note}"
 
 
-class TreatmentNotes(ArikeModelMixin, models.Model):
+class TreatmentNotes(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     note = models.TextField(blank=True)
     description = models.TextField(blank=True)
     care_type = models.CharField(max_length=255, blank=True)
     care_sub_type = models.CharField(max_length=255, blank=True)
 
 
-class Treatment(ArikeModelMixin, models.Model):
+class Treatment(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     description = models.TextField(blank=True)
     care_type = models.CharField(max_length=255, blank=True)
     care_sub_type = models.CharField(max_length=255, blank=True)
@@ -319,7 +301,7 @@ class Treatment(ArikeModelMixin, models.Model):
     treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT)
 
 
-class VisitSchedule(ArikeModelMixin, models.Model):
+class VisitSchedule(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     schedule_time = models.DateTimeField()
     duration = models.DurationField()
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
@@ -328,7 +310,7 @@ class VisitSchedule(ArikeModelMixin, models.Model):
         return f"{self.schedule_time} for duration {self.duration}"
 
 
-class VisitDetails(ArikeModelMixin, models.Model):
+class VisitDetails(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     palliative_phase = models.CharField(max_length=255, blank=True)
     blood_pressure = models.CharField(max_length=255, blank=True)
     pulse = models.CharField(max_length=255, blank=True)
