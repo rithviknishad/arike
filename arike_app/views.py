@@ -94,26 +94,48 @@ class UsersViews:
             return res
 
         def has_permission(self) -> bool:
+            # TODO: move to CustomCreateView
             return super().has_permission() and self.model.has_create_permission(self.request)
 
     class Delete(_ViewMixin, CustomDeleteView):
-        pass
+        def has_permission(self) -> bool:
+            # TODO: move to CustomDeleteView
+            return super().has_permission() and self.model.has_delete_permission(self.request)
 
     class Details(_ViewMixin, CustomDetailView):
         def get_context_data(self, **kwargs):
+            # TODO: move to CustomDetailView
             context = super().get_context_data(**kwargs)
-            print(self.get_object())
-            context["has_edit_perm"] = False
+            context["has_update_perm"] = self.get_object().has_object_update_permission(self.request)
+            context["has_delete_perm"] = self.model.has_delete_permission(self.request)
             return context
 
-    class Edit(_ViewMixin, CustomUpdateView):
+        def has_permission(self) -> bool:
+            # TODO: move to CustomDetailView
+            return super().has_permission() and self.get_object().has_object_read_permission(self.request)
+
+    class Update(_ViewMixin, CustomUpdateView):
         form_class = UserChangeForm
+
+        def has_permission(self) -> bool:
+            # TODO: move to CustomUpdateView
+            return super().has_permission() and self.get_object().has_object_update_permission(self.request)
 
     class List(_ViewMixin, CustomListView):
         def get_queryset(self):
             qs = super().get_queryset()
             qs = qs.filter(district=self.request.user.district)
             return qs
+
+        def get_context_data(self, **kwargs):
+            # TODO: move to CustomListView
+            context = super().get_context_data(**kwargs)
+            context["has_create_perm"] = self.model.has_create_permission(self.request)
+            return context
+
+        def has_permission(self) -> bool:
+            # TODO: move to CustomListView
+            return super().has_permission() and self.model.has_read_permission(self.request)
 
 
 class FacilitiesViews:
@@ -132,7 +154,7 @@ class FacilitiesViews:
     class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, CustomUpdateView):
         pass
 
     class List(_ViewMixin, CustomListView):
@@ -155,7 +177,7 @@ class WardsViews:
     class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, CustomUpdateView):
         pass
 
     class List(_ViewMixin, CustomListView):
@@ -178,7 +200,7 @@ class PatientsViews:
     class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, CustomUpdateView):
         pass
 
     class List(_ViewMixin, CustomListView):
@@ -201,7 +223,7 @@ class LsgBodiesViews:
     class Details(_ViewMixin, CustomDetailView):
         pass
 
-    class Edit(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, CustomUpdateView):
         pass
 
     class List(_ViewMixin, CustomListView):
