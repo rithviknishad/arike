@@ -47,6 +47,17 @@ class CustomListView(DashboardViewMixin, FilterView):
 class CustomDetailView(DashboardViewMixin, DetailView):
     view_type = "details"
 
+    def get_context_data(self, **kwargs):
+        # TODO: move to CustomDetailView
+        context = super().get_context_data(**kwargs)
+        context["has_update_perm"] = self.get_object().has_object_update_permission(self.request)
+        context["has_delete_perm"] = self.model.has_delete_permission(self.request)
+        return context
+
+    def has_permission(self) -> bool:
+        # TODO: move to CustomDetailView
+        return super().has_permission() and self.get_object().has_object_read_permission(self.request)
+
 
 class CustomUpdateView(DashboardViewMixin, UpdateView):
     view_type = "edit"
@@ -113,16 +124,7 @@ class UsersViews:
             return super().has_permission() and self.model.has_delete_permission(self.request)
 
     class Details(_ViewMixin, CustomDetailView):
-        def get_context_data(self, **kwargs):
-            # TODO: move to CustomDetailView
-            context = super().get_context_data(**kwargs)
-            context["has_update_perm"] = self.get_object().has_object_update_permission(self.request)
-            context["has_delete_perm"] = self.model.has_delete_permission(self.request)
-            return context
-
-        def has_permission(self) -> bool:
-            # TODO: move to CustomDetailView
-            return super().has_permission() and self.get_object().has_object_read_permission(self.request)
+        pass
 
     class Update(_ViewMixin, CustomUpdateView):
         form_class = UserChangeForm
