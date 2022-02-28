@@ -21,23 +21,25 @@ class ArikeModelMixin(models.Model):
         self.deleted = True
         self.save()
 
+    __DEFAULT_PERMISSIONS = False
+
     @staticmethod
     def has_create_permission(request: HttpRequest):
-        return True
+        return ArikeModelMixin.__DEFAULT_PERMISSIONS
 
     @staticmethod
     def has_read_permission(request: HttpRequest):
-        return True
+        return ArikeModelMixin.__DEFAULT_PERMISSIONS
 
     def has_object_read_permission(self, request: HttpRequest):
-        return True
+        return ArikeModelMixin.__DEFAULT_PERMISSIONS
 
     def has_object_update_permission(self, request: HttpRequest):
-        return True
+        return ArikeModelMixin.__DEFAULT_PERMISSIONS
 
     @staticmethod
     def has_delete_permission(request: HttpRequest):
-        return True
+        return ArikeModelMixin.__DEFAULT_PERMISSIONS
 
 
 class State(ArikeModelMixin, models.Model):
@@ -46,6 +48,10 @@ class State(ArikeModelMixin, models.Model):
     def __str__(self):
         return f"{self.name}"
 
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser
+
 
 class District(ArikeModelMixin, models.Model):
     name = models.CharField(max_length=255)
@@ -53,6 +59,10 @@ class District(ArikeModelMixin, models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser
 
 
 LOCAL_BODY_CHOICES = (
@@ -222,6 +232,24 @@ class Patient(ArikeModelMixin, models.Model):
 
     def __str__(self):
         return f"{self.full_name}"
+
+    @staticmethod
+    def has_create_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
+    @staticmethod
+    def has_read_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+
+    def has_object_read_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+
+    def has_object_update_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
 
 
 class FamilyDetail(ArikeModelMixin, models.Model):
