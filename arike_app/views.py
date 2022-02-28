@@ -12,8 +12,7 @@ from arike_app.forms import *
 from arike_app.models import *
 
 
-class DashboardViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
-
+class ModelTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
     name = None
     view_type = None
     context_object_name = "object"
@@ -30,7 +29,7 @@ class DashboardViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMix
         return context
 
 
-class CustomListView(DashboardViewMixin, FilterView):
+class GenericModelListView(ModelTabViewMixin, FilterView):
     view_type = "list"
 
     def get_context_data(self, **kwargs):
@@ -42,7 +41,7 @@ class CustomListView(DashboardViewMixin, FilterView):
         return super().has_permission() and self.model.has_read_permission(self.request)
 
 
-class CustomDetailView(DashboardViewMixin, DetailView):
+class GenericModelDetailView(ModelTabViewMixin, DetailView):
     view_type = "details"
 
     def get_context_data(self, **kwargs):
@@ -55,7 +54,7 @@ class CustomDetailView(DashboardViewMixin, DetailView):
         return super().has_permission() and self.get_object().has_object_read_permission(self.request)
 
 
-class CustomUpdateView(DashboardViewMixin, UpdateView):
+class GenericModelUpdateView(ModelTabViewMixin, UpdateView):
     view_type = "edit"
     success_url = "../"
 
@@ -63,7 +62,7 @@ class CustomUpdateView(DashboardViewMixin, UpdateView):
         return super().has_permission() and self.get_object().has_object_update_permission(self.request)
 
 
-class CustomDeleteView(DashboardViewMixin, DeleteView):
+class GenericModelDeleteView(ModelTabViewMixin, DeleteView):
     view_type = "delete"
     success_url = "../../"
 
@@ -72,7 +71,7 @@ class CustomDeleteView(DashboardViewMixin, DeleteView):
         return super().has_permission() and self.model.has_delete_permission(self.request)
 
 
-class CustomCreateView(DashboardViewMixin, CreateView):
+class GenericModelCreateView(ModelTabViewMixin, CreateView):
     view_type = "create"
     success_url = "../"
 
@@ -85,13 +84,13 @@ class UserLoginView(LoginView):
     form_class = LoginForm
 
 
-class HomeView(DashboardViewMixin, TemplateView):
+class HomeView(ModelTabViewMixin, TemplateView):
     def __init__(self) -> None:
         super().__init__()
         self.template_name = "dashboard/home.html"
 
 
-class ProfileUpdateView(DashboardViewMixin, UpdateView):
+class ProfileUpdateView(ModelTabViewMixin, UpdateView):
     template_name = "dashboard/profile.html"
 
 
@@ -102,7 +101,7 @@ class UsersViews:
         filterset_class = UsersFilter
         queryset = User.objects.filter(deleted=False)
 
-    class Create(_ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, GenericModelCreateView):
         form_class = UserCreationForm
 
         def form_valid(self, form) -> HttpResponse:
@@ -112,16 +111,16 @@ class UsersViews:
             self.object.save()
             return res
 
-    class Delete(_ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, GenericModelDeleteView):
         pass
 
-    class Details(_ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, GenericModelDetailView):
         pass
 
-    class Update(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, GenericModelUpdateView):
         form_class = UserChangeForm
 
-    class List(_ViewMixin, CustomListView):
+    class List(_ViewMixin, GenericModelListView):
         def get_queryset(self):
             qs = super().get_queryset()
             qs = qs.filter(district=self.request.user.district)
@@ -135,19 +134,19 @@ class FacilitiesViews:
         form_class = FacilityForm
         filterset_class = FacilitiesFilter
 
-    class Create(_ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, GenericModelCreateView):
         pass
 
-    class Delete(_ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, GenericModelDeleteView):
         pass
 
-    class Details(_ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, GenericModelDetailView):
         pass
 
-    class Update(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, GenericModelUpdateView):
         pass
 
-    class List(_ViewMixin, CustomListView):
+    class List(_ViewMixin, GenericModelListView):
         pass
 
 
@@ -158,19 +157,19 @@ class WardsViews:
         form_class = WardForm
         filterset_class = WardsFilter
 
-    class Create(_ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, GenericModelCreateView):
         pass
 
-    class Delete(_ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, GenericModelDeleteView):
         pass
 
-    class Details(_ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, GenericModelDetailView):
         pass
 
-    class Update(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, GenericModelUpdateView):
         pass
 
-    class List(_ViewMixin, CustomListView):
+    class List(_ViewMixin, GenericModelListView):
         pass
 
 
@@ -181,19 +180,19 @@ class PatientsViews:
         form_class = PatientForm
         filterset_class = PatientsFilter
 
-    class Create(_ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, GenericModelCreateView):
         pass
 
-    class Delete(_ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, GenericModelDeleteView):
         pass
 
-    class Details(_ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, GenericModelDetailView):
         pass
 
-    class Update(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, GenericModelUpdateView):
         pass
 
-    class List(_ViewMixin, CustomListView):
+    class List(_ViewMixin, GenericModelListView):
         pass
 
 
@@ -204,17 +203,17 @@ class LsgBodiesViews:
         form_class = LsgBodyForm
         filterset_class = LsgBodyFilter
 
-    class Create(_ViewMixin, CustomCreateView):
+    class Create(_ViewMixin, GenericModelCreateView):
         pass
 
-    class Delete(_ViewMixin, CustomDeleteView):
+    class Delete(_ViewMixin, GenericModelDeleteView):
         pass
 
-    class Details(_ViewMixin, CustomDetailView):
+    class Details(_ViewMixin, GenericModelDetailView):
         pass
 
-    class Update(_ViewMixin, CustomUpdateView):
+    class Update(_ViewMixin, GenericModelUpdateView):
         pass
 
-    class List(_ViewMixin, CustomListView):
+    class List(_ViewMixin, GenericModelListView):
         pass
