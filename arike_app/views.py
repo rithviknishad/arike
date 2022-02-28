@@ -89,16 +89,20 @@ class UsersViews:
         pass
 
     class Details(_ViewMixin, CustomDetailView):
-        pass
+        def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            print(self.get_object())
+            context["has_edit_perm"] = False
+            return context
 
     class Edit(_ViewMixin, CustomUpdateView):
         form_class = UserChangeForm
 
     class List(_ViewMixin, CustomListView):
         def get_queryset(self):
-            return super().get_queryset().filter(district=self.request.user.district)
-
-        pass
+            qs = super().get_queryset()
+            qs = qs.filter(district=self.request.user.district)
+            return qs
 
 
 class FacilitiesViews:

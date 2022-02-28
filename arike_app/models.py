@@ -3,6 +3,8 @@ from django.db import models
 
 from datetime import datetime
 
+from django.http import HttpRequest
+
 
 class ArikeModelMixin(models.Model):
     created_at = models.DateTimeField(auto_now=True)
@@ -124,6 +126,44 @@ class User(ArikeModelMixin, AbstractUser):
 
     def __str__(self):
         return self.get_full_name() or self.username
+
+    @property
+    def is_district_admin(self):
+        return self.role == 1
+
+    @property
+    def is_doctor(self):
+        return self.role == 2
+
+    @property
+    def is_primary_nurse(self):
+        return self.role == 3
+
+    @property
+    def is_secondary_nurse(self):
+        return self.role == 4
+
+    @property
+    def is_doctor(self):
+        return self.is_primary_nurse or self.is_secondary_nurse
+
+    @staticmethod
+    def has_create_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
+    @staticmethod
+    def has_read_permission(request: HttpRequest):
+        return True
+
+    def has_object_read_permission(self, request: HttpRequest):
+        return request.user.is_superuser or self == request.user or self.district == request.user.district
+
+    @staticmethod
+    def has_write_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
+    def has_object_write_permission(self, request: HttpRequest):
+        return request.user.is_superuser or self == request.user
 
 
 class Patient(ArikeModelMixin, models.Model):
