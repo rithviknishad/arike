@@ -184,7 +184,7 @@ class User(ArikeModelMixin, AbstractUser):
         return self.role == 4
 
     @property
-    def is_doctor(self):
+    def is_nurse(self):
         return self.is_primary_nurse or self.is_secondary_nurse
 
     @staticmethod
