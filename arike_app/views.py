@@ -33,6 +33,16 @@ class DashboardViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMix
 class CustomListView(DashboardViewMixin, FilterView):
     view_type = "list"
 
+    def get_context_data(self, **kwargs):
+        # TODO: move to CustomListView
+        context = super().get_context_data(**kwargs)
+        context["has_create_perm"] = self.model.has_create_permission(self.request)
+        return context
+
+    def has_permission(self) -> bool:
+        # TODO: move to CustomListView
+        return super().has_permission() and self.model.has_read_permission(self.request)
+
 
 class CustomDetailView(DashboardViewMixin, DetailView):
     view_type = "details"
@@ -126,16 +136,6 @@ class UsersViews:
             qs = super().get_queryset()
             qs = qs.filter(district=self.request.user.district)
             return qs
-
-        def get_context_data(self, **kwargs):
-            # TODO: move to CustomListView
-            context = super().get_context_data(**kwargs)
-            context["has_create_perm"] = self.model.has_create_permission(self.request)
-            return context
-
-        def has_permission(self) -> bool:
-            # TODO: move to CustomListView
-            return super().has_permission() and self.model.has_read_permission(self.request)
 
 
 class FacilitiesViews:
