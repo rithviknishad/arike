@@ -72,6 +72,9 @@ class CustomCreateView(DashboardViewMixin, CreateView):
     view_type = "create"
     success_url = "../"
 
+    def has_permission(self) -> bool:
+        return super().has_permission() and self.model.has_create_permission(self.request)
+
 
 class UserLoginView(LoginView):
     template_name = "auth/login.html"
@@ -112,10 +115,6 @@ class UsersViews:
             self.object.district = self.request.user.district
             self.object.save()
             return res
-
-        def has_permission(self) -> bool:
-            # TODO: move to CustomCreateView
-            return super().has_permission() and self.model.has_create_permission(self.request)
 
     class Delete(_ViewMixin, CustomDeleteView):
         def has_permission(self) -> bool:
