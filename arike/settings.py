@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "theme",
     "django_browser_reload",
     "django_filters",
+    "crispy_forms",
+    "crispy_tailwind",
     "arike_app",
 ]
 
@@ -145,3 +147,7 @@ LOGIN_URL = "/auth/login"
 LOGOUT_REDIRECT_URL = "/auth/login"
 
 TAILWIND_APP_NAME = "theme"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
