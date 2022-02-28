@@ -1,7 +1,7 @@
-from dataclasses import field
+from crispy_forms.helper import FormHelper
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import forms as auth_forms
-from django.forms import ModelForm, Form
+from django.forms import ModelForm
 from arike_app.models import *
 
 
@@ -63,13 +63,17 @@ class PatientForm(CustomFormStyleMixin, ModelForm):
 class UserChangeForm(CustomFormStyleMixin, auth_forms.UserChangeForm):
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email", "phone", "district", "facility", "role"]
+        fields = ["first_name", "last_name", "email", "phone", "facility", "role"]
 
 
 class UserCreationForm(CustomFormStyleMixin, auth_forms.UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "password1", "password2", *UserChangeForm.Meta.fields]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
 
 
 # class ProfileForm(ModelForm):
