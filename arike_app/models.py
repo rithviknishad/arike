@@ -268,6 +268,24 @@ class FamilyDetail(ArikeModelMixin, models.Model):
     def __str__(self):
         return f"{self.full_name}"
 
+    @staticmethod
+    def has_create_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
+    @staticmethod
+    def has_read_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+
+    def has_object_read_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+
+    def has_object_update_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_nurse
+
 
 class Disease(ArikeModelMixin, models.Model):
     name = models.CharField(max_length=255)
