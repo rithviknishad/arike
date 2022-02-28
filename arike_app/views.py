@@ -67,6 +67,10 @@ class CustomDeleteView(DashboardViewMixin, DeleteView):
     view_type = "delete"
     success_url = "../../"
 
+    def has_permission(self) -> bool:
+        # TODO: move to CustomDeleteView
+        return super().has_permission() and self.model.has_delete_permission(self.request)
+
 
 class CustomCreateView(DashboardViewMixin, CreateView):
     view_type = "create"
@@ -117,9 +121,7 @@ class UsersViews:
             return res
 
     class Delete(_ViewMixin, CustomDeleteView):
-        def has_permission(self) -> bool:
-            # TODO: move to CustomDeleteView
-            return super().has_permission() and self.model.has_delete_permission(self.request)
+        pass
 
     class Details(_ViewMixin, CustomDetailView):
         pass
