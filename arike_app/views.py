@@ -91,14 +91,6 @@ class HomeView(DashboardViewMixin, TemplateView):
         self.template_name = "dashboard/home.html"
 
 
-class FacilitiesView(DashboardViewMixin, ListView):
-    template_name = "dashboard/facilities.html"
-
-    def get_queryset(self):
-        # TODO: show only current district users.
-        return Facility.objects.all()
-
-
 class ProfileUpdateView(DashboardViewMixin, UpdateView):
     template_name = "dashboard/profile.html"
 
