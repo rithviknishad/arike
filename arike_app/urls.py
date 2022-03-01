@@ -17,7 +17,7 @@ from typing import List
 
 from django.contrib.auth.views import LogoutView
 from django.shortcuts import redirect
-from django.urls import path
+from django.urls import path, re_path
 from django.views.generic import View
 
 from arike_app.views import *
@@ -37,7 +37,7 @@ urlpatterns = [
     # Authentication
     path("auth/login/", UserLoginView.as_view()),
     path("auth/logout/", LogoutView.as_view()),
-    path(
+    re_path(
         r"^auth/activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$",
         ActivateAccountView.as_view(),
     ),
