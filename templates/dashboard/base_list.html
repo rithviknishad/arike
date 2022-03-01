@@ -22,7 +22,7 @@
           {% include 'generic/expand_button.html' with label="Sort" %}
         </div>
       </div>
-      {{ filter.form.as_p }}
+      {% block filters_form %}{{ filter.form.as_p }}{% endblock filters_form %}
     </div>
   </form>
   {% endblock search_and_filter_section %}

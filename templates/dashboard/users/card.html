@@ -1,8 +1,6 @@
-<button class="rounded-xl bg-white hover:bg-slate-200" onClick="location.href='{{object.id}}'">
-  <div class="">
-    {{object}}
-  </div>
-  <div class="">
-    {{object}}
+<button class="rounded-xl items-start justify-start bg-white hover:bg-slate-200" onClick="location.href='{{object.id}}'">
+  <div class="p-4 items-start justify-start">
+    <p class="text-slate-600">{{object.get_role_display}}</p>
+    <p class="text-slate-900">{{object}}</p>
   </div>
 </button>
