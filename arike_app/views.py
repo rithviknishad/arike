@@ -124,7 +124,7 @@ class UsersViews:
         def get_queryset(self):
             qs = super().get_queryset()
             if not self.request.user.is_superuser:
-                qs = qs.filter(district=self.request.user.district)
+                qs = qs.filter(district=self.request.user.district, is_superuser=False)
             return qs
 
 
