@@ -123,7 +123,8 @@ class UsersViews:
     class List(_ViewMixin, GenericModelListView):
         def get_queryset(self):
             qs = super().get_queryset()
-            qs = qs.filter(district=self.request.user.district)
+            if not self.request.user.is_superuser:
+                qs = qs.filter(district=self.request.user.district)
             return qs
 
 

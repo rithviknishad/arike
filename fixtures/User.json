@@ -1,1 +1,54 @@
-[{"model": "arike_app.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$320000$arVKwqhN7jAdTCKoYr0H9F$dHx53PjtsuF1xcK8Tr8anKnJCr79pHc+UtU/YkiwStY=", "last_login": "2022-02-28T16:05:37.625Z", "is_superuser": true, "username": "rithviknishad", "first_name": "", "last_name": "", "email": "rithvikn2001@gmail.com", "is_staff": true, "is_active": true, "date_joined": "2022-02-28T16:05:28.135Z", "created_at": "2022-02-28T16:05:28.319Z", "updated_at": "2022-02-28T16:05:28.135Z", "deleted": false, "role": null, "phone": "+919696969696", "is_verified": true, "district": null, "facility": null, "groups": [], "user_permissions": []}}, {"model": "arike_app.user", "pk": 2, "fields": {"password": "distadmin", "last_login": null, "is_superuser": false, "username": "distadmin", "first_name": "CNN District", "last_name": "Admin", "email": "cnn.distadmin@arike.in", "is_staff": false, "is_active": true, "date_joined": "2022-03-01T04:02:18Z", "created_at": "2022-03-01T04:04:10.284Z", "updated_at": "2022-03-01T04:02:18Z", "deleted": false, "role": 1, "phone": "+919696969696", "is_verified": false, "district": 4, "facility": 1, "groups": [], "user_permissions": []}}]
+[
+    {
+        "model": "arike_app.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$arVKwqhN7jAdTCKoYr0H9F$dHx53PjtsuF1xcK8Tr8anKnJCr79pHc+UtU/YkiwStY=",
+            "last_login": "2022-02-28T16:05:37.625Z",
+            "is_superuser": true,
+            "username": "rithviknishad",
+            "first_name": "",
+            "last_name": "",
+            "email": "rithvikn2001@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-02-28T16:05:28.135Z",
+            "created_at": "2022-02-28T16:05:28.319Z",
+            "updated_at": "2022-02-28T16:05:28.135Z",
+            "deleted": false,
+            "role": null,
+            "phone": "+919696969696",
+            "is_verified": true,
+            "district": null,
+            "facility": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "arike_app.user",
+        "pk": 2,
+        "fields": {
+            "password": "distadmin",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "distadmin",
+            "first_name": "CNN District",
+            "last_name": "Admin",
+            "email": "cnn.distadmin@arike.in",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-03-01T04:02:18Z",
+            "created_at": "2022-03-01T04:04:10.284Z",
+            "updated_at": "2022-03-01T04:02:18Z",
+            "deleted": false,
+            "role": 1,
+            "phone": "+919696969696",
+            "is_verified": false,
+            "district": 4,
+            "facility": 1,
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]
