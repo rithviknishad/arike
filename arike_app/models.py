@@ -131,7 +131,8 @@ class Facility(ArikeModelMixin, models.Model):
         return True
 
     def has_object_read_permission(self, request: HttpRequest):
-        return request.user.is_superuser or self.district == request.user.district
+        print(request.user.district)
+        return request.user.is_superuser or self.ward.lsg_body.district == request.user.district
 
     def has_object_update_permission(self, request: HttpRequest):
         return request.user.is_superuser or request.user.is_district_admin
