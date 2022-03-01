@@ -5,8 +5,12 @@
   <div class="flex flex-row">
     <div class="flex-none text-3xl font-bold">{% block head_title %}Details Base{% endblock head_title %}</div>
     <div class="flex-1"></div>
-    <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" %}</div>
-    <div class="px-1">{% include 'generic/button.html' with label="Edit" onClick="location.href='edit'" %}</div>
+    {% if has_delete_perm %}
+      <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" %}</div>
+    {% endif %}
+    {% if has_update_perm %}
+      <div class="px-1">{% include 'generic/button.html' with label="Edit" onClick="location.href='edit'" %}</div>
+    {% endif %}
   </div>
   {% block details %}
   <div class='py-8'></div>
