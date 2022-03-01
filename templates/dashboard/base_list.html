@@ -5,7 +5,9 @@
   <div class="flex flex-row">
     <div class="flex-none text-3xl font-bold">{% block head_title %}List Base{% endblock head_title %}</div>
     <div class="flex-1"></div>
-    {% include 'generic/button.html' with label="New" onClick="location.href='create'" %}
+    {% if has_create_perm %}
+      {% include 'generic/button.html' with label="New" onClick="location.href='create'" %}
+    {% endif %}
   </div>
   {% block search_and_filter_section %}
   <form action="" method="get">
