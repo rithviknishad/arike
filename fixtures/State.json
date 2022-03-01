@@ -1,0 +1,12 @@
+[
+    {
+        "model": "arike_app.state",
+        "pk": 1,
+        "fields": {
+            "created_at": "2022-02-28T16:06:00.027Z",
+            "updated_at": "2022-02-28T16:05:55Z",
+            "deleted": false,
+            "name": "Kerala"
+        }
+    }
+]

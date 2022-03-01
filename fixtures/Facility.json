@@ -1,0 +1,17 @@
+[
+    {
+        "model": "arike_app.facility",
+        "pk": 1,
+        "fields": {
+            "created_at": "2022-03-01T04:04:05.815Z",
+            "updated_at": "2022-03-01T04:03:22Z",
+            "deleted": false,
+            "kind": "PHC",
+            "name": "Test Facility",
+            "address": "Dharmadam",
+            "pincode": "670106",
+            "phone": "+919696969696",
+            "ward": 17
+        }
+    }
+]

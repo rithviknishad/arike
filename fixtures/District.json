@@ -1,0 +1,156 @@
+[
+    {
+        "model": "arike_app.district",
+        "pk": 1,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.775Z",
+            "updated_at": "2022-03-01T03:36:04.774Z",
+            "deleted": false,
+            "name": "Alappuzha",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 2,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.806Z",
+            "updated_at": "2022-03-01T03:36:04.806Z",
+            "deleted": false,
+            "name": "Ernakulam",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 3,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.809Z",
+            "updated_at": "2022-03-01T03:36:04.809Z",
+            "deleted": false,
+            "name": "Idukki",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 4,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.814Z",
+            "updated_at": "2022-03-01T03:36:04.814Z",
+            "deleted": false,
+            "name": "Kannur",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 5,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.816Z",
+            "updated_at": "2022-03-01T03:36:04.816Z",
+            "deleted": false,
+            "name": "Kasargode",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 6,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.821Z",
+            "updated_at": "2022-03-01T03:36:04.820Z",
+            "deleted": false,
+            "name": "Kollam",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 7,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.823Z",
+            "updated_at": "2022-03-01T03:36:04.823Z",
+            "deleted": false,
+            "name": "Kottayam",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 8,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.827Z",
+            "updated_at": "2022-03-01T03:36:04.827Z",
+            "deleted": false,
+            "name": "Kozhikode",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 9,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.829Z",
+            "updated_at": "2022-03-01T03:36:04.829Z",
+            "deleted": false,
+            "name": "Malappuram",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 10,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.833Z",
+            "updated_at": "2022-03-01T03:36:04.833Z",
+            "deleted": false,
+            "name": "Palakkad",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 11,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.835Z",
+            "updated_at": "2022-03-01T03:36:04.835Z",
+            "deleted": false,
+            "name": "Pathanamthitta",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 12,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.839Z",
+            "updated_at": "2022-03-01T03:36:04.839Z",
+            "deleted": false,
+            "name": "Thiruvananthapuram",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 13,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.842Z",
+            "updated_at": "2022-03-01T03:36:04.841Z",
+            "deleted": false,
+            "name": "Thrissur",
+            "state": 1
+        }
+    },
+    {
+        "model": "arike_app.district",
+        "pk": 14,
+        "fields": {
+            "created_at": "2022-03-01T03:36:04.845Z",
+            "updated_at": "2022-03-01T03:36:04.845Z",
+            "deleted": false,
+            "name": "Wayanad",
+            "state": 1
+        }
+    }
+]
