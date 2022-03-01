@@ -253,7 +253,7 @@ class PatientDetailsPermsMixin:
         return request.user.is_superuser or request.user.is_nurse
 
 
-class Patient(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
+class Patient(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255, blank=True)
     email = models.CharField(max_length=255, blank=True)
@@ -271,7 +271,7 @@ class Patient(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
         return f"{self.full_name}"
 
 
-class FamilyDetail(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
+class FamilyDetail(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     full_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=15)
     date_of_birth = models.DateField(blank=True)
@@ -296,7 +296,7 @@ class Disease(ArikeModelMixin, models.Model):
         return f"{self.name}"
 
 
-class PatientDisease(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
+class PatientDisease(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
     disease = models.ForeignKey(Disease, on_delete=models.PROTECT)
     note = models.TextField()
@@ -305,14 +305,14 @@ class PatientDisease(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
         return f"{self.note}"
 
 
-class TreatmentNotes(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
+class TreatmentNotes(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     note = models.TextField(blank=True)
     description = models.TextField(blank=True)
     care_type = models.CharField(max_length=255, blank=True)
     care_sub_type = models.CharField(max_length=255, blank=True)
 
 
-class Treatment(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
+class Treatment(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     description = models.TextField(blank=True)
     care_type = models.CharField(max_length=255, blank=True)
     care_sub_type = models.CharField(max_length=255, blank=True)
@@ -320,7 +320,7 @@ class Treatment(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
     treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT)
 
 
-class VisitSchedule(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
+class VisitSchedule(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     schedule_time = models.DateTimeField()
     duration = models.DurationField()
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
@@ -329,7 +329,7 @@ class VisitSchedule(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
         return f"{self.schedule_time} for duration {self.duration}"
 
 
-class VisitDetails(ArikeModelMixin, PatientDetailsPermsMixin, models.Model):
+class VisitDetails(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     palliative_phase = models.CharField(max_length=255, blank=True)
     blood_pressure = models.CharField(max_length=255, blank=True)
     pulse = models.CharField(max_length=255, blank=True)
