@@ -5,18 +5,20 @@
   <div class="flex flex-row">
     <div class="flex-none text-3xl font-bold">{% block head_title %}Details Base{% endblock head_title %}</div>
     <div class="flex-1"></div>
-    <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" %}</div>
-    <div class="px-1">{% include 'generic/button.html' with label="Edit" onClick="location.href='edit'" %}</div>
+    {% if has_delete_perm %}
+      <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" %}</div>
+    {% endif %}
+    {% if has_update_perm %}
+      <div class="px-1">{% include 'generic/button.html' with label="Edit" onClick="location.href='edit'" %}</div>
+    {% endif %}
   </div>
   {% block details %}
-  <table>
+  <div class='py-8'></div>
+  <div class="grid grid-cols-2 gap-x-8 gap-y-6">
     {% for label, value in object.get_fields %}
-      <tr>
-        <td>{{ label }}</td>
-        <td>{{ value }}</td>
-      </tr>
+      {% include 'generic/read_only_field.html' with key=label value=value %}
     {% endfor %}
-  </table>
+  </div>
   {% endblock details %}  
 </div>
 {% endblock inner %}

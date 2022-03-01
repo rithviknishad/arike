@@ -2,6 +2,23 @@
 
 {% block head_title %}Wards{% endblock head_title %}
 
+{% block filters_form %}
+<div class="bg-white rounded-xl p-6">
+  <div class="flex flex-row gap-4">
+    <div>
+      <div class="text-sm text-slate-600 pb-2">LSG Body</div>
+      {{filter.form.lsg_body}}
+    </div>
+    <div>
+      <div class="text-sm text-slate-600 pb-2">Ordering</div>
+      {{filter.form.o}}
+    </div>
+  </div>
+  <div class="p-2"></div>
+  {% include 'generic/button.html' with label='Apply'%}
+</div>
+{% endblock filters_form %}
+
 {% block list_content %}
 <div class="grid grid-cols-2 gap-4">
   {% for object in object_list %}
