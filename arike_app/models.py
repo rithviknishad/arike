@@ -267,6 +267,10 @@ class Patient(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     gender = models.CharField(max_length=2, choices=Genders.choices)
     expired_time = models.DateTimeField(null=True, blank=True)
 
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
     def __str__(self):
         return f"{self.full_name}"
 
