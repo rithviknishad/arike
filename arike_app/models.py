@@ -92,6 +92,24 @@ class LsgBody(ArikeModelMixin, models.Model):
     def __str__(self):
         return f"{self.name} ({self.kind})"
 
+    @staticmethod
+    def has_create_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
+    @staticmethod
+    def has_read_permission(request: HttpRequest):
+        return True
+
+    def has_object_read_permission(self, request: HttpRequest):
+        return True
+
+    def has_object_update_permission(self, request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
+    @staticmethod
+    def has_delete_permission(request: HttpRequest):
+        return request.user.is_superuser or request.user.is_district_admin
+
 
 class Ward(ArikeModelMixin, models.Model):
     name = models.CharField(max_length=255)
