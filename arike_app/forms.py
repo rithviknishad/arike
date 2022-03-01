@@ -1,7 +1,7 @@
 from crispy_forms.helper import FormHelper
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import forms as auth_forms
-from django.forms import ModelForm
+from django.forms import ModelForm, ValidationError, HiddenInput
 from arike_app.models import *
 
 
@@ -69,11 +69,24 @@ class UserChangeForm(CustomFormStyleMixin, auth_forms.UserChangeForm):
 class UserCreationForm(CustomFormStyleMixin, auth_forms.UserCreationForm):
     class Meta:
         model = User
-        fields = ["username", "password1", "password2", *UserChangeForm.Meta.fields]
+        fields = ["username", *UserChangeForm.Meta.fields]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.fields["password1"].required = False
+        self.fields["password2"].required = False
+        self.fields["password1"].widget.attrs["autocomplete"] = "off"
+        self.fields["password2"].widget.attrs["autocomplete"] = "off"
+        self.fields["password1"].widget = HiddenInput()
+        self.fields["password2"].widget = HiddenInput()
+
+    def clean_password2(self):
+        password1 = self.cleaned_data.get("password1")
+        password2 = super(UserCreationForm, self).clean_password2()
+        if bool(password1) ^ bool(password2):
+            raise ValidationError("Fill out both fields")
+        return password2
 
 
 # class ProfileForm(ModelForm):

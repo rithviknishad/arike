@@ -1,20 +1,14 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.contrib.auth.views import LoginView
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
 from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView, View
 from django.views.generic.base import ContextMixin
 from django_filters.views import FilterView
-from django.contrib.auth import login
-from django.utils.encoding import force_str
-from django.utils.http import urlsafe_base64_decode
 
 from arike_app.dashboard import DASHBOARD_PAGES
 from arike_app.filters import *
 from arike_app.forms import *
 from arike_app.mixins import UserOnboardingMailDispatcherMixin
 from arike_app.models import *
-from arike_app.tokens import account_activation_token
 
 
 class ModelTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
@@ -83,28 +77,6 @@ class GenericModelCreateView(ModelTabViewMixin, CreateView):
         return super().has_permission() and self.model.has_create_permission(self.request)
 
 
-class UserLoginView(LoginView):
-    template_name = "auth/login.html"
-    form_class = LoginForm
-
-
-class ActivateAccountView(View):
-    def get(self, request, uidb64, token):
-        try:
-            uid = force_str(urlsafe_base64_decode(uidb64))
-            user = User.objects.get(pk=uid)
-        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-            user = None
-
-        if user is not None and account_activation_token.check_token(user, token):
-            user.profile.email_confirmed = True
-            user.save()
-            login(request, user)
-            return redirect("home")
-        else:
-            return render(request, "auth/invalid_token.html")
-
-
 class HomeView(ModelTabViewMixin, TemplateView):
     def __init__(self) -> None:
         super().__init__()
@@ -130,7 +102,7 @@ class UsersViews:
             self.object.district = self.request.user.district
             self.object.is_verified = False
             self.object.save()
-            self.send_account_activation_mail(self.object)
+            self.send_onboarding_mail(self.object)
             return res
 
     class Delete(_ViewMixin, GenericModelDeleteView):

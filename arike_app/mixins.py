@@ -8,7 +8,7 @@ class UserOnboardingMailDispatcherMixin:
         token = account_activation_token.make_token(user)
         send_mail(
             subject="You've been invited to join Arike",
-            message="The link will be valid for the next 7 days!",
+            message="Click http://rithviknishad-arike.herokuapp.com/auth/activate/{user.id}/{token}/ to activate your account.",
             from_email="Arike Onboarding Bot <noreply@arike.in>",
             recipient_list=[self.object.email],
         )
