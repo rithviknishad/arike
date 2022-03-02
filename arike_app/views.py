@@ -7,8 +7,8 @@ from django_filters.views import FilterView
 from arike_app.dashboard import DASHBOARD_PAGES
 from arike_app.filters import *
 from arike_app.forms import *
-from arike_app.mixins import UserOnboardingMailDispatcherMixin
 from arike_app.models import *
+from arike_app.utils import send_onboarding_mail
 
 
 class ModelTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
@@ -94,7 +94,7 @@ class UsersViews:
         filterset_class = UsersFilter
         queryset = User.objects.filter(deleted=False)
 
-    class Create(_ViewMixin, UserOnboardingMailDispatcherMixin, GenericModelCreateView):
+    class Create(_ViewMixin, GenericModelCreateView):
         form_class = UserCreationForm
 
         def form_valid(self, form) -> HttpResponse:
@@ -102,7 +102,7 @@ class UsersViews:
             self.object.district = self.request.user.district
             self.object.is_verified = False
             self.object.save()
-            self.send_onboarding_mail(self.object)
+            send_onboarding_mail(self.object)
             return res
 
     class Delete(_ViewMixin, GenericModelDeleteView):
