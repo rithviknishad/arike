@@ -2,30 +2,9 @@
 
 {% block head_title %}Disease History of {{ patient }}{% endblock head_title %}
 
-{% block filters_form %}
-<div class="bg-white rounded-xl p-6">
-  <div class="flex flex-row gap-4">
-    <div>
-      <div class="text-sm text-slate-600 pb-2">Ward</div>
-      {{filter.form.ward}}
-    </div>
-    <div>
-      <div class="text-sm text-slate-600 pb-2">Facility</div>
-      {{filter.form.facility}}
-    </div>
-    <div>
-      <div class="text-sm text-slate-600 pb-2">Gender</div>
-      {{filter.form.gender}}
-    </div>
-    <div>
-      <div class="text-sm text-slate-600 pb-2">Ordering</div>
-      {{filter.form.o}}
-    </div>
-  </div>
-  <div class="p-2"></div>
-  {% include 'generic/button.html' with label='Apply'%}
-</div>
-{% endblock filters_form %}
+{% block search_and_filter_section %}
+<div class="py-10">TODO: include gist_card of patient here</div>
+{% endblock search_and_filter_section %}
 
 {% block list_content %}
 <div class="grid grid-cols-2 gap-4">
