@@ -38,8 +38,7 @@ urlpatterns = [
     # Authentication
     path("auth/login/", UserLoginView.as_view()),
     path("auth/logout/", LogoutView.as_view()),
-    path("auth/activate/<int:pk>/<str:token>/", ActivateAccountView.as_view()),
-    path("auth/rest-password/", PasswordResetConfirmView.as_view()),
+    path("auth/activate/<uidb64>/<token>/", ActivateAccountView.as_view(), name="password_reset_confirm"),
     # Home
     path("", lambda req: redirect("/home/")),
     path("home/", HomeView.as_view()),
