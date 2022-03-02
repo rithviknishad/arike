@@ -330,8 +330,11 @@ class VisitSchedule(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
         return f"{self.schedule_time} for duration {self.duration}"
 
 
+PalliativePhase = models.IntegerChoices("PalliativePhase", "STABLE UNSTABLE DETERIORATING DYING")
+
+
 class VisitDetails(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
-    palliative_phase = models.CharField(max_length=255, blank=True)
+    palliative_phase = models.IntegerField(choices=PalliativePhase.choices)
     blood_pressure = models.CharField(max_length=255, blank=True)
     pulse = models.CharField(max_length=255, blank=True)
     general_random_blood_sugar = models.CharField(max_length=255, blank=True)
