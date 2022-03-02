@@ -275,15 +275,15 @@ class Patient(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
 class FamilyDetail(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     full_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=15)
-    date_of_birth = models.DateField(blank=True)
-    email = models.EmailField("email address", null=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    email = models.EmailField("email address", null=True, blank=True)
     relation = models.CharField(max_length=255, blank=True)
     address = models.CharField(max_length=255, blank=True)
     education = models.CharField(max_length=255, blank=True)
     occupation = models.CharField(max_length=255, blank=True)
     remarks = models.CharField(max_length=255, blank=True)
     is_primary = models.BooleanField()
-    patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
+    patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return f"{self.full_name}"
@@ -298,7 +298,7 @@ class Disease(ArikeModelMixin, models.Model):
 
 
 class PatientDisease(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
+    patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
     disease = models.ForeignKey(Disease, on_delete=models.PROTECT)
     note = models.TextField()
 
@@ -317,14 +317,14 @@ class Treatment(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     description = models.TextField(blank=True)
     care_type = models.CharField(max_length=255, blank=True)
     care_sub_type = models.CharField(max_length=255, blank=True)
-    patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
+    patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
     treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT)
 
 
 class VisitSchedule(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     schedule_time = models.DateTimeField()
     duration = models.DurationField()
-    patient = models.ForeignKey(Patient, on_delete=models.PROTECT)
+    patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return f"{self.schedule_time} for duration {self.duration}"

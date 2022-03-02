@@ -220,15 +220,24 @@ class PatientFamilyDetailsViews:
         name = "patient-family-details"
         form_class = PatientFamilyDetailForm
 
+        @property
+        def patient(self):
+            return Patient.objects.get(id=self.kwargs.get("patient_id"))
+
+        def get_queryset(self):
+            return super().get_queryset().filter(patient=self.patient)
+
+        def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context["patient"] = self.patient
+            return context
+
     class Create(_ViewMixin, GenericModelCreateView):
         def form_valid(self, form) -> HttpResponse:
             res = super().form_valid(form)
-            self.object.district = self.request.user.district
-            self.object.is_verified = False
+            self.object.patient = self.patient
             self.object.save()
             return res
 
     class List(_ViewMixin, GenericModelListView):
-        def get_queryset(self):
-            patient_id = self.kwargs.get("patient_id")
-            return super().get_queryset(patient=patient_id)
+        pass
