@@ -1,11 +1,10 @@
-from django.contrib.auth.views import LoginView, PasswordResetView
-from django.shortcuts import redirect, render
-from django.contrib.auth import login
+from django.contrib.auth.views import LoginView, PasswordResetConfirmView
+from django.contrib.auth import forms as auth_forms
 from arike_app.tokens import account_activation_token
-from django.views.generic import View
 
 from arike_app.forms import LoginForm
-from arike_app.models import User
+from arike_app.tokens import account_activation_token
+from arike_app.mixins import CustomFormStyleMixin
 
 
 class UserLoginView(LoginView):
@@ -13,25 +12,19 @@ class UserLoginView(LoginView):
     form_class = LoginForm
 
 
-class ActivateAccountView(View):
-    def get(self, request, pk, token):
-        try:
-            user = User.objects.get(id=pk)
-        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-            user = None
-
-        if user is not None and user.is_verified:
-            return render(request, "auth/already_verified.html")
-
-        if user is not None and account_activation_token.check_token(user, token):
-            user.is_verified = True
-            user.save()
-            login(request, user)
-            return redirect("/auth/rest-password/")
-        else:
-            return render(request, "auth/invalid_token.html")
+class CustomSetPasswordForm(CustomFormStyleMixin, auth_forms.SetPasswordForm):
+    pass
 
 
-class ResetPasswordView(PasswordResetView):
-    template_name = "auth/reset.html"
+class ActivateAccountView(PasswordResetConfirmView):
+    template_name = "auth/activate.html"
     success_url = "/"
+    token_generator = account_activation_token
+    form_class = CustomSetPasswordForm
+
+    def form_valid(self, form):
+        res = super().form_valid(form)
+        user = form.save()
+        user.is_verified = True
+        user.save()
+        return res
