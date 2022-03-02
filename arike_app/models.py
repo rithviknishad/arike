@@ -1,14 +1,11 @@
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
-
-from datetime import datetime
-
 from django.http import HttpRequest
 
 
 class ArikeModelMixin(models.Model):
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(default=datetime.now)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     deleted = models.BooleanField(default=False)
 
     class Meta:
