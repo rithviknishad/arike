@@ -303,7 +303,7 @@ class PatientDisease(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     note = models.TextField()
 
     def __str__(self):
-        return f"{self.note}"
+        return f"{self.disease}"
 
 
 class TreatmentNotes(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
