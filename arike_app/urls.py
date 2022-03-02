@@ -24,14 +24,19 @@ from arike_app.views import *
 from arike_app.auth_views import *
 
 
-def _(name: str, views_cls) -> List:
-    return [
-        path(f"{name}/", views_cls.List.as_view()),
-        path(f"{name}/create/", views_cls.Create.as_view()),
-        path(f"{name}/<pk>/", views_cls.Details.as_view()),
-        path(f"{name}/<pk>/edit/", views_cls.Update.as_view()),
-        path(f"{name}/<pk>/delete/", views_cls.Delete.as_view()),
-    ]
+def _(name: str, views_cls, url_prefix: str = "") -> List:
+    results = []
+    if hasattr(views_cls, "List"):
+        results.append(path(f"{url_prefix}{name}/", views_cls.List.as_view()))
+    if hasattr(views_cls, "Create"):
+        results.append(path(f"{url_prefix}{name}/create/", views_cls.Create.as_view()))
+    if hasattr(views_cls, "Details"):
+        results.append(path(f"{url_prefix}{name}/<pk>/", views_cls.Details.as_view()))
+    if hasattr(views_cls, "Update"):
+        results.append(path(f"{url_prefix}{name}/<pk>/edit/", views_cls.Update.as_view()))
+    if hasattr(views_cls, "Delete"):
+        results.append(path(f"{url_prefix}{name}/<pk>/delete/", views_cls.Delete.as_view()))
+    return results
 
 
 urlpatterns = [
@@ -45,9 +50,9 @@ urlpatterns = [
     # Models CRUD urls
     *_("users", UsersViews),
     *_("facilities", FacilitiesViews),
-    *_("patients", PatientsViews),
     *_("lsg-bodies", LsgBodiesViews),
     *_("wards", WardsViews),
+    *_("patients", PatientsViews),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]
