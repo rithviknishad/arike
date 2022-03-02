@@ -216,23 +216,25 @@ class PatientsViews:
         pass
 
 
+class PatientRelatedViewMixin(ContextMixin):
+    @property
+    def patient(self):
+        return Patient.objects.get(id=self.kwargs.get("patient_id"))
+
+    def get_queryset(self):
+        return super().get_queryset().filter(patient=self.patient)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["patient"] = self.patient
+        return context
+
+
 class PatientFamilyDetailsViews:
-    class _ViewMixin:
+    class _ViewMixin(PatientRelatedViewMixin):
         model = FamilyDetail
         name = "patient-family-details"
         form_class = PatientFamilyDetailForm
-
-        @property
-        def patient(self):
-            return Patient.objects.get(id=self.kwargs.get("patient_id"))
-
-        def get_queryset(self):
-            return super().get_queryset().filter(patient=self.patient)
-
-        def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context["patient"] = self.patient
-            return context
 
     class Create(_ViewMixin, GenericModelCreateView):
         def form_valid(self, form) -> HttpResponse:
