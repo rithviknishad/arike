@@ -69,6 +69,12 @@ class PatientFamilyDetailForm(CustomFormStyleMixin, ModelForm):
         ]
 
 
+class PatientDiseaseForm(CustomFormStyleMixin, ModelForm):
+    class Meta:
+        model = PatientDisease
+        fields = ["disease", "note"]
+
+
 class UserChangeForm(CustomFormStyleMixin, auth_forms.UserChangeForm):
     class Meta:
         model = User
