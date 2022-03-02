@@ -45,7 +45,7 @@ urlpatterns = [
     path("auth/logout/", LogoutView.as_view()),
     path("auth/activate/<uidb64>/<token>/", ActivateAccountView.as_view(), name="password_reset_confirm"),
     # Home
-    path("", lambda req: redirect("/home/")),
+    path("", lambda _: redirect("/home/")),
     path("home/", HomeView.as_view()),
     # Models CRUD urls
     *_("users", UsersViews),
@@ -54,6 +54,7 @@ urlpatterns = [
     *_("wards", WardsViews),
     *_("patients", PatientsViews),
     *_("family-details", PatientFamilyDetailsViews, url_prefix="patients/<patient_id>/"),
+    *_("disease-history", PatientDiseaseHistoryViews, url_prefix="patients/<patient_id>/"),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]
