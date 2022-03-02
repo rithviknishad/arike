@@ -6,3 +6,5 @@
 ./manage.py loaddata fixtures/Ward.json;
 ./manage.py loaddata fixtures/Facility.json;
 ./manage.py loaddata fixtures/User.json;
+./manage.py loaddata fixtures/Patient.json;
+./manage.py loaddata fixtures/Disease.json;

@@ -307,7 +307,7 @@ class PatientDisease(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
 
 
 class CareType(ArikeModelMixin, models.Model):
-    value = models.TextField(max_length=255)
+    value = models.TextField(max_length=255, unique=True)
 
     def __str__(self) -> str:
         return f"{self.value}"
@@ -315,7 +315,7 @@ class CareType(ArikeModelMixin, models.Model):
 
 class CareSubType(ArikeModelMixin, models.Model):
     care_type = models.ForeignKey(CareType, on_delete=models.PROTECT)
-    care_sub_type = models.TextField(max_length=255)
+    care_sub_type = models.TextField(max_length=255, unique=True)
 
     def __str__(self) -> str:
         return f"{self.care_sub_type}"
