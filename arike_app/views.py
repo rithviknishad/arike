@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.http import HttpResponse
 from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView, View
 from django.views.generic.base import ContextMixin
+from django.views.generic.edit import FormMixin
 from django_filters.views import FilterView
 
 from arike_app.dashboard import DASHBOARD_PAGES
@@ -216,18 +217,28 @@ class PatientsViews:
         pass
 
 
-class PatientRelatedViewMixin(ContextMixin):
+class PatientRelatedViewMixin:
+    @property
+    def patient_id(self):
+        return self.kwargs.get("patient_id")
+
     @property
     def patient(self):
-        return Patient.objects.get(id=self.kwargs.get("patient_id"))
+        return Patient.objects.get(id=self.patient_id)
 
     def get_queryset(self):
-        return super().get_queryset().filter(patient=self.patient)
+        return super().get_queryset().filter(patient__id=self.patient_id)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["patient"] = self.patient
         return context
+
+    def form_valid(self, form) -> HttpResponse:
+        res = super().form_valid(form)
+        self.object.patient = self.patient
+        self.object.save()
+        return res
 
 
 class PatientFamilyDetailsViews:
@@ -237,11 +248,7 @@ class PatientFamilyDetailsViews:
         form_class = PatientFamilyDetailForm
 
     class Create(_ViewMixin, GenericModelCreateView):
-        def form_valid(self, form) -> HttpResponse:
-            res = super().form_valid(form)
-            self.object.patient = self.patient
-            self.object.save()
-            return res
+        pass
 
     class List(_ViewMixin, GenericModelListView):
         pass
@@ -254,3 +261,10 @@ class PatientFamilyDetailsViews:
 
     class Delete(_ViewMixin, GenericModelDeleteView):
         pass
+
+
+class PatientDiseaseHistoryViews:
+    class _ViewMixin(PatientRelatedViewMixin):
+        model = PatientDisease
+        name = "patient-disease-history"
+        form_class = PatientDiseaseForm
