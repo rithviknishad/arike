@@ -236,21 +236,21 @@ class User(ArikeModelMixin, AbstractUser):
 class PatientDetailsPermsMixin:
     @staticmethod
     def has_create_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
+        return request.user.is_superuser or request.user.is_verified_nurse
 
     @staticmethod
     def has_read_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+        return request.user.is_superuser or request.user.is_verified_nurse or request.user.is_district_admin
 
     def has_object_read_permission(self, request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse or request.user.is_district_admin
+        return request.user.is_superuser or request.user.is_verified_nurse or request.user.is_district_admin
 
     def has_object_update_permission(self, request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
+        return request.user.is_superuser or request.user.is_verified_nurse
 
     @staticmethod
     def has_delete_permission(request: HttpRequest):
-        return request.user.is_superuser or request.user.is_nurse
+        return request.user.is_superuser or request.user.is_verified_nurse
 
 
 class Patient(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
