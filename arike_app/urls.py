@@ -53,6 +53,7 @@ urlpatterns = [
     *_("lsg-bodies", LsgBodiesViews),
     *_("wards", WardsViews),
     *_("patients", PatientsViews),
+    *_("family-details", PatientFamilyDetailsViews, url_prefix="patients/<patient_id>/"),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]

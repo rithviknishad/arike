@@ -168,6 +168,29 @@ class WardsViews:
         pass
 
 
+class LsgBodiesViews:
+    class _ViewMixin:
+        model = LsgBody
+        name = "lsg-bodies"
+        form_class = LsgBodyForm
+        filterset_class = LsgBodyFilter
+
+    class Create(_ViewMixin, GenericModelCreateView):
+        pass
+
+    class Delete(_ViewMixin, GenericModelDeleteView):
+        pass
+
+    class Details(_ViewMixin, GenericModelDetailView):
+        pass
+
+    class Update(_ViewMixin, GenericModelUpdateView):
+        pass
+
+    class List(_ViewMixin, GenericModelListView):
+        pass
+
+
 class PatientsViews:
     class _ViewMixin:
         model = Patient
@@ -191,24 +214,21 @@ class PatientsViews:
         pass
 
 
-class LsgBodiesViews:
+class PatientFamilyDetailsViews:
     class _ViewMixin:
-        model = LsgBody
-        name = "lsg-bodies"
-        form_class = LsgBodyForm
-        filterset_class = LsgBodyFilter
+        model = FamilyDetail
+        name = "patient-family-details"
+        form_class = PatientFamilyDetailForm
 
     class Create(_ViewMixin, GenericModelCreateView):
-        pass
-
-    class Delete(_ViewMixin, GenericModelDeleteView):
-        pass
-
-    class Details(_ViewMixin, GenericModelDetailView):
-        pass
-
-    class Update(_ViewMixin, GenericModelUpdateView):
-        pass
+        def form_valid(self, form) -> HttpResponse:
+            res = super().form_valid(form)
+            self.object.district = self.request.user.district
+            self.object.is_verified = False
+            self.object.save()
+            return res
 
     class List(_ViewMixin, GenericModelListView):
-        pass
+        def get_queryset(self):
+            patient_id = self.kwargs.get("patient_id")
+            return super().get_queryset(patient=patient_id)

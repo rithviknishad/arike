@@ -1,0 +1,31 @@
+{% extends 'dashboard/base_details.html' %}
+
+{% block head_title %}{{ object }}{% endblock head_title %}
+
+{% block details %}
+<div class="pt-8 pb-5 text-2xl font-bold">Personal Information</div>
+<div class="grid grid-cols-2 gap-4 p-3 bg-white rounded-xl">
+  {% include 'generic/read_only_field.html' with key='Name' value=object.full_name %}
+  {% include 'generic/read_only_field.html' with key='Email' value=object.email %}
+  {% include 'generic/read_only_field.html' with key='Phone No' value=object.phone_number %}
+  {% include 'generic/read_only_field.html' with key='Emergency Phone No' value=object.emergency_phone_number %}
+  {% include 'generic/read_only_field.html' with key='Gender' value=object.gender %}
+  {% include 'generic/read_only_field.html' with key='Facility' value=object.facility %}
+</div>
+<div class="bg-white rounded-xl my-6 p-6 text-xl font-bold">
+  <p>Family Details</p>
+  <p class="text-sm font-normal text-red-400">Feature work in progress</p>
+</div>
+<div class="bg-white rounded-xl my-6 p-6 text-xl font-bold">
+  <p>Disease History</p>
+  <p class="text-sm font-normal text-red-400">Feature work in progress</p>
+</div>
+<div class="bg-white rounded-xl my-6 p-6 text-xl font-bold">
+  <p>Visists</p>
+  <p class="text-sm font-normal text-red-400">Feature work in progress</p>
+</div>
+<div class="bg-white rounded-xl my-6 p-6 text-xl font-bold">
+  <p>Treatments</p>
+  <p class="text-sm font-normal text-red-400">Feature work in progress</p>
+</div>
+{% endblock details %}
