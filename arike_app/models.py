@@ -211,8 +211,8 @@ class User(ArikeModelMixin, AbstractUser):
         return self.role == 4
 
     @property
-    def is_nurse(self):
-        return self.is_primary_nurse or self.is_secondary_nurse
+    def is_verified_nurse(self):
+        return self.is_verified and (self.is_primary_nurse or self.is_secondary_nurse)
 
     @staticmethod
     def has_create_permission(request: HttpRequest):
