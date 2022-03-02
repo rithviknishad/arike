@@ -1,11 +1,11 @@
 {% extends './base.html' %}
 
-{% block head_title %}Sign In{% endblock %}
+{% block head_title %}Activate account{% endblock %}
 
-{% block inner %}
+{% block content %}
 <div>
   <div class="py-8">
-    <p class="text-4xl">Authorized Login</p>
+    <p class="text-4xl">Activate your account</p>
   </div>
   <div class="max-w-md">
     <form action="" method="post">
@@ -24,9 +24,9 @@
       </div>
       {%csrf_token%}
       <button type="submit" class="mt-4 w-80 h-14 text-white bg-slate-900 hover:bg-slate-800 focus:ring-4 font-medium rounded-xl text-sm text-center">
-        <p class="text-lg">Sign In</p> 
+        <p class="text-lg">Activate</p> 
       </button>
     </form>
   </div>
 </div>
-{% endblock inner %}
+{% endblock content %}
