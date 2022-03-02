@@ -3,15 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import forms as auth_forms
 from django.forms import ModelForm, ValidationError, HiddenInput
 from arike_app.models import *
-
-
-class CustomFormStyleMixin:
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        text_field_style = "bg-white rounded-xl w-full py-2 px-4"
-        for field in self.fields:
-            self.fields[field].widget.attrs["class"] = text_field_style
-            self.fields[field].widget.attrs["placeholder"] = self.fields[field].label
+from arike_app.mixins import CustomFormStyleMixin
 
 
 class LoginForm(CustomFormStyleMixin, AuthenticationForm):
