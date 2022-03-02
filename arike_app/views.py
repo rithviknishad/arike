@@ -243,3 +243,12 @@ class PatientFamilyDetailsViews:
 
     class List(_ViewMixin, GenericModelListView):
         pass
+
+    class Details(_ViewMixin, GenericModelDetailView):
+        pass
+
+    class Update(_ViewMixin, GenericModelUpdateView):
+        pass
+
+    class Delete(_ViewMixin, GenericModelDeleteView):
+        pass
