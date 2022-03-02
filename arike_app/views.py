@@ -1,15 +1,14 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.contrib.auth.views import LoginView
 from django.http import HttpResponse
-from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView
+from django.views.generic import CreateView, DeleteView, DetailView, TemplateView, UpdateView, View
 from django.views.generic.base import ContextMixin
-from django.views.generic.list import ListView
 from django_filters.views import FilterView
 
 from arike_app.dashboard import DASHBOARD_PAGES
 from arike_app.filters import *
 from arike_app.forms import *
 from arike_app.models import *
+from arike_app.utils import send_onboarding_mail
 
 
 class ModelTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
@@ -67,7 +66,6 @@ class GenericModelDeleteView(ModelTabViewMixin, DeleteView):
     success_url = "../../"
 
     def has_permission(self) -> bool:
-        # TODO: move to CustomDeleteView
         return super().has_permission() and self.model.has_delete_permission(self.request)
 
 
@@ -77,11 +75,6 @@ class GenericModelCreateView(ModelTabViewMixin, CreateView):
 
     def has_permission(self) -> bool:
         return super().has_permission() and self.model.has_create_permission(self.request)
-
-
-class UserLoginView(LoginView):
-    template_name = "auth/login.html"
-    form_class = LoginForm
 
 
 class HomeView(ModelTabViewMixin, TemplateView):
@@ -105,10 +98,11 @@ class UsersViews:
         form_class = UserCreationForm
 
         def form_valid(self, form) -> HttpResponse:
-            """Injects district of district admin's district."""
             res = super().form_valid(form)
             self.object.district = self.request.user.district
+            self.object.is_verified = False
             self.object.save()
+            send_onboarding_mail(self.object)
             return res
 
     class Delete(_ViewMixin, GenericModelDeleteView):

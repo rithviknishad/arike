@@ -15,12 +15,13 @@ Including another URLconf
 """
 from typing import List
 
-from django.contrib.auth.views import LogoutView
+from django.contrib.auth.views import LogoutView, PasswordResetConfirmView
 from django.shortcuts import redirect
-from django.urls import path
+from django.urls import path, re_path
 from django.views.generic import View
 
 from arike_app.views import *
+from arike_app.auth_views import *
 
 
 def _(name: str, views_cls) -> List:
@@ -37,6 +38,7 @@ urlpatterns = [
     # Authentication
     path("auth/login/", UserLoginView.as_view()),
     path("auth/logout/", LogoutView.as_view()),
+    path("auth/activate/<uidb64>/<token>/", ActivateAccountView.as_view(), name="password_reset_confirm"),
     # Home
     path("", lambda req: redirect("/home/")),
     path("home/", HomeView.as_view()),
