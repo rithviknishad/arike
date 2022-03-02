@@ -11,7 +11,7 @@ from arike_app.models import *
 from arike_app.utils import send_onboarding_mail
 
 
-class ModelTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
+class DashboardTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
     name = None
     view_type = None
     context_object_name = "object"
@@ -28,13 +28,16 @@ class ModelTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixi
         return context
 
 
-class GenericModelListView(ModelTabViewMixin, FilterView):
-    view_type = "list"
-
+class ModelTabViewMixin(DashboardTabViewMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["has_create_perm"] = self.model.has_create_permission(self.request)
+        context["has_delete_perm"] = self.model.has_delete_permission(self.request)
         return context
+
+
+class GenericModelListView(ModelTabViewMixin, FilterView):
+    view_type = "list"
 
     def has_permission(self) -> bool:
         return super().has_permission() and self.model.has_read_permission(self.request)
@@ -46,7 +49,6 @@ class GenericModelDetailView(ModelTabViewMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["has_update_perm"] = self.get_object().has_object_update_permission(self.request)
-        context["has_delete_perm"] = self.model.has_delete_permission(self.request)
         return context
 
     def has_permission(self) -> bool:
@@ -77,13 +79,13 @@ class GenericModelCreateView(ModelTabViewMixin, CreateView):
         return super().has_permission() and self.model.has_create_permission(self.request)
 
 
-class HomeView(ModelTabViewMixin, TemplateView):
+class HomeView(DashboardTabViewMixin, TemplateView):
     def __init__(self) -> None:
         super().__init__()
         self.template_name = "dashboard/home.html"
 
 
-class ProfileUpdateView(ModelTabViewMixin, UpdateView):
+class ProfileUpdateView(DashboardTabViewMixin, UpdateView):
     template_name = "dashboard/profile.html"
 
 
