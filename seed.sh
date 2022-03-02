@@ -8,3 +8,5 @@
 ./manage.py loaddata fixtures/User.json;
 ./manage.py loaddata fixtures/Patient.json;
 ./manage.py loaddata fixtures/Disease.json;
+./manage.py loaddata fixtures/CareType.json;
+./manage.py loaddata fixtures/CareSubType.json;

@@ -10,3 +10,5 @@ cat fixtures/Facility.json | heroku run --no-tty -a rithviknishad-arike -- pytho
 cat fixtures/User.json | heroku run --no-tty -a rithviknishad-arike -- python manage.py loaddata --format=json -;
 cat fixtures/Patient.json | heroku run --no-tty -a rithviknishad-arike -- python manage.py loaddata --format=json -;
 cat fixtures/Disease.json | heroku run --no-tty -a rithviknishad-arike -- python manage.py loaddata --format=json -;
+cat fixtures/CareType.json | heroku run --no-tty -a rithviknishad-arike -- python manage.py loaddata --format=json -;
+cat fixtures/CareSubType.json | heroku run --no-tty -a rithviknishad-arike -- python manage.py loaddata --format=json -;
