@@ -330,7 +330,7 @@ class Treatment(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     description = models.TextField(blank=True)
     care_type_and_sub_type = models.ForeignKey(CareSubType, on_delete=models.PROTECT)
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
-    treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT)
+    treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT, null=True)
 
 
 class VisitSchedule(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
