@@ -80,6 +80,12 @@ class PatientTreatmentForm(CustomFormStyleMixin, ModelForm):
         fields = ["care_type_and_sub_type", "description"]
 
 
+class ScheduleVisitForm(CustomFormStyleMixin, ModelForm):
+    class Meta:
+        model = VisitSchedule
+        fields = ["schedule_time", "duration"]
+
+
 class UserChangeForm(CustomFormStyleMixin, auth_forms.UserChangeForm):
     class Meta:
         model = User
