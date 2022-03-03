@@ -314,3 +314,9 @@ class PatientTreatmentsViews:
 
     class Delete(_ViewMixin, GenericModelDeleteView):
         pass
+
+
+class ScheduleViews:
+    class _ViewMixin:
+        model = VisitSchedule
+        name = "schedule"

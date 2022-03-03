@@ -56,6 +56,7 @@ urlpatterns = [
     *_("family-details", PatientFamilyDetailsViews, url_prefix="patients/<patient_id>/"),
     *_("disease-history", PatientDiseaseHistoryViews, url_prefix="patients/<patient_id>/"),
     *_("treatments", PatientTreatmentsViews, url_prefix="patients/<patient_id>/"),
+    *_("schedule", ScheduleViews),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]
