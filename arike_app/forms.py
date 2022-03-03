@@ -47,7 +47,6 @@ class PatientForm(CustomFormStyleMixin, ModelForm):
             "address",
             "landmark",
             "ward",
-            "facility",
             "gender",
         ]
 

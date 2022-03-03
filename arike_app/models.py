@@ -260,7 +260,7 @@ class Patient(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     address = models.CharField(max_length=255)
     landmark = models.CharField(max_length=255)
     ward = models.ForeignKey(Ward, on_delete=models.PROTECT)
-    facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
+    facility = models.ForeignKey(Facility, on_delete=models.PROTECT, null=True)
     gender = models.CharField(max_length=2, choices=Genders.choices)
     expired_time = models.DateTimeField(null=True, blank=True)
 

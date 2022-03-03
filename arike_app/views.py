@@ -145,7 +145,11 @@ class FacilitiesViews:
         pass
 
     class List(_ViewMixin, GenericModelListView):
-        pass
+        def get_queryset(self):
+            qs = super().get_queryset()
+            if not self.request.user.is_superuser:
+                qs = qs.filter(district=self.request.user.district, is_superuser=False)
+            return qs
 
 
 class WardsViews:
@@ -168,7 +172,8 @@ class WardsViews:
         pass
 
     class List(_ViewMixin, GenericModelListView):
-        pass
+        def get_queryset(self):
+            return super().get_queryset().filter(lsg_body__district=self.request.user.district)
 
 
 class LsgBodiesViews:
@@ -191,7 +196,8 @@ class LsgBodiesViews:
         pass
 
     class List(_ViewMixin, GenericModelListView):
-        pass
+        def get_queryset(self):
+            return super().get_queryset().filter(district=self.request.user.district)
 
 
 class PatientsViews:
@@ -202,7 +208,11 @@ class PatientsViews:
         filterset_class = PatientsFilter
 
     class Create(_ViewMixin, GenericModelCreateView):
-        pass
+        def form_valid(self, form) -> HttpResponse:
+            res = super().form_valid(form)
+            self.object.facility = self.request.user.facility
+            self.object.save()
+            return res
 
     class Delete(_ViewMixin, GenericModelDeleteView):
         pass
@@ -214,7 +224,8 @@ class PatientsViews:
         pass
 
     class List(_ViewMixin, GenericModelListView):
-        pass
+        def get_queryset(self):
+            return super().get_queryset()
 
 
 class PatientRelatedViewMixin:
@@ -236,8 +247,9 @@ class PatientRelatedViewMixin:
 
     def form_valid(self, form) -> HttpResponse:
         res = super().form_valid(form)
-        self.object.patient = self.patient
-        self.object.save()
+        if not self.object.patient:
+            self.object.patient = self.patient
+            self.object.save()
         return res
 
 
