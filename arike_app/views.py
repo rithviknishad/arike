@@ -146,10 +146,7 @@ class FacilitiesViews:
 
     class List(_ViewMixin, GenericModelListView):
         def get_queryset(self):
-            qs = super().get_queryset()
-            if not self.request.user.is_superuser:
-                qs = qs.filter(district=self.request.user.district, is_superuser=False)
-            return qs
+            return super().get_queryset().filter(ward__lsg_body__district=self.request.user.district)
 
 
 class WardsViews:
@@ -225,7 +222,7 @@ class PatientsViews:
 
     class List(_ViewMixin, GenericModelListView):
         def get_queryset(self):
-            return super().get_queryset()
+            return super().get_queryset().filter(facility=self.request.user.facility)
 
 
 class PatientRelatedViewMixin:
