@@ -1,0 +1,15 @@
+{% extends 'dashboard/base_list.html' %}
+
+{% block head_title %}Visit History{% endblock head_title %}
+
+{% block search_and_filter_section %}
+<div class="py-10">TODO: include gist_card of patient here</div>
+{% endblock search_and_filter_section %}
+
+{% block list_content %}
+<div class="grid grid-cols-2 gap-4">
+  {% for object in object_list %}
+  {% include './card.html' %}
+  {% endfor %}
+</div>
+{% endblock list_content %}
