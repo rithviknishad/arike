@@ -318,7 +318,7 @@ class CareSubType(ArikeModelMixin, models.Model):
     care_sub_type = models.TextField(max_length=255, unique=True)
 
     def __str__(self) -> str:
-        return f"{self.care_sub_type}"
+        return f"{self.care_type} - {self.care_sub_type}"
 
 
 class TreatmentNotes(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
@@ -338,6 +338,7 @@ class VisitSchedule(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     schedule_time = models.DateTimeField()
     duration = models.DurationField()
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
+    nurse = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return f"{self.schedule_time} for duration {self.duration}"
