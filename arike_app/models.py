@@ -332,6 +332,9 @@ class Treatment(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
     treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT, null=True)
 
+    def __str__(self) -> str:
+        return self.care_type_and_sub_type.care_sub_type
+
 
 class VisitSchedule(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     schedule_time = models.DateTimeField()

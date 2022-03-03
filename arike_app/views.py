@@ -296,9 +296,9 @@ class PatientDiseaseHistoryViews:
 
 class PatientTreatmentsViews:
     class _ViewMixin(PatientRelatedViewMixin):
-        model = PatientDisease
+        model = Treatment
         name = "patient-treatments"
-        form_class = PatientDiseaseForm
+        form_class = PatientTreatmentForm
 
     class Create(_ViewMixin, GenericModelCreateView):
         pass

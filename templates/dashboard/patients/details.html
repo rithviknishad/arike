@@ -21,15 +21,15 @@
   </div>
   <div class="bg-white rounded-xl p-6 text-xl font-bold">
     <p>Treatments</p>
-    <p class="text-sm font-normal text-red-400">Feature work in progress</p>
+    {% include 'generic/button.html' with label="Treatments" onClick="location.href='treatments/'"%}
   </div>
   <div class="bg-white rounded-xl p-6 text-xl font-bold">
     <p>Family Details</p>
-    {% include 'generic/button.html' with label="See Family Details" onClick="location.href='family-details/'"%}
+    {% include 'generic/button.html' with label="Family Details" onClick="location.href='family-details/'"%}
   </div>
   <div class="bg-white rounded-xl p-6 text-xl font-bold">
     <p>Disease History</p>
-    {% include 'generic/button.html' with label="See Disease History" onClick="location.href='disease-history/'"%}
+    {% include 'generic/button.html' with label="Disease History" onClick="location.href='disease-history/'"%}
   </div>
 </div>
 {% endblock details %}
