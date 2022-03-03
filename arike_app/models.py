@@ -223,7 +223,7 @@ class User(ArikeModelMixin, AbstractUser):
         return request.user.is_superuser or self.district == request.user.district
 
     def has_object_update_permission(self, request: HttpRequest):
-        return request.user.is_superuser or self == request.user
+        return request.user.is_superuser or self.district == request.user.district
 
     @staticmethod
     def has_delete_permission(request: HttpRequest):
