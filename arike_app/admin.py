@@ -18,5 +18,7 @@ admin.sites.site.register(
         models.TreatmentNotes,
         models.VisitSchedule,
         models.VisitDetails,
+        models.CareType,
+        models.CareSubType,
     ]
 )
