@@ -1,0 +1,17 @@
+{% extends 'dashboard/base_details.html' %}
+
+{% block head_title %}{{ object }}{% endblock head_title %}
+
+{% block details %}
+<div class="pt-8 pb-5 text-2xl font-bold">Profile</div>
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+  {% include 'generic/read_only_field.html' with key='First Name' value=object.first_name %}
+  {% include 'generic/read_only_field.html' with key='Last Name' value=object.last_name %}
+  {% include 'generic/read_only_field.html' with key='Email' value=object.email %}
+  {% include 'generic/read_only_field.html' with key='Phone No' value=object.phone %}
+</div>
+<div class="pt-8 pb-5 text-2xl font-bold">Facility</div>
+{% include 'generic/read_only_field.html' with key='Facility' value=object.facility %}
+<div class="pt-8 pb-5 text-2xl font-bold">Role</div>
+{% include 'generic/read_only_field.html' with key='Role' value=object.get_role_display %}
+{% endblock details %}
