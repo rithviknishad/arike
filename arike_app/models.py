@@ -324,7 +324,6 @@ class CareSubType(ArikeModelMixin, models.Model):
 class TreatmentNotes(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     note = models.TextField(blank=True)
     description = models.TextField(blank=True)
-    care_type_and_sub_type = models.ForeignKey(CareSubType, on_delete=models.PROTECT)
 
 
 class Treatment(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
