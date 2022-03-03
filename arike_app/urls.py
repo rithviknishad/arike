@@ -15,27 +15,38 @@ Including another URLconf
 """
 from typing import List
 
-from django.contrib.auth.views import LogoutView, PasswordResetConfirmView
+from django.contrib.auth.views import LogoutView
 from django.shortcuts import redirect
-from django.urls import path, re_path
-from django.views.generic import View
+from django.urls import path
 
-from arike_app.views import *
-from arike_app.auth_views import *
+from arike_app.views.views import HomeView, ProfileUpdateView
+from arike_app.views.auth import *
+from arike_app.views import (
+    users,
+    patients,
+    facilities,
+    lsg_bodies,
+    wards,
+    patient_disease_history,
+    patient_family_details,
+    patient_treatments,
+    patient_visits,
+    schedule,
+)
 
 
-def _(name: str, views_cls, url_prefix: str = "") -> List:
+def _(name: str, view_module, url_prefix: str = "") -> List:
     results = []
-    if hasattr(views_cls, "List"):
-        results.append(path(f"{url_prefix}{name}/", views_cls.List.as_view()))
-    if hasattr(views_cls, "Create"):
-        results.append(path(f"{url_prefix}{name}/create/", views_cls.Create.as_view()))
-    if hasattr(views_cls, "Details"):
-        results.append(path(f"{url_prefix}{name}/<pk>/", views_cls.Details.as_view()))
-    if hasattr(views_cls, "Update"):
-        results.append(path(f"{url_prefix}{name}/<pk>/edit/", views_cls.Update.as_view()))
-    if hasattr(views_cls, "Delete"):
-        results.append(path(f"{url_prefix}{name}/<pk>/delete/", views_cls.Delete.as_view()))
+    if hasattr(view_module, "List"):
+        results.append(path(f"{url_prefix}{name}/", view_module.List.as_view()))
+    if hasattr(view_module, "Create"):
+        results.append(path(f"{url_prefix}{name}/create/", view_module.Create.as_view()))
+    if hasattr(view_module, "Details"):
+        results.append(path(f"{url_prefix}{name}/<pk>/", view_module.Details.as_view()))
+    if hasattr(view_module, "Update"):
+        results.append(path(f"{url_prefix}{name}/<pk>/edit/", view_module.Update.as_view()))
+    if hasattr(view_module, "Delete"):
+        results.append(path(f"{url_prefix}{name}/<pk>/delete/", view_module.Delete.as_view()))
     return results
 
 
@@ -48,16 +59,16 @@ urlpatterns = [
     path("", lambda _: redirect("/home/")),
     path("home/", HomeView.as_view()),
     # Models CRUD urls
-    *_("users", UsersViews),
-    *_("facilities", FacilitiesViews),
-    *_("lsg-bodies", LsgBodiesViews),
-    *_("wards", WardsViews),
-    *_("patients", PatientsViews),
-    *_("family-details", PatientFamilyDetailsViews, url_prefix="patients/<patient_id>/"),
-    *_("disease-history", PatientDiseaseHistoryViews, url_prefix="patients/<patient_id>/"),
-    *_("treatments", PatientTreatmentsViews, url_prefix="patients/<patient_id>/"),
-    *_("visits", PatientVisitsViews, url_prefix="patients/<patient_id>/"),
-    *_("schedule", ScheduleViews),
+    *_("users", users),
+    *_("facilities", facilities),
+    *_("lsg_bodies", lsg_bodies),
+    *_("wards", wards),
+    *_("patients", patients),
+    *_("disease_history", patient_disease_history, url_prefix="patients/<patient_id>/"),
+    *_("family_details", patient_family_details, url_prefix="patients/<patient_id>/"),
+    *_("treatments", patient_treatments, url_prefix="patients/<patient_id>/"),
+    *_("visits", patient_visits, url_prefix="patients/<patient_id>/"),
+    *_("schedule", schedule),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]

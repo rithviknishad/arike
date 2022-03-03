@@ -15,7 +15,7 @@ DASHBOARD_PAGES = [
         ("Schedule", "/schedule/"),
         ("Users", "/users/"),
         ("Facilities", "/facilities/"),
-        ("LSG Bodies", "/lsg-bodies/"),
+        ("LSG Bodies", "/lsg_bodies/"),
         ("Wards", "/wards/"),
         ("Profile", "/profile/"),
     ]
