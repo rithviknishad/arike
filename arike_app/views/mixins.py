@@ -13,8 +13,8 @@ class DashboardTabViewMixin(LoginRequiredMixin, PermissionRequiredMixin, Context
     context_object_name = "object"
     permission_required = []
 
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
         self.template_name = f"dashboard/{self.name}/{self.view_type}.html"
 
     def get_context_data(self, **kwargs):
