@@ -35,18 +35,18 @@ from arike_app.views import (
 )
 
 
-def _(name: str, view_module, url_prefix: str = "") -> List:
+def _(name: str, views, url_prefix: str = "") -> List:
     results = []
-    if hasattr(view_module, "List"):
-        results.append(path(f"{url_prefix}{name}/", view_module.List.as_view()))
-    if hasattr(view_module, "Create"):
-        results.append(path(f"{url_prefix}{name}/create/", view_module.Create.as_view()))
-    if hasattr(view_module, "Details"):
-        results.append(path(f"{url_prefix}{name}/<pk>/", view_module.Details.as_view()))
-    if hasattr(view_module, "Update"):
-        results.append(path(f"{url_prefix}{name}/<pk>/edit/", view_module.Update.as_view()))
-    if hasattr(view_module, "Delete"):
-        results.append(path(f"{url_prefix}{name}/<pk>/delete/", view_module.Delete.as_view()))
+    if hasattr(views, "List"):
+        results.append(path(f"{url_prefix}{name}/", views.List.as_view()))
+    if hasattr(views, "Create"):
+        results.append(path(f"{url_prefix}{name}/create/", views.Create.as_view()))
+    if hasattr(views, "Details"):
+        results.append(path(f"{url_prefix}{name}/<pk>/", views.Details.as_view()))
+    if hasattr(views, "Update"):
+        results.append(path(f"{url_prefix}{name}/<pk>/edit/", views.Update.as_view()))
+    if hasattr(views, "Delete"):
+        results.append(path(f"{url_prefix}{name}/<pk>/delete/", views.Delete.as_view()))
     return results
 
 
@@ -69,6 +69,7 @@ urlpatterns = [
     *_("treatments", patient_treatments, url_prefix="patients/<patient_id>/"),
     *_("visits", patient_visits, url_prefix="patients/<patient_id>/"),
     *_("schedule", schedule),
+    path("schedule/create/<patient_id>/", patient_visits.Create.as_view(success_url="/schedule")),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]
