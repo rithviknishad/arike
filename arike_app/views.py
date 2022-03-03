@@ -242,11 +242,14 @@ class PatientRelatedViewMixin:
         context["patient"] = self.patient
         return context
 
-    def form_valid(self, form) -> HttpResponse:
-        res = super().form_valid(form)
+    def pre_save_object(self) -> None:
         if not self.object.patient:
             self.object.patient = self.patient
-            self.object.save()
+
+    def form_valid(self, form) -> HttpResponse:
+        res = super().form_valid(form)
+        self.pre_save_object()
+        self.object.save()
         return res
 
 
@@ -302,6 +305,30 @@ class PatientTreatmentsViews:
 
     class Create(_ViewMixin, GenericModelCreateView):
         pass
+
+    class List(_ViewMixin, GenericModelListView):
+        pass
+
+    class Details(_ViewMixin, GenericModelDetailView):
+        pass
+
+    class Update(_ViewMixin, GenericModelUpdateView):
+        pass
+
+    class Delete(_ViewMixin, GenericModelDeleteView):
+        pass
+
+
+class PatientVisitsViews:
+    class _ViewMixin(PatientRelatedViewMixin):
+        model = VisitSchedule
+        name = "patient-visits"
+        form_class = ScheduleVisitForm
+
+    class Create(_ViewMixin, GenericModelCreateView):
+        def pre_save_object(self) -> None:
+            super().pre_save_object()
+            self.object.nurse = self.request.user
 
     class List(_ViewMixin, GenericModelListView):
         pass
