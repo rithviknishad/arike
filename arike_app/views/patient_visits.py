@@ -12,7 +12,7 @@ from arike_app.views.mixins import PatientRelatedViewMixin
 
 class _ViewMixin(PatientRelatedViewMixin):
     model = VisitSchedule
-    name = "patient-visits"
+    name = "patient_visits"
     form_class = ScheduleVisitForm
 
 
