@@ -1,16 +1,13 @@
 from datetime import datetime
 
-from arike_app.filters import FacilitiesFilter
-from arike_app.forms import FacilityForm
-from arike_app.models import VisitSchedule, Patient
+from arike_app.models import Patient, VisitDetails, VisitSchedule
 from arike_app.views.generic import (
     GenericModelCreateView,
-    GenericModelListView,
-    GenericModelDetailView,
-    GenericModelUpdateView,
     GenericModelDeleteView,
+    GenericModelDetailView,
+    GenericModelListView,
+    GenericModelUpdateView,
 )
-from arike_app.models import VisitSchedule
 
 
 class __ScheduleViewsMixin:
@@ -48,6 +45,6 @@ class Delete(__ScheduleViewsMixin, GenericModelDeleteView):
     pass
 
 
-class VisitPatient(GenericModelDetailView):
-    model = VisitSchedule
+class VisitPatient(__ScheduleViewsMixin, GenericModelDetailView):
+    model = VisitDetails
     view_type = "visit"
