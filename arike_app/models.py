@@ -363,5 +363,5 @@ class VisitDetails(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     patient_at_peace = models.BooleanField()
     pain = models.BooleanField()
     notes = models.TextField(blank=True)
-    visit_schedule = models.ForeignKey(VisitSchedule, on_delete=models.PROTECT)
+    visit_schedule = models.OneToOneField(VisitSchedule, on_delete=models.PROTECT)
     treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT)
