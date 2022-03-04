@@ -31,7 +31,7 @@ class FacilityForm(CustomFormStyleMixin, ModelForm):
 class LsgBodyForm(CustomFormStyleMixin, ModelForm):
     class Meta:
         model = LsgBody
-        fields = ["kind", "name", "lsg_body_code", "district"]
+        fields = ["kind", "name", "lsg_body_code"]
 
 
 class PatientForm(CustomFormStyleMixin, ModelForm):
@@ -50,7 +50,7 @@ class PatientForm(CustomFormStyleMixin, ModelForm):
             "gender",
         ]
         widgets = {
-            "date_of_birth": DateInput(),
+            "date_of_birth": DateInput(attrs={"type": "date"}),
         }
 
 
@@ -70,7 +70,7 @@ class PatientFamilyDetailForm(CustomFormStyleMixin, ModelForm):
             "is_primary",
         ]
         widgets = {
-            "date_of_birth": DateInput(),
+            "date_of_birth": DateInput(attrs={"type": "date"}),
         }
 
 
