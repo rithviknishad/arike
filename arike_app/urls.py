@@ -71,6 +71,7 @@ urlpatterns = [
     *_("schedule", schedule),
     path("schedule/create/<patient_id>/", patient_visits.Create.as_view(success_url="/schedule")),
     path("schedule/agenda/", schedule.Agenda.as_view()),
+    path("schedule/visit/<schedule_id>/", schedule.VisitPatient.as_view()),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]

@@ -46,3 +46,8 @@ class Agenda(__ScheduleViewsMixin, GenericModelListView):
 
 class Delete(__ScheduleViewsMixin, GenericModelDeleteView):
     pass
+
+
+class VisitPatient(GenericModelDetailView):
+    model = VisitSchedule
+    view_type = "visit"
