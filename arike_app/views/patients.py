@@ -15,11 +15,11 @@ from arike_app.views.generic import (
 class __PatientsViewMixin:
     model = Patient
     name = "patients"
-    form_class = PatientForm
-    filterset_class = PatientsFilter
 
 
 class Create(__PatientsViewMixin, GenericModelCreateView):
+    form_class = PatientForm
+
     def form_valid(self, form) -> HttpResponse:
         res = super().form_valid(form)
         self.object.facility = self.request.user.facility
@@ -36,9 +36,11 @@ class Details(__PatientsViewMixin, GenericModelDetailView):
 
 
 class Update(__PatientsViewMixin, GenericModelUpdateView):
-    pass
+    form_class = PatientForm
 
 
 class List(__PatientsViewMixin, GenericModelListView):
+    filterset_class = PatientsFilter
+
     def get_queryset(self):
         return super().get_queryset().filter(facility=self.request.user.facility)

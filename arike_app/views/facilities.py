@@ -13,12 +13,10 @@ from arike_app.views.generic import (
 class __FacilitiesViewMixin:
     model = Facility
     name = "facilities"
-    form_class = FacilityForm
-    filterset_class = FacilitiesFilter
 
 
 class Create(__FacilitiesViewMixin, GenericModelCreateView):
-    pass
+    form_class = FacilityForm
 
 
 class Delete(__FacilitiesViewMixin, GenericModelDeleteView):
@@ -30,9 +28,11 @@ class Details(__FacilitiesViewMixin, GenericModelDetailView):
 
 
 class Update(__FacilitiesViewMixin, GenericModelUpdateView):
-    pass
+    form_class = FacilityForm
 
 
 class List(__FacilitiesViewMixin, GenericModelListView):
+    filterset_class = FacilitiesFilter
+
     def get_queryset(self):
         return super().get_queryset().filter(ward__lsg_body__district=self.request.user.district)

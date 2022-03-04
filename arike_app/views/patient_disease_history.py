@@ -13,11 +13,10 @@ from arike_app.views.mixins import PatientRelatedViewMixin
 class _ViewMixin(PatientRelatedViewMixin):
     model = PatientDisease
     name = "patient_disease_history"
-    form_class = PatientDiseaseForm
 
 
 class Create(_ViewMixin, GenericModelCreateView):
-    pass
+    form_class = PatientDiseaseForm
 
 
 class List(_ViewMixin, GenericModelListView):
@@ -29,7 +28,7 @@ class Details(_ViewMixin, GenericModelDetailView):
 
 
 class Update(_ViewMixin, GenericModelUpdateView):
-    pass
+    form_class = PatientDiseaseForm
 
 
 class Delete(_ViewMixin, GenericModelDeleteView):

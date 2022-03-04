@@ -16,8 +16,6 @@ from arike_app.views.generic import (
 class __UsersViewMixin:
     model = User
     name = "users"
-    filterset_class = UsersFilter
-    queryset = User.objects.filter(deleted=False)
 
 
 class Create(__UsersViewMixin, GenericModelCreateView):
@@ -33,6 +31,9 @@ class Create(__UsersViewMixin, GenericModelCreateView):
 
 
 class List(__UsersViewMixin, GenericModelListView):
+    filterset_class = UsersFilter
+    queryset = User.objects.filter(deleted=False)
+
     def get_queryset(self):
         qs = super().get_queryset()
         if not self.request.user.is_superuser:

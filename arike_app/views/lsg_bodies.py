@@ -13,12 +13,10 @@ from arike_app.views.generic import (
 class __LsgBodiesViewMixin:
     model = LsgBody
     name = "lsg_bodies"
-    form_class = LsgBodyForm
-    filterset_class = LsgBodyFilter
 
 
 class Create(__LsgBodiesViewMixin, GenericModelCreateView):
-    pass
+    form_class = LsgBodyForm
 
 
 class Delete(__LsgBodiesViewMixin, GenericModelDeleteView):
@@ -30,9 +28,11 @@ class Details(__LsgBodiesViewMixin, GenericModelDetailView):
 
 
 class Update(__LsgBodiesViewMixin, GenericModelUpdateView):
-    pass
+    form_class = LsgBodyForm
 
 
 class List(__LsgBodiesViewMixin, GenericModelListView):
+    filterset_class = LsgBodyFilter
+
     def get_queryset(self):
         return super().get_queryset().filter(district=self.request.user.district)
