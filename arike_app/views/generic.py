@@ -7,6 +7,9 @@ from arike_app.views.mixins import ModelTabViewMixin
 class GenericModelListView(ModelTabViewMixin, FilterView):
     view_type = "list"
 
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
+
     def has_permission(self) -> bool:
         return super().has_permission() and self.model.has_read_permission(self.request)
 
