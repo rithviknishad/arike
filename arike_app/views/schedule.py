@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from arike_app.filters import FacilitiesFilter
 from arike_app.forms import FacilityForm
 from arike_app.models import VisitSchedule, Patient
@@ -27,3 +29,15 @@ class List(__ScheduleViewsMixin, GenericModelListView):
 
     def get_queryset(self):
         return super().get_queryset().filter(facility=self.request.user.facility)
+
+
+class Agenda(__ScheduleViewsMixin, GenericModelListView):
+    model = VisitSchedule
+    view_type = "agenda"
+
+    def get_queryset(self):
+        return super().get_queryset().filter(nurse=self.request.user, schedule_time__gte=datetime.today())
+
+
+class Delete(__ScheduleViewsMixin, GenericModelDeleteView):
+    pass
