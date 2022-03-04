@@ -35,6 +35,11 @@ class Agenda(__ScheduleViewsMixin, GenericModelListView):
     model = VisitSchedule
     view_type = "agenda"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["has_create_perm"] = False  # Overriding to hide create button in this list view
+        return context
+
     def get_queryset(self):
         return super().get_queryset().filter(nurse=self.request.user, schedule_time__gte=datetime.today())
 
