@@ -91,7 +91,7 @@ class ScheduleVisitForm(CustomFormStyleMixin, ModelForm):
         model = VisitSchedule
         fields = ["schedule_time", "duration"]
         widgets = {
-            "schedule_time": DateTimeInput(attrs={"type": "date"}),
+            "schedule_time": DateTimeInput(attrs={"type": "datetime-local"}),
         }
 
 
