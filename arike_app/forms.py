@@ -1,7 +1,7 @@
 from crispy_forms.helper import FormHelper
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import forms as auth_forms
-from django.forms import ModelForm, ValidationError, HiddenInput
+from django.forms import ModelForm, ValidationError, HiddenInput, DateInput, DateTimeInput
 from arike_app.models import *
 from arike_app.mixins import CustomFormStyleMixin
 
@@ -49,6 +49,9 @@ class PatientForm(CustomFormStyleMixin, ModelForm):
             "ward",
             "gender",
         ]
+        widgets = {
+            "date_of_birth": DateInput(),
+        }
 
 
 class PatientFamilyDetailForm(CustomFormStyleMixin, ModelForm):
@@ -66,6 +69,9 @@ class PatientFamilyDetailForm(CustomFormStyleMixin, ModelForm):
             "remarks",
             "is_primary",
         ]
+        widgets = {
+            "date_of_birth": DateInput(),
+        }
 
 
 class PatientDiseaseForm(CustomFormStyleMixin, ModelForm):
@@ -84,6 +90,9 @@ class ScheduleVisitForm(CustomFormStyleMixin, ModelForm):
     class Meta:
         model = VisitSchedule
         fields = ["schedule_time", "duration"]
+        widgets = {
+            "schedule_time": DateTimeInput(attrs={"type": "date"}),
+        }
 
 
 class UserChangeForm(CustomFormStyleMixin, auth_forms.UserChangeForm):
