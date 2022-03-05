@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.http import HttpRequest
 
+from datetime import datetime
+
 
 class ArikeModelMixin(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -365,3 +367,9 @@ class VisitDetails(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     notes = models.TextField(blank=True)
     visit_schedule = models.OneToOneField(VisitSchedule, on_delete=models.PROTECT)
     treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT)
+
+
+class UserReportConfiguration(models.Model):
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
+    preferred_time = models.TimeField()
+    last_dispatched = models.DateTimeField(default=datetime.now)
