@@ -151,6 +151,12 @@ class ProfileForm(CustomFormStyleMixin, ModelForm):
         fields = ["first_name", "last_name", "email", "phone"]
 
 
+class ProfileReportConfigFOrm(CustomFormStyleMixin, ModelForm):
+    class Meta:
+        model = UserReportConfiguration
+        fields = ["preferred_time"]
+
+
 class WardForm(CustomFormStyleMixin, ModelForm):
     class Meta:
         model = Ward
