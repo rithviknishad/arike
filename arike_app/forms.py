@@ -4,6 +4,7 @@ from django.contrib.auth import forms as auth_forms
 from django.forms import ModelForm, ValidationError, HiddenInput, DateInput, DateTimeInput
 from arike_app.models import *
 from arike_app.mixins import CustomFormStyleMixin
+from arike_app.views.schedule import VisitPatient
 
 
 class LoginForm(CustomFormStyleMixin, AuthenticationForm):
@@ -124,10 +125,24 @@ class UserCreationForm(CustomFormStyleMixin, auth_forms.UserCreationForm):
         return password2
 
 
-# class ProfileForm(ModelForm):
-#     class Meta:
-#         model = User
-#         fields = UserCreationForm.Meta.fields
+class VisitDetailsForm(CustomFormStyleMixin, ModelForm):
+    class Meta:
+        model = VisitDetails
+        fields = [
+            "palliative_phase",
+            "blood_pressure",
+            "pulse",
+            "general_random_blood_sugar",
+            "personal_hygiene",
+            "mouth_hygiene",
+            "public_hygiene",
+            "systemic_examination",
+            "systemic_examination_details",
+            "patient_at_peace",
+            "pain",
+            "notes",
+            "treatment_notes",
+        ]
 
 
 class WardForm(CustomFormStyleMixin, ModelForm):
