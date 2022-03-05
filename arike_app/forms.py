@@ -145,6 +145,12 @@ class VisitDetailsForm(CustomFormStyleMixin, ModelForm):
         ]
 
 
+class ProfileForm(CustomFormStyleMixin, ModelForm):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email", "phone"]
+
+
 class WardForm(CustomFormStyleMixin, ModelForm):
     class Meta:
         model = Ward
