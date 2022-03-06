@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.views import PasswordChangeView
 from django.views.generic import TemplateView, UpdateView
 from arike_app.forms import ProfileForm
 from arike_app.models import User
@@ -19,8 +20,14 @@ class ProfileUpdateView(DashboardTabViewMixin, UpdateView):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.template_name = "dashboard/profile.html"
-
-    queryset = User.objects.filter(deleted=False)
+        self.success_url = "./"
 
     def get_object(self):
         return get_object_or_404(User, pk=self.request.user.id)
+
+
+class ChangePasswordView(DashboardTabViewMixin, PasswordChangeView):
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
+        self.template_name = "dashboard/profile_change_password.html"
+        self.success_url = "../"
