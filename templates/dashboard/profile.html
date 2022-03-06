@@ -1,8 +1,19 @@
-{% extends 'dashboard/base.html' %}
-{% block head_title %}Profile{% endblock head_title %}
+{% extends 'dashboard/base_edit.html' %}
 
 {% block inner %}
-<div class="p-16">
-    
+<div class="flex h-screen">
+  <div class="px-10 py-10 mx-auto">
+    <div class="text-3xl font-bold">{% block head_title %}{{object}}{% endblock head_title %}</div>
+    <div class="px-1 py-10">
+      <form action="" method="post">
+        {% block form_view %}{{form.as_p}}{% endblock form_view %}
+        {% csrf_token %}
+        <div class="mt-16">
+          <div class="p-2">{% include 'generic/button.html' with label="Change Password" onClick="location.href='change_password'" type="" %}</div>
+          <div class="p-2">{% include 'generic/button.html' with label="Update" %}</div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 {% endblock inner %}
