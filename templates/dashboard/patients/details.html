@@ -9,8 +9,8 @@
     <div class="grid grid-cols-2 gap-4 p-3 bg-white rounded-xl">
       {% include 'generic/read_only_field.html' with key='Name' value=object.full_name %}
       {% include 'generic/read_only_field.html' with key='Email' value=object.email %}
-      {% include 'generic/read_only_field.html' with key='Phone No' value=object.phone_number %}
-      {% include 'generic/read_only_field.html' with key='Emergency Phone No' value=object.emergency_phone_number %}
+      {% include 'generic/read_only_field.html' with key='Phone No' value=object.phone_number color="text-cyan-600" %}
+      {% include 'generic/read_only_field.html' with key='Emergency Phone No' value=object.emergency_phone_number color="text-cyan-600" %}
       {% include 'generic/read_only_field.html' with key='Gender' value=object.gender %}
       {% include 'generic/read_only_field.html' with key='Facility' value=object.facility %}
     </div>
