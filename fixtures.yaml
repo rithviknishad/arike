@@ -1,0 +1,1854 @@
+- model: arike_app.caresubtype
+  pk: 1
+  fields:
+    created_at: 2022-03-02 10:14:55.352320+00:00
+    updated_at: 2022-03-02 10:14:55.352338+00:00
+    deleted: false
+    care_type: 1
+    care_sub_type: Mouth care
+- model: arike_app.caresubtype
+  pk: 2
+  fields:
+    created_at: 2022-03-02 10:14:55.356840+00:00
+    updated_at: 2022-03-02 10:14:55.356856+00:00
+    deleted: false
+    care_type: 1
+    care_sub_type: Bath
+- model: arike_app.caresubtype
+  pk: 3
+  fields:
+    created_at: 2022-03-02 10:14:55.358780+00:00
+    updated_at: 2022-03-02 10:14:55.358803+00:00
+    deleted: false
+    care_type: 1
+    care_sub_type: Nail cutting
+- model: arike_app.caresubtype
+  pk: 4
+  fields:
+    created_at: 2022-03-02 10:14:55.363290+00:00
+    updated_at: 2022-03-02 10:14:55.363338+00:00
+    deleted: false
+    care_type: 1
+    care_sub_type: Shaving
+- model: arike_app.caresubtype
+  pk: 5
+  fields:
+    created_at: 2022-03-02 10:14:55.371921+00:00
+    updated_at: 2022-03-02 10:14:55.371971+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Perennial care
+- model: arike_app.caresubtype
+  pk: 6
+  fields:
+    created_at: 2022-03-02 10:14:55.376086+00:00
+    updated_at: 2022-03-02 10:14:55.376145+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Condom catheterisation & training
+- model: arike_app.caresubtype
+  pk: 7
+  fields:
+    created_at: 2022-03-02 10:14:55.381415+00:00
+    updated_at: 2022-03-02 10:14:55.381460+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Nelcath catheterisation & training
+- model: arike_app.caresubtype
+  pk: 8
+  fields:
+    created_at: 2022-03-02 10:14:55.384530+00:00
+    updated_at: 2022-03-02 10:14:55.384571+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Foley’s catheterisation
+- model: arike_app.caresubtype
+  pk: 9
+  fields:
+    created_at: 2022-03-02 10:14:55.389304+00:00
+    updated_at: 2022-03-02 10:14:55.389346+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Foley’s catheter care
+- model: arike_app.caresubtype
+  pk: 10
+  fields:
+    created_at: 2022-03-02 10:14:55.392695+00:00
+    updated_at: 2022-03-02 10:14:55.392740+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Suprapubic catheterisation
+- model: arike_app.caresubtype
+  pk: 11
+  fields:
+    created_at: 2022-03-02 10:14:55.397749+00:00
+    updated_at: 2022-03-02 10:14:55.397818+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Suprapubic catheter care
+- model: arike_app.caresubtype
+  pk: 12
+  fields:
+    created_at: 2022-03-02 10:14:55.401232+00:00
+    updated_at: 2022-03-02 10:14:55.401278+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Bladder wash with normal saline
+- model: arike_app.caresubtype
+  pk: 13
+  fields:
+    created_at: 2022-03-02 10:14:55.406285+00:00
+    updated_at: 2022-03-02 10:14:55.406326+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Bladder wash with soda bicarbonate
+- model: arike_app.caresubtype
+  pk: 14
+  fields:
+    created_at: 2022-03-02 10:14:55.410432+00:00
+    updated_at: 2022-03-02 10:14:55.410482+00:00
+    deleted: false
+    care_type: 2
+    care_sub_type: Urostomy care
+- model: arike_app.caresubtype
+  pk: 15
+  fields:
+    created_at: 2022-03-02 10:14:55.418428+00:00
+    updated_at: 2022-03-02 10:14:55.418470+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Ryles tube insertion
+- model: arike_app.caresubtype
+  pk: 16
+  fields:
+    created_at: 2022-03-02 10:14:55.423178+00:00
+    updated_at: 2022-03-02 10:14:55.423218+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Ryles tube care
+- model: arike_app.caresubtype
+  pk: 17
+  fields:
+    created_at: 2022-03-02 10:14:55.426669+00:00
+    updated_at: 2022-03-02 10:14:55.426712+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Ryles tube feeding & training
+- model: arike_app.caresubtype
+  pk: 18
+  fields:
+    created_at: 2022-03-02 10:14:55.431892+00:00
+    updated_at: 2022-03-02 10:14:55.431939+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: PEG care
+- model: arike_app.caresubtype
+  pk: 19
+  fields:
+    created_at: 2022-03-02 10:14:55.435250+00:00
+    updated_at: 2022-03-02 10:14:55.435294+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Per Rectal Enema
+- model: arike_app.caresubtype
+  pk: 20
+  fields:
+    created_at: 2022-03-02 10:14:55.440275+00:00
+    updated_at: 2022-03-02 10:14:55.440319+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: High enema
+- model: arike_app.caresubtype
+  pk: 21
+  fields:
+    created_at: 2022-03-02 10:14:55.443918+00:00
+    updated_at: 2022-03-02 10:14:55.443968+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Bisacodyl Suppository
+- model: arike_app.caresubtype
+  pk: 22
+  fields:
+    created_at: 2022-03-02 10:14:55.449287+00:00
+    updated_at: 2022-03-02 10:14:55.449338+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Digital evacuation
+- model: arike_app.caresubtype
+  pk: 23
+  fields:
+    created_at: 2022-03-02 10:14:55.452733+00:00
+    updated_at: 2022-03-02 10:14:55.452774+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Colostomy care
+- model: arike_app.caresubtype
+  pk: 24
+  fields:
+    created_at: 2022-03-02 10:14:55.457709+00:00
+    updated_at: 2022-03-02 10:14:55.457751+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: Colostomy irrigation care
+- model: arike_app.caresubtype
+  pk: 25
+  fields:
+    created_at: 2022-03-02 10:14:55.461261+00:00
+    updated_at: 2022-03-02 10:14:55.461311+00:00
+    deleted: false
+    care_type: 3
+    care_sub_type: ileostomy care
+- model: arike_app.caresubtype
+  pk: 26
+  fields:
+    created_at: 2022-03-02 10:14:55.469356+00:00
+    updated_at: 2022-03-02 10:14:55.469399+00:00
+    deleted: false
+    care_type: 4
+    care_sub_type: Wound care training given to family
+- model: arike_app.caresubtype
+  pk: 27
+  fields:
+    created_at: 2022-03-02 10:14:55.474267+00:00
+    updated_at: 2022-03-02 10:14:55.474311+00:00
+    deleted: false
+    care_type: 4
+    care_sub_type: Wound dressing
+- model: arike_app.caresubtype
+  pk: 28
+  fields:
+    created_at: 2022-03-02 10:14:55.477832+00:00
+    updated_at: 2022-03-02 10:14:55.477882+00:00
+    deleted: false
+    care_type: 4
+    care_sub_type: Suture removal
+- model: arike_app.caresubtype
+  pk: 29
+  fields:
+    created_at: 2022-03-02 10:14:55.483151+00:00
+    updated_at: 2022-03-02 10:14:55.483200+00:00
+    deleted: false
+    care_type: 4
+    care_sub_type: Vacuum dressing
+- model: arike_app.caresubtype
+  pk: 30
+  fields:
+    created_at: 2022-03-02 10:14:55.492290+00:00
+    updated_at: 2022-03-02 10:14:55.492340+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Tracheostomy care
+- model: arike_app.caresubtype
+  pk: 31
+  fields:
+    created_at: 2022-03-02 10:14:55.496332+00:00
+    updated_at: 2022-03-02 10:14:55.496381+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Chest physiotherapy
+- model: arike_app.caresubtype
+  pk: 32
+  fields:
+    created_at: 2022-03-02 10:14:55.501545+00:00
+    updated_at: 2022-03-02 10:14:55.501604+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Inhaler training
+- model: arike_app.caresubtype
+  pk: 33
+  fields:
+    created_at: 2022-03-02 10:14:55.504766+00:00
+    updated_at: 2022-03-02 10:14:55.504808+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Oxygen concentrator - training
+- model: arike_app.caresubtype
+  pk: 34
+  fields:
+    created_at: 2022-03-02 10:14:55.509893+00:00
+    updated_at: 2022-03-02 10:14:55.509943+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Bi-PAP training
+- model: arike_app.caresubtype
+  pk: 35
+  fields:
+    created_at: 2022-03-02 10:14:55.514938+00:00
+    updated_at: 2022-03-02 10:14:55.514989+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Bandaging
+- model: arike_app.caresubtype
+  pk: 36
+  fields:
+    created_at: 2022-03-02 10:14:55.520409+00:00
+    updated_at: 2022-03-02 10:14:55.520456+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Upper limb lymphedema bandaging
+- model: arike_app.caresubtype
+  pk: 37
+  fields:
+    created_at: 2022-03-02 10:14:55.524219+00:00
+    updated_at: 2022-03-02 10:14:55.524269+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Lower limb lymphedema bandaging
+- model: arike_app.caresubtype
+  pk: 38
+  fields:
+    created_at: 2022-03-02 10:14:55.529582+00:00
+    updated_at: 2022-03-02 10:14:55.529631+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: Upper limb lymphedema hosiery
+- model: arike_app.caresubtype
+  pk: 39
+  fields:
+    created_at: 2022-03-02 10:14:55.533532+00:00
+    updated_at: 2022-03-02 10:14:55.533579+00:00
+    deleted: false
+    care_type: 5
+    care_sub_type: PVOD bandaging
+- model: arike_app.caresubtype
+  pk: 40
+  fields:
+    created_at: 2022-03-02 10:14:55.541605+00:00
+    updated_at: 2022-03-02 10:14:55.541674+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: IV fluid infusion
+- model: arike_app.caresubtype
+  pk: 41
+  fields:
+    created_at: 2022-03-02 10:14:55.547138+00:00
+    updated_at: 2022-03-02 10:14:55.547187+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: IV medicine bolus administration
+- model: arike_app.caresubtype
+  pk: 42
+  fields:
+    created_at: 2022-03-02 10:14:55.550791+00:00
+    updated_at: 2022-03-02 10:14:55.550839+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: IV cannula care
+- model: arike_app.caresubtype
+  pk: 43
+  fields:
+    created_at: 2022-03-02 10:14:55.555951+00:00
+    updated_at: 2022-03-02 10:14:55.555992+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: IV cannula insertion
+- model: arike_app.caresubtype
+  pk: 44
+  fields:
+    created_at: 2022-03-02 10:14:55.559426+00:00
+    updated_at: 2022-03-02 10:14:55.559476+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: S/C cannula insertion
+- model: arike_app.caresubtype
+  pk: 45
+  fields:
+    created_at: 2022-03-02 10:14:55.564496+00:00
+    updated_at: 2022-03-02 10:14:55.564543+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: S/C fluid infusion (subcutaneous)
+- model: arike_app.caresubtype
+  pk: 46
+  fields:
+    created_at: 2022-03-02 10:14:55.567813+00:00
+    updated_at: 2022-03-02 10:14:55.567858+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: S/C medicine bolus administration
+- model: arike_app.caresubtype
+  pk: 47
+  fields:
+    created_at: 2022-03-02 10:14:55.572599+00:00
+    updated_at: 2022-03-02 10:14:55.572641+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: S/C cannula care
+- model: arike_app.caresubtype
+  pk: 48
+  fields:
+    created_at: 2022-03-02 10:14:55.576277+00:00
+    updated_at: 2022-03-02 10:14:55.576338+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: Ascites tapping
+- model: arike_app.caresubtype
+  pk: 49
+  fields:
+    created_at: 2022-03-02 10:14:55.581808+00:00
+    updated_at: 2022-03-02 10:14:55.581858+00:00
+    deleted: false
+    care_type: 6
+    care_sub_type: Ascitic catheter care
+- model: arike_app.caresubtype
+  pk: 50
+  fields:
+    created_at: 2022-03-02 10:14:55.590044+00:00
+    updated_at: 2022-03-02 10:14:55.590096+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Passive Movement
+- model: arike_app.caresubtype
+  pk: 51
+  fields:
+    created_at: 2022-03-02 10:14:55.593464+00:00
+    updated_at: 2022-03-02 10:14:55.593509+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Active Movement
+- model: arike_app.caresubtype
+  pk: 52
+  fields:
+    created_at: 2022-03-02 10:14:55.598581+00:00
+    updated_at: 2022-03-02 10:14:55.598626+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Strengthening exercises
+- model: arike_app.caresubtype
+  pk: 53
+  fields:
+    created_at: 2022-03-02 10:14:55.601979+00:00
+    updated_at: 2022-03-02 10:14:55.602024+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: NDT
+- model: arike_app.caresubtype
+  pk: 54
+  fields:
+    created_at: 2022-03-02 10:14:55.606719+00:00
+    updated_at: 2022-03-02 10:14:55.606762+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: GAIT Training
+- model: arike_app.caresubtype
+  pk: 55
+  fields:
+    created_at: 2022-03-02 10:14:55.610463+00:00
+    updated_at: 2022-03-02 10:14:55.610512+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Modalities + text field
+- model: arike_app.caresubtype
+  pk: 56
+  fields:
+    created_at: 2022-03-02 10:14:55.615642+00:00
+    updated_at: 2022-03-02 10:14:55.615686+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Breathing exercises
+- model: arike_app.caresubtype
+  pk: 57
+  fields:
+    created_at: 2022-03-02 10:14:55.618677+00:00
+    updated_at: 2022-03-02 10:14:55.618717+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Balance & Coordination exercises
+- model: arike_app.caresubtype
+  pk: 58
+  fields:
+    created_at: 2022-03-02 10:14:55.623942+00:00
+    updated_at: 2022-03-02 10:14:55.623994+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Stretching
+- model: arike_app.caresubtype
+  pk: 59
+  fields:
+    created_at: 2022-03-02 10:14:55.627509+00:00
+    updated_at: 2022-03-02 10:14:55.627559+00:00
+    deleted: false
+    care_type: 7
+    care_sub_type: Postural correction
+- model: arike_app.caretype
+  pk: 1
+  fields:
+    created_at: 2022-03-02 10:14:55.345340+00:00
+    updated_at: 2022-03-02 10:14:55.345373+00:00
+    deleted: false
+    value: General care
+- model: arike_app.caretype
+  pk: 2
+  fields:
+    created_at: 2022-03-02 10:14:55.366858+00:00
+    updated_at: 2022-03-02 10:14:55.366906+00:00
+    deleted: false
+    value: Genito urinary care
+- model: arike_app.caretype
+  pk: 3
+  fields:
+    created_at: 2022-03-02 10:14:55.415434+00:00
+    updated_at: 2022-03-02 10:14:55.415478+00:00
+    deleted: false
+    value: Gastro-intestinal care
+- model: arike_app.caretype
+  pk: 4
+  fields:
+    created_at: 2022-03-02 10:14:55.466154+00:00
+    updated_at: 2022-03-02 10:14:55.466206+00:00
+    deleted: false
+    value: Wound care
+- model: arike_app.caretype
+  pk: 5
+  fields:
+    created_at: 2022-03-02 10:14:55.486804+00:00
+    updated_at: 2022-03-02 10:14:55.486854+00:00
+    deleted: false
+    value: Respiratory care
+- model: arike_app.caretype
+  pk: 6
+  fields:
+    created_at: 2022-03-02 10:14:55.538486+00:00
+    updated_at: 2022-03-02 10:14:55.538533+00:00
+    deleted: false
+    value: Invasive care
+- model: arike_app.caretype
+  pk: 7
+  fields:
+    created_at: 2022-03-02 10:14:55.585026+00:00
+    updated_at: 2022-03-02 10:14:55.585068+00:00
+    deleted: false
+    value: Physiotherapy
+- model: arike_app.disease
+  pk: 1
+  fields:
+    created_at: 2022-03-02 07:14:14.009000+00:00
+    updated_at: 2022-03-02 07:14:14.009000+00:00
+    deleted: false
+    name: DM
+    icds_code: D-32
+- model: arike_app.disease
+  pk: 2
+  fields:
+    created_at: 2022-03-02 07:14:14.014000+00:00
+    updated_at: 2022-03-02 07:14:14.014000+00:00
+    deleted: false
+    name: Hypertension
+    icds_code: HT-58
+- model: arike_app.disease
+  pk: 3
+  fields:
+    created_at: 2022-03-02 07:14:14.016000+00:00
+    updated_at: 2022-03-02 07:14:14.016000+00:00
+    deleted: false
+    name: IHD
+    icds_code: IDH-21
+- model: arike_app.disease
+  pk: 4
+  fields:
+    created_at: 2022-03-02 07:14:14.019000+00:00
+    updated_at: 2022-03-02 07:14:14.019000+00:00
+    deleted: false
+    name: COPD
+    icds_code: DPOC-144
+- model: arike_app.disease
+  pk: 5
+  fields:
+    created_at: 2022-03-02 07:14:14.021000+00:00
+    updated_at: 2022-03-02 07:14:14.021000+00:00
+    deleted: false
+    name: Dementia
+    icds_code: DM-62
+- model: arike_app.disease
+  pk: 6
+  fields:
+    created_at: 2022-03-02 07:14:14.024000+00:00
+    updated_at: 2022-03-02 07:14:14.024000+00:00
+    deleted: false
+    name: CVA
+    icds_code: CAV-89
+- model: arike_app.disease
+  pk: 7
+  fields:
+    created_at: 2022-03-02 07:14:14.025000+00:00
+    updated_at: 2022-03-02 07:14:14.025000+00:00
+    deleted: false
+    name: Cancer
+    icds_code: C-98
+- model: arike_app.disease
+  pk: 8
+  fields:
+    created_at: 2022-03-02 07:14:14.028000+00:00
+    updated_at: 2022-03-02 07:14:14.028000+00:00
+    deleted: false
+    name: CKD
+    icds_code: DC-25
+- model: arike_app.district
+  pk: 1
+  fields:
+    created_at: 2022-03-01 03:36:04.775000+00:00
+    updated_at: 2022-03-01 03:36:04.774000+00:00
+    deleted: false
+    name: Alappuzha
+    state: 1
+- model: arike_app.district
+  pk: 2
+  fields:
+    created_at: 2022-03-01 03:36:04.806000+00:00
+    updated_at: 2022-03-01 03:36:04.806000+00:00
+    deleted: false
+    name: Ernakulam
+    state: 1
+- model: arike_app.district
+  pk: 3
+  fields:
+    created_at: 2022-03-01 03:36:04.809000+00:00
+    updated_at: 2022-03-01 03:36:04.809000+00:00
+    deleted: false
+    name: Idukki
+    state: 1
+- model: arike_app.district
+  pk: 4
+  fields:
+    created_at: 2022-03-01 03:36:04.814000+00:00
+    updated_at: 2022-03-01 03:36:04.814000+00:00
+    deleted: false
+    name: Kannur
+    state: 1
+- model: arike_app.district
+  pk: 5
+  fields:
+    created_at: 2022-03-01 03:36:04.816000+00:00
+    updated_at: 2022-03-01 03:36:04.816000+00:00
+    deleted: false
+    name: Kasargode
+    state: 1
+- model: arike_app.district
+  pk: 6
+  fields:
+    created_at: 2022-03-01 03:36:04.821000+00:00
+    updated_at: 2022-03-01 03:36:04.820000+00:00
+    deleted: false
+    name: Kollam
+    state: 1
+- model: arike_app.district
+  pk: 7
+  fields:
+    created_at: 2022-03-01 03:36:04.823000+00:00
+    updated_at: 2022-03-01 03:36:04.823000+00:00
+    deleted: false
+    name: Kottayam
+    state: 1
+- model: arike_app.district
+  pk: 8
+  fields:
+    created_at: 2022-03-01 03:36:04.827000+00:00
+    updated_at: 2022-03-01 03:36:04.827000+00:00
+    deleted: false
+    name: Kozhikode
+    state: 1
+- model: arike_app.district
+  pk: 9
+  fields:
+    created_at: 2022-03-01 03:36:04.829000+00:00
+    updated_at: 2022-03-01 03:36:04.829000+00:00
+    deleted: false
+    name: Malappuram
+    state: 1
+- model: arike_app.district
+  pk: 10
+  fields:
+    created_at: 2022-03-01 03:36:04.833000+00:00
+    updated_at: 2022-03-01 03:36:04.833000+00:00
+    deleted: false
+    name: Palakkad
+    state: 1
+- model: arike_app.district
+  pk: 11
+  fields:
+    created_at: 2022-03-01 03:36:04.835000+00:00
+    updated_at: 2022-03-01 03:36:04.835000+00:00
+    deleted: false
+    name: Pathanamthitta
+    state: 1
+- model: arike_app.district
+  pk: 12
+  fields:
+    created_at: 2022-03-01 03:36:04.839000+00:00
+    updated_at: 2022-03-01 03:36:04.839000+00:00
+    deleted: false
+    name: Thiruvananthapuram
+    state: 1
+- model: arike_app.district
+  pk: 13
+  fields:
+    created_at: 2022-03-01 03:36:04.842000+00:00
+    updated_at: 2022-03-01 03:36:04.841000+00:00
+    deleted: false
+    name: Thrissur
+    state: 1
+- model: arike_app.district
+  pk: 14
+  fields:
+    created_at: 2022-03-01 03:36:04.845000+00:00
+    updated_at: 2022-03-01 03:36:04.845000+00:00
+    deleted: false
+    name: Wayanad
+    state: 1
+- model: arike_app.facility
+  pk: 1
+  fields:
+    created_at: 2022-03-01 04:04:05.815000+00:00
+    updated_at: 2022-03-01 04:03:22+00:00
+    deleted: false
+    kind: PHC
+    name: Test Facility
+    address: Dharmadam
+    pincode: "670106"
+    phone: "+919696969696"
+    ward: 17
+- model: arike_app.lsgbody
+  pk: 1
+  fields:
+    created_at: 2022-03-01 03:44:48.620000+00:00
+    updated_at: 2022-03-01 03:44:48.620000+00:00
+    deleted: false
+    name: Alakode  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130308
+    district: 4
+- model: arike_app.lsgbody
+  pk: 2
+  fields:
+    created_at: 2022-03-01 03:44:48.636000+00:00
+    updated_at: 2022-03-01 03:44:48.636000+00:00
+    deleted: false
+    name: Anjarakandy  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130706
+    district: 4
+- model: arike_app.lsgbody
+  pk: 3
+  fields:
+    created_at: 2022-03-01 03:44:48.643000+00:00
+    updated_at: 2022-03-01 03:44:48.642000+00:00
+    deleted: false
+    name: Aralam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131001
+    district: 4
+- model: arike_app.lsgbody
+  pk: 4
+  fields:
+    created_at: 2022-03-01 03:44:48.647000+00:00
+    updated_at: 2022-03-01 03:44:48.646000+00:00
+    deleted: false
+    name: Ayyankunnu  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131002
+    district: 4
+- model: arike_app.lsgbody
+  pk: 5
+  fields:
+    created_at: 2022-03-01 03:44:48.653000+00:00
+    updated_at: 2022-03-01 03:44:48.652000+00:00
+    deleted: false
+    name: Azhikode  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130505
+    district: 4
+- model: arike_app.lsgbody
+  pk: 6
+  fields:
+    created_at: 2022-03-01 03:44:48.658000+00:00
+    updated_at: 2022-03-01 03:44:48.657000+00:00
+    deleted: false
+    name: Chapparapadava  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130305
+    district: 4
+- model: arike_app.lsgbody
+  pk: 7
+  fields:
+    created_at: 2022-03-01 03:44:48.664000+00:00
+    updated_at: 2022-03-01 03:44:48.664000+00:00
+    deleted: false
+    name: Chembilode  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130605
+    district: 4
+- model: arike_app.lsgbody
+  pk: 8
+  fields:
+    created_at: 2022-03-01 03:44:48.668000+00:00
+    updated_at: 2022-03-01 03:44:48.667000+00:00
+    deleted: false
+    name: Chengalayi  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130302
+    district: 4
+- model: arike_app.lsgbody
+  pk: 9
+  fields:
+    created_at: 2022-03-01 03:44:48.672000+00:00
+    updated_at: 2022-03-01 03:44:48.672000+00:00
+    deleted: false
+    name: Cherukunnu  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130205
+    district: 4
+- model: arike_app.lsgbody
+  pk: 10
+  fields:
+    created_at: 2022-03-01 03:44:48.675000+00:00
+    updated_at: 2022-03-01 03:44:48.675000+00:00
+    deleted: false
+    name: Cherupuzha  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130107
+    district: 4
+- model: arike_app.lsgbody
+  pk: 11
+  fields:
+    created_at: 2022-03-01 03:44:48.679000+00:00
+    updated_at: 2022-03-01 03:44:48.679000+00:00
+    deleted: false
+    name: Cheruthazham  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130201
+    district: 4
+- model: arike_app.lsgbody
+  pk: 12
+  fields:
+    created_at: 2022-03-01 03:44:48.682000+00:00
+    updated_at: 2022-03-01 03:44:48.682000+00:00
+    deleted: false
+    name: Chirakkal  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130501
+    district: 4
+- model: arike_app.lsgbody
+  pk: 13
+  fields:
+    created_at: 2022-03-01 03:44:48.686000+00:00
+    updated_at: 2022-03-01 03:44:48.686000+00:00
+    deleted: false
+    name: Chittariparamba  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130902
+    district: 4
+- model: arike_app.lsgbody
+  pk: 14
+  fields:
+    created_at: 2022-03-01 03:44:48.688000+00:00
+    updated_at: 2022-03-01 03:44:48.688000+00:00
+    deleted: false
+    name: Chokli  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130802
+    district: 4
+- model: arike_app.lsgbody
+  pk: 15
+  fields:
+    created_at: 2022-03-01 03:44:48.692000+00:00
+    updated_at: 2022-03-01 03:44:48.692000+00:00
+    deleted: false
+    name: Dharmadam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130701
+    district: 4
+- model: arike_app.lsgbody
+  pk: 16
+  fields:
+    created_at: 2022-03-01 03:44:48.694000+00:00
+    updated_at: 2022-03-01 03:44:48.694000+00:00
+    deleted: false
+    name: Edakkad  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B130600
+    district: 4
+- model: arike_app.lsgbody
+  pk: 17
+  fields:
+    created_at: 2022-03-01 03:44:48.698000+00:00
+    updated_at: 2022-03-01 03:44:48.698000+00:00
+    deleted: false
+    name: Eramam Kuttur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130105
+    district: 4
+- model: arike_app.lsgbody
+  pk: 18
+  fields:
+    created_at: 2022-03-01 03:44:48.701000+00:00
+    updated_at: 2022-03-01 03:44:48.700000+00:00
+    deleted: false
+    name: Eranholi  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130702
+    district: 4
+- model: arike_app.lsgbody
+  pk: 19
+  fields:
+    created_at: 2022-03-01 03:44:48.705000+00:00
+    updated_at: 2022-03-01 03:44:48.704000+00:00
+    deleted: false
+    name: Eruvessy  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130401
+    district: 4
+- model: arike_app.lsgbody
+  pk: 20
+  fields:
+    created_at: 2022-03-01 03:44:48.707000+00:00
+    updated_at: 2022-03-01 03:44:48.706000+00:00
+    deleted: false
+    name: Ezhome  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130202
+    district: 4
+- model: arike_app.lsgbody
+  pk: 21
+  fields:
+    created_at: 2022-03-01 03:44:48.711000+00:00
+    updated_at: 2022-03-01 03:44:48.711000+00:00
+    deleted: false
+    name: Irikkur  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B130400
+    district: 4
+- model: arike_app.lsgbody
+  pk: 22
+  fields:
+    created_at: 2022-03-01 03:44:48.713000+00:00
+    updated_at: 2022-03-01 03:44:48.713000+00:00
+    deleted: false
+    name: Irikkur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130402
+    district: 4
+- model: arike_app.lsgbody
+  pk: 23
+  fields:
+    created_at: 2022-03-01 03:44:48.717000+00:00
+    updated_at: 2022-03-01 03:44:48.717000+00:00
+    deleted: false
+    name: Iritty  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B131000
+    district: 4
+- model: arike_app.lsgbody
+  pk: 24
+  fields:
+    created_at: 2022-03-01 03:44:48.721000+00:00
+    updated_at: 2022-03-01 03:44:48.720000+00:00
+    deleted: false
+    name: Kadambur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130603
+    district: 4
+- model: arike_app.lsgbody
+  pk: 25
+  fields:
+    created_at: 2022-03-01 03:44:48.725000+00:00
+    updated_at: 2022-03-01 03:44:48.725000+00:00
+    deleted: false
+    name: Kadannappally Panapuzha  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130309
+    district: 4
+- model: arike_app.lsgbody
+  pk: 26
+  fields:
+    created_at: 2022-03-01 03:44:48.727000+00:00
+    updated_at: 2022-03-01 03:44:48.727000+00:00
+    deleted: false
+    name: Kadirur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130801
+    district: 4
+- model: arike_app.lsgbody
+  pk: 27
+  fields:
+    created_at: 2022-03-01 03:44:48.730000+00:00
+    updated_at: 2022-03-01 03:44:48.730000+00:00
+    deleted: false
+    name: "Kalliasseri
+
+      Block Panchayat, Kannur District"
+    kind: 2
+    lsg_body_code: B130200
+    district: 4
+- model: arike_app.lsgbody
+  pk: 28
+  fields:
+    created_at: 2022-03-01 03:44:48.732000+00:00
+    updated_at: 2022-03-01 03:44:48.732000+00:00
+    deleted: false
+    name: Kalliasseri  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130206
+    district: 4
+- model: arike_app.lsgbody
+  pk: 29
+  fields:
+    created_at: 2022-03-01 03:44:48.737000+00:00
+    updated_at: 2022-03-01 03:44:48.736000+00:00
+    deleted: false
+    name: Kanichar  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131101
+    district: 4
+- model: arike_app.lsgbody
+  pk: 30
+  fields:
+    created_at: 2022-03-01 03:44:48.739000+00:00
+    updated_at: 2022-03-01 03:44:48.739000+00:00
+    deleted: false
+    name: Kankol - Alappadamba  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130104
+    district: 4
+- model: arike_app.lsgbody
+  pk: 31
+  fields:
+    created_at: 2022-03-01 03:44:48.743000+00:00
+    updated_at: 2022-03-01 03:44:48.742000+00:00
+    deleted: false
+    name: Kannapuram  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130207
+    district: 4
+- model: arike_app.lsgbody
+  pk: 32
+  fields:
+    created_at: 2022-03-01 03:44:48.745000+00:00
+    updated_at: 2022-03-01 03:44:48.745000+00:00
+    deleted: false
+    name: Kannur  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B130500
+    district: 4
+- model: arike_app.lsgbody
+  pk: 33
+  fields:
+    created_at: 2022-03-01 03:44:48.749000+00:00
+    updated_at: 2022-03-01 03:44:48.749000+00:00
+    deleted: false
+    name: Kannur  District Panchayat, Kannur District
+    kind: 3
+    lsg_body_code: D130000
+    district: 4
+- model: arike_app.lsgbody
+  pk: 34
+  fields:
+    created_at: 2022-03-01 03:44:48.751000+00:00
+    updated_at: 2022-03-01 03:44:48.751000+00:00
+    deleted: false
+    name: Karivellur Peralam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130103
+    district: 4
+- model: arike_app.lsgbody
+  pk: 35
+  fields:
+    created_at: 2022-03-01 03:44:48.755000+00:00
+    updated_at: 2022-03-01 03:44:48.755000+00:00
+    deleted: false
+    name: Keezhallur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131003
+    district: 4
+- model: arike_app.lsgbody
+  pk: 36
+  fields:
+    created_at: 2022-03-01 03:44:48.758000+00:00
+    updated_at: 2022-03-01 03:44:48.757000+00:00
+    deleted: false
+    name: Kelakam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131102
+    district: 4
+- model: arike_app.lsgbody
+  pk: 37
+  fields:
+    created_at: 2022-03-01 03:44:48.762000+00:00
+    updated_at: 2022-03-01 03:44:48.761000+00:00
+    deleted: false
+    name: Kolachery  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130608
+    district: 4
+- model: arike_app.lsgbody
+  pk: 38
+  fields:
+    created_at: 2022-03-01 03:44:48.764000+00:00
+    updated_at: 2022-03-01 03:44:48.764000+00:00
+    deleted: false
+    name: Kolayad  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131105
+    district: 4
+- model: arike_app.lsgbody
+  pk: 39
+  fields:
+    created_at: 2022-03-01 03:44:48.768000+00:00
+    updated_at: 2022-03-01 03:44:48.767000+00:00
+    deleted: false
+    name: Koodali  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131005
+    district: 4
+- model: arike_app.lsgbody
+  pk: 40
+  fields:
+    created_at: 2022-03-01 03:44:48.770000+00:00
+    updated_at: 2022-03-01 03:44:48.770000+00:00
+    deleted: false
+    name: Kottayam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130906
+    district: 4
+- model: arike_app.lsgbody
+  pk: 41
+  fields:
+    created_at: 2022-03-01 03:44:48.774000+00:00
+    updated_at: 2022-03-01 03:44:48.774000+00:00
+    deleted: false
+    name: Kottiyoor  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131103
+    district: 4
+- model: arike_app.lsgbody
+  pk: 42
+  fields:
+    created_at: 2022-03-01 03:44:48.776000+00:00
+    updated_at: 2022-03-01 03:44:48.776000+00:00
+    deleted: false
+    name: Kunhimangalam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130101
+    district: 4
+- model: arike_app.lsgbody
+  pk: 43
+  fields:
+    created_at: 2022-03-01 03:44:48.780000+00:00
+    updated_at: 2022-03-01 03:44:48.780000+00:00
+    deleted: false
+    name: Kunnothuparamba  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130903
+    district: 4
+- model: arike_app.lsgbody
+  pk: 44
+  fields:
+    created_at: 2022-03-01 03:44:48.782000+00:00
+    updated_at: 2022-03-01 03:44:48.782000+00:00
+    deleted: false
+    name: Kurumathur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130303
+    district: 4
+- model: arike_app.lsgbody
+  pk: 45
+  fields:
+    created_at: 2022-03-01 03:44:48.786000+00:00
+    updated_at: 2022-03-01 03:44:48.785000+00:00
+    deleted: false
+    name: Kuthuparamba  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B130900
+    district: 4
+- model: arike_app.lsgbody
+  pk: 46
+  fields:
+    created_at: 2022-03-01 03:44:48.788000+00:00
+    updated_at: 2022-03-01 03:44:48.788000+00:00
+    deleted: false
+    name: Kuthuparamba  Municipality, Kannur District
+    kind: 10
+    lsg_body_code: M130300
+    district: 4
+- model: arike_app.lsgbody
+  pk: 47
+  fields:
+    created_at: 2022-03-01 03:44:48.792000+00:00
+    updated_at: 2022-03-01 03:44:48.792000+00:00
+    deleted: false
+    name: Kuttiattoor  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130405
+    district: 4
+- model: arike_app.lsgbody
+  pk: 48
+  fields:
+    created_at: 2022-03-01 03:44:48.794000+00:00
+    updated_at: 2022-03-01 03:44:48.794000+00:00
+    deleted: false
+    name: Madayi  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130203
+    district: 4
+- model: arike_app.lsgbody
+  pk: 49
+  fields:
+    created_at: 2022-03-01 03:44:48.798000+00:00
+    updated_at: 2022-03-01 03:44:48.798000+00:00
+    deleted: false
+    name: Malappattam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130403
+    district: 4
+- model: arike_app.lsgbody
+  pk: 50
+  fields:
+    created_at: 2022-03-01 03:44:48.801000+00:00
+    updated_at: 2022-03-01 03:44:48.801000+00:00
+    deleted: false
+    name: Malur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131106
+    district: 4
+- model: arike_app.lsgbody
+  pk: 51
+  fields:
+    created_at: 2022-03-01 03:44:48.805000+00:00
+    updated_at: 2022-03-01 03:44:48.805000+00:00
+    deleted: false
+    name: Mangattidam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130904
+    district: 4
+- model: arike_app.lsgbody
+  pk: 52
+  fields:
+    created_at: 2022-03-01 03:44:48.807000+00:00
+    updated_at: 2022-03-01 03:44:48.807000+00:00
+    deleted: false
+    name: Mattanur  Municipality, Kannur District
+    kind: 10
+    lsg_body_code: M130100
+    district: 4
+- model: arike_app.lsgbody
+  pk: 53
+  fields:
+    created_at: 2022-03-01 03:44:48.811000+00:00
+    updated_at: 2022-03-01 03:44:48.811000+00:00
+    deleted: false
+    name: Mattool  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130204
+    district: 4
+- model: arike_app.lsgbody
+  pk: 54
+  fields:
+    created_at: 2022-03-01 03:44:48.813000+00:00
+    updated_at: 2022-03-01 03:44:48.813000+00:00
+    deleted: false
+    name: Mayyil  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130406
+    district: 4
+- model: arike_app.lsgbody
+  pk: 55
+  fields:
+    created_at: 2022-03-01 03:44:48.818000+00:00
+    updated_at: 2022-03-01 03:44:48.817000+00:00
+    deleted: false
+    name: Mokeri  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130805
+    district: 4
+- model: arike_app.lsgbody
+  pk: 56
+  fields:
+    created_at: 2022-03-01 03:44:48.820000+00:00
+    updated_at: 2022-03-01 03:44:48.820000+00:00
+    deleted: false
+    name: Munderi  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130606
+    district: 4
+- model: arike_app.lsgbody
+  pk: 57
+  fields:
+    created_at: 2022-03-01 03:44:48.824000+00:00
+    updated_at: 2022-03-01 03:44:48.823000+00:00
+    deleted: false
+    name: Muzhakkunnu  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131104
+    district: 4
+- model: arike_app.lsgbody
+  pk: 58
+  fields:
+    created_at: 2022-03-01 03:44:48.826000+00:00
+    updated_at: 2022-03-01 03:44:48.826000+00:00
+    deleted: false
+    name: Muzhappilangad  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130705
+    district: 4
+- model: arike_app.lsgbody
+  pk: 59
+  fields:
+    created_at: 2022-03-01 03:44:48.830000+00:00
+    updated_at: 2022-03-01 03:44:48.829000+00:00
+    deleted: false
+    name: Naduvil  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130306
+    district: 4
+- model: arike_app.lsgbody
+  pk: 60
+  fields:
+    created_at: 2022-03-01 03:44:48.832000+00:00
+    updated_at: 2022-03-01 03:44:48.832000+00:00
+    deleted: false
+    name: Narath  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130208
+    district: 4
+- model: arike_app.lsgbody
+  pk: 61
+  fields:
+    created_at: 2022-03-01 03:44:48.837000+00:00
+    updated_at: 2022-03-01 03:44:48.836000+00:00
+    deleted: false
+    name: New Mahe  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130704
+    district: 4
+- model: arike_app.lsgbody
+  pk: 62
+  fields:
+    created_at: 2022-03-01 03:44:48.841000+00:00
+    updated_at: 2022-03-01 03:44:48.840000+00:00
+    deleted: false
+    name: Padiyoor   Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130408
+    district: 4
+- model: arike_app.lsgbody
+  pk: 63
+  fields:
+    created_at: 2022-03-01 03:44:48.847000+00:00
+    updated_at: 2022-03-01 03:44:48.846000+00:00
+    deleted: false
+    name: Panniyannur  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130806
+    district: 4
+- model: arike_app.lsgbody
+  pk: 64
+  fields:
+    created_at: 2022-03-01 03:44:48.850000+00:00
+    updated_at: 2022-03-01 03:44:48.850000+00:00
+    deleted: false
+    name: "Panoor
+
+      Block Panchayat, Kannur District"
+    kind: 2
+    lsg_body_code: B130800
+    district: 4
+- model: arike_app.lsgbody
+  pk: 65
+  fields:
+    created_at: 2022-03-01 03:44:48.855000+00:00
+    updated_at: 2022-03-01 03:44:48.854000+00:00
+    deleted: false
+    name: Pappinisseri  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130506
+    district: 4
+- model: arike_app.lsgbody
+  pk: 66
+  fields:
+    created_at: 2022-03-01 03:44:48.857000+00:00
+    updated_at: 2022-03-01 03:44:48.857000+00:00
+    deleted: false
+    name: Pariyaram  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130304
+    district: 4
+- model: arike_app.lsgbody
+  pk: 67
+  fields:
+    created_at: 2022-03-01 03:44:48.861000+00:00
+    updated_at: 2022-03-01 03:44:48.861000+00:00
+    deleted: false
+    name: Pattiam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130905
+    district: 4
+- model: arike_app.lsgbody
+  pk: 68
+  fields:
+    created_at: 2022-03-01 03:44:48.864000+00:00
+    updated_at: 2022-03-01 03:44:48.863000+00:00
+    deleted: false
+    name: Pattuvam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130301
+    district: 4
+- model: arike_app.lsgbody
+  pk: 69
+  fields:
+    created_at: 2022-03-01 03:44:48.868000+00:00
+    updated_at: 2022-03-01 03:44:48.868000+00:00
+    deleted: false
+    name: Payam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131006
+    district: 4
+- model: arike_app.lsgbody
+  pk: 70
+  fields:
+    created_at: 2022-03-01 03:44:48.870000+00:00
+    updated_at: 2022-03-01 03:44:48.870000+00:00
+    deleted: false
+    name: Payyannur  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B130100
+    district: 4
+- model: arike_app.lsgbody
+  pk: 71
+  fields:
+    created_at: 2022-03-01 03:44:48.874000+00:00
+    updated_at: 2022-03-01 03:44:48.874000+00:00
+    deleted: false
+    name: Payyannur  Municipality, Kannur District
+    kind: 10
+    lsg_body_code: M130400
+    district: 4
+- model: arike_app.lsgbody
+  pk: 72
+  fields:
+    created_at: 2022-03-01 03:44:48.877000+00:00
+    updated_at: 2022-03-01 03:44:48.877000+00:00
+    deleted: false
+    name: Payyavoor  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130404
+    district: 4
+- model: arike_app.lsgbody
+  pk: 73
+  fields:
+    created_at: 2022-03-01 03:44:48.881000+00:00
+    updated_at: 2022-03-01 03:44:48.880000+00:00
+    deleted: false
+    name: Peralassery  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130607
+    district: 4
+- model: arike_app.lsgbody
+  pk: 74
+  fields:
+    created_at: 2022-03-01 03:44:48.883000+00:00
+    updated_at: 2022-03-01 03:44:48.883000+00:00
+    deleted: false
+    name: Peravoor  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B131100
+    district: 4
+- model: arike_app.lsgbody
+  pk: 75
+  fields:
+    created_at: 2022-03-01 03:44:48.887000+00:00
+    updated_at: 2022-03-01 03:44:48.887000+00:00
+    deleted: false
+    name: Peravoor  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131107
+    district: 4
+- model: arike_app.lsgbody
+  pk: 76
+  fields:
+    created_at: 2022-03-01 03:44:48.890000+00:00
+    updated_at: 2022-03-01 03:44:48.889000+00:00
+    deleted: false
+    name: Peringome Vayakkara  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130106
+    district: 4
+- model: arike_app.lsgbody
+  pk: 77
+  fields:
+    created_at: 2022-03-01 03:44:48.894000+00:00
+    updated_at: 2022-03-01 03:44:48.893000+00:00
+    deleted: false
+    name: Pinarayi  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130703
+    district: 4
+- model: arike_app.lsgbody
+  pk: 78
+  fields:
+    created_at: 2022-03-01 03:44:48.896000+00:00
+    updated_at: 2022-03-01 03:44:48.896000+00:00
+    deleted: false
+    name: Ramanthali  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130102
+    district: 4
+- model: arike_app.lsgbody
+  pk: 79
+  fields:
+    created_at: 2022-03-01 03:44:48.901000+00:00
+    updated_at: 2022-03-01 03:44:48.900000+00:00
+    deleted: false
+    name: Thalassery  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B130700
+    district: 4
+- model: arike_app.lsgbody
+  pk: 80
+  fields:
+    created_at: 2022-03-01 03:44:48.905000+00:00
+    updated_at: 2022-03-01 03:44:48.905000+00:00
+    deleted: false
+    name: Thalassery  Municipality, Kannur District
+    kind: 10
+    lsg_body_code: M130500
+    district: 4
+- model: arike_app.lsgbody
+  pk: 81
+  fields:
+    created_at: 2022-03-01 03:44:48.911000+00:00
+    updated_at: 2022-03-01 03:44:48.911000+00:00
+    deleted: false
+    name: Thalipparamba  Block Panchayat, Kannur District
+    kind: 2
+    lsg_body_code: B130300
+    district: 4
+- model: arike_app.lsgbody
+  pk: 82
+  fields:
+    created_at: 2022-03-01 03:44:48.916000+00:00
+    updated_at: 2022-03-01 03:44:48.915000+00:00
+    deleted: false
+    name: Thalipparamba  Municipality, Kannur District
+    kind: 10
+    lsg_body_code: M130200
+    district: 4
+- model: arike_app.lsgbody
+  pk: 83
+  fields:
+    created_at: 2022-03-01 03:44:48.922000+00:00
+    updated_at: 2022-03-01 03:44:48.922000+00:00
+    deleted: false
+    name: Thillankery  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G131004
+    district: 4
+- model: arike_app.lsgbody
+  pk: 84
+  fields:
+    created_at: 2022-03-01 03:44:48.927000+00:00
+    updated_at: 2022-03-01 03:44:48.926000+00:00
+    deleted: false
+    name: Triprangottoor  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130901
+    district: 4
+- model: arike_app.lsgbody
+  pk: 85
+  fields:
+    created_at: 2022-03-01 03:44:48.933000+00:00
+    updated_at: 2022-03-01 03:44:48.932000+00:00
+    deleted: false
+    name: Udayagiri  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130307
+    district: 4
+- model: arike_app.lsgbody
+  pk: 86
+  fields:
+    created_at: 2022-03-01 03:44:48.938000+00:00
+    updated_at: 2022-03-01 03:44:48.937000+00:00
+    deleted: false
+    name: Ulikkal  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130409
+    district: 4
+- model: arike_app.lsgbody
+  pk: 87
+  fields:
+    created_at: 2022-03-01 03:44:48.945000+00:00
+    updated_at: 2022-03-01 03:44:48.944000+00:00
+    deleted: false
+    name: Valapattanam  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130504
+    district: 4
+- model: arike_app.lsgbody
+  pk: 88
+  fields:
+    created_at: 2022-03-01 03:44:48.949000+00:00
+    updated_at: 2022-03-01 03:44:48.949000+00:00
+    deleted: false
+    name: Vengad  Grama Panchayat, Kannur District
+    kind: 1
+    lsg_body_code: G130707
+    district: 4
+- model: arike_app.state
+  pk: 1
+  fields:
+    created_at: 2022-02-28 16:06:00.027000+00:00
+    updated_at: 2022-02-28 16:05:55+00:00
+    deleted: false
+    name: Kerala
+- model: arike_app.user
+  pk: 1
+  fields:
+    password: pbkdf2_sha256$320000$6vj8A4B0z6fLufP8hjFZ4V$8G8MKW+GriSuAxdTwtGdNNgJSrXNHkI1VRh3zRWwYd8=
+    last_login: 2022-03-02 11:12:51.322194+00:00
+    is_superuser: true
+    username: rithviknishad
+    first_name: ""
+    last_name: ""
+    email: rithvikn2001@gmail.com
+    is_staff: true
+    is_active: true
+    date_joined: 2022-02-28 16:05:28.135000+00:00
+    created_at: 2022-03-02 02:01:52.426000+00:00
+    updated_at: 2022-02-28 16:05:28.135000+00:00
+    deleted: false
+    role: null
+    phone: "+919696969696"
+    is_verified: true
+    district: null
+    facility: null
+    groups: []
+    user_permissions: []
+- model: arike_app.user
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$320000$jsXuvquq4PC5sfPDjNO3VN$CJZbXL3DHex5espWSA5CD8j37oFRlyDXKeN37nJfmmE=
+    last_login: 2022-03-02 11:12:38.108718+00:00
+    is_superuser: false
+    username: distadmin
+    first_name: District Admin
+    last_name: CNN
+    email: cnn.distadmin@arike.in
+    is_staff: false
+    is_active: true
+    date_joined: 2022-03-01 07:04:18+00:00
+    created_at: 2022-03-02 03:50:04.166000+00:00
+    updated_at: 2022-03-01 07:04:18+00:00
+    deleted: false
+    role: 1
+    phone: "+919696969696"
+    is_verified: true
+    district: 4
+    facility: 1
+    groups: []
+    user_permissions: []
+- model: arike_app.user
+  pk: 3
+  fields:
+    password: pbkdf2_sha256$320000$PXV97bVCWyDJ6wlqINvHcq$aRY1hOT1Ar2gwX6jtvNrZlUf0YkwfPCJ110kE1Q5UHU=
+    last_login: 2022-03-02 11:20:42.488985+00:00
+    is_superuser: false
+    username: primarynurse
+    first_name: Primary Nurse
+    last_name: CNN
+    email: cnn.primarynurse@arike.in
+    is_staff: false
+    is_active: true
+    date_joined: 2022-03-01 07:08:39+00:00
+    created_at: 2022-03-02 03:53:43.346000+00:00
+    updated_at: 2022-03-01 07:08:39+00:00
+    deleted: false
+    role: 3
+    phone: "+919696969696"
+    is_verified: true
+    district: 4
+    facility: 1
+    groups: []
+    user_permissions: []
+- model: arike_app.user
+  pk: 4
+  fields:
+    password: pbkdf2_sha256$320000$uSUO3NscDUr9fUUx84EStd$nv/Bl8mqmuiiL5j1PV1KUel9cJ6GG7koOtvFCuMn2Ow=
+    last_login: 2022-03-03 04:12:06.091859+00:00
+    is_superuser: false
+    username: secondarynurse
+    first_name: Secondary Nurse
+    last_name: CNN
+    email: cnn.secondarynurse@arike.in
+    is_staff: false
+    is_active: true
+    date_joined: 2022-03-01 07:09:33+00:00
+    created_at: 2022-03-02 03:55:55.167000+00:00
+    updated_at: 2022-03-01 07:09:33+00:00
+    deleted: false
+    role: 4
+    phone: "+919696969696"
+    is_verified: true
+    district: 4
+    facility: 1
+    groups: []
+    user_permissions: []
+- model: arike_app.ward
+  pk: 1
+  fields:
+    created_at: 2022-03-01 03:57:53.750000+00:00
+    updated_at: 2022-03-01 03:57:53.749000+00:00
+    deleted: false
+    name: ADIVAYAL
+    number: 18
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 2
+  fields:
+    created_at: 2022-03-01 03:57:53.764000+00:00
+    updated_at: 2022-03-01 03:57:53.764000+00:00
+    deleted: false
+    name: ANDALOOR
+    number: 6
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 3
+  fields:
+    created_at: 2022-03-01 03:57:53.768000+00:00
+    updated_at: 2022-03-01 03:57:53.768000+00:00
+    deleted: false
+    name: CHATHODAM
+    number: 13
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 4
+  fields:
+    created_at: 2022-03-01 03:57:53.772000+00:00
+    updated_at: 2022-03-01 03:57:53.772000+00:00
+    deleted: false
+    name: CHEEROTH
+    number: 14
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 5
+  fields:
+    created_at: 2022-03-01 03:57:53.774000+00:00
+    updated_at: 2022-03-01 03:57:53.774000+00:00
+    deleted: false
+    name: CHIRAKKUNI KIZHAKKU
+    number: 7
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 6
+  fields:
+    created_at: 2022-03-01 03:57:53.778000+00:00
+    updated_at: 2022-03-01 03:57:53.778000+00:00
+    deleted: false
+    name: COLONY KIZHAKKE PALAYAD
+    number: 9
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 7
+  fields:
+    created_at: 2022-03-01 03:57:53.781000+00:00
+    updated_at: 2022-03-01 03:57:53.781000+00:00
+    deleted: false
+    name: EATHAMANI
+    number: 15
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 8
+  fields:
+    created_at: 2022-03-01 03:57:53.785000+00:00
+    updated_at: 2022-03-01 03:57:53.785000+00:00
+    deleted: false
+    name: GUMTTIMUKKU
+    number: 3
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 9
+  fields:
+    created_at: 2022-03-01 03:57:53.787000+00:00
+    updated_at: 2022-03-01 03:57:53.787000+00:00
+    deleted: false
+    name: INDUSTRIAL ESTATE
+    number: 4
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 10
+  fields:
+    created_at: 2022-03-01 03:57:53.791000+00:00
+    updated_at: 2022-03-01 03:57:53.791000+00:00
+    deleted: false
+    name: KAIRALI
+    number: 8
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 11
+  fields:
+    created_at: 2022-03-01 03:57:53.794000+00:00
+    updated_at: 2022-03-01 03:57:53.793000+00:00
+    deleted: false
+    name: KARADIYIL
+    number: 5
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 12
+  fields:
+    created_at: 2022-03-01 03:57:53.797000+00:00
+    updated_at: 2022-03-01 03:57:53.797000+00:00
+    deleted: false
+    name: MELUR KIZHAKKU
+    number: 2
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 13
+  fields:
+    created_at: 2022-03-01 03:57:53.799000+00:00
+    updated_at: 2022-03-01 03:57:53.799000+00:00
+    deleted: false
+    name: MELUR PADINJARU
+    number: 1
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 14
+  fields:
+    created_at: 2022-03-01 03:57:53.804000+00:00
+    updated_at: 2022-03-01 03:57:53.803000+00:00
+    deleted: false
+    name: NARIVAYAL
+    number: 17
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 15
+  fields:
+    created_at: 2022-03-01 03:57:53.806000+00:00
+    updated_at: 2022-03-01 03:57:53.806000+00:00
+    deleted: false
+    name: OZHAYIL BHAGAM
+    number: 10
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 16
+  fields:
+    created_at: 2022-03-01 03:57:53.810000+00:00
+    updated_at: 2022-03-01 03:57:53.810000+00:00
+    deleted: false
+    name: PAREEKADAVU
+    number: 11
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 17
+  fields:
+    created_at: 2022-03-01 03:57:53.813000+00:00
+    updated_at: 2022-03-01 03:57:53.812000+00:00
+    deleted: false
+    name: SWAMIKKUNNU
+    number: 12
+    lsg_body: 15
+- model: arike_app.ward
+  pk: 18
+  fields:
+    created_at: 2022-03-01 03:57:53.817000+00:00
+    updated_at: 2022-03-01 03:57:53.816000+00:00
+    deleted: false
+    name: VELLOZHUKKU
+    number: 16
+    lsg_body: 15
