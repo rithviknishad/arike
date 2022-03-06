@@ -19,7 +19,7 @@ from django.contrib.auth.views import LogoutView
 from django.shortcuts import redirect
 from django.urls import path
 
-from arike_app.views.views import HomeView, ProfileUpdateView
+from arike_app.views.views import ChangePasswordView, HomeView, ProfileUpdateView
 from arike_app.views.auth import *
 from arike_app.views import (
     users,
@@ -76,4 +76,5 @@ urlpatterns = [
     path("schedule/visit/treatment_notes/<pk>/", schedule.UpdateTreatmentNotes.as_view()),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
+    path("profile/change_password/", ChangePasswordView.as_view()),
 ]
