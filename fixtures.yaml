@@ -699,14 +699,38 @@
   pk: 1
   fields:
     created_at: 2022-03-01 04:04:05.815000+00:00
-    updated_at: 2022-03-01 04:03:22+00:00
+    updated_at: 2022-03-06 08:13:45.490347+00:00
     deleted: false
     kind: PHC
-    name: Test Facility
-    address: Dharmadam
+    name: Govt Hospital
+    address: Aikaranad Grama Panchayat, Kannur District
     pincode: "670106"
     phone: "+919696969696"
     ward: 17
+- model: arike_app.facility
+  pk: 2
+  fields:
+    created_at: 2022-03-06 08:15:00.588427+00:00
+    updated_at: 2022-03-06 08:15:00.588447+00:00
+    deleted: false
+    kind: CHC
+    name: St George Hospital
+    address: Aikaranad Grama Panchayat, Kannur District
+    pincode: "670106"
+    phone: "+919696969696"
+    ward: 12
+- model: arike_app.facility
+  pk: 3
+  fields:
+    created_at: 2022-03-06 08:15:34.311200+00:00
+    updated_at: 2022-03-06 08:15:34.311222+00:00
+    deleted: false
+    kind: PHC
+    name: Govt Hospital
+    address: Aikaranad Grama Panchayat, Kannur District
+    pincode: "670106"
+    phone: "+919696969696"
+    ward: 16
 - model: arike_app.lsgbody
   pk: 1
   fields:
@@ -1625,7 +1649,7 @@
   pk: 2
   fields:
     password: pbkdf2_sha256$320000$jsXuvquq4PC5sfPDjNO3VN$CJZbXL3DHex5espWSA5CD8j37oFRlyDXKeN37nJfmmE=
-    last_login: 2022-03-02 11:12:38.108718+00:00
+    last_login: 2022-03-06 08:10:28.907279+00:00
     is_superuser: false
     username: distadmin
     first_name: District Admin
@@ -1648,7 +1672,7 @@
   pk: 3
   fields:
     password: pbkdf2_sha256$320000$PXV97bVCWyDJ6wlqINvHcq$aRY1hOT1Ar2gwX6jtvNrZlUf0YkwfPCJ110kE1Q5UHU=
-    last_login: 2022-03-02 11:20:42.488985+00:00
+    last_login: 2022-03-06 08:05:46.635496+00:00
     is_superuser: false
     username: primarynurse
     first_name: Primary Nurse
@@ -1852,3 +1876,309 @@
     name: VELLOZHUKKU
     number: 16
     lsg_body: 15
+- model: arike_app.patient
+  pk: 1
+  fields:
+    created_at: 2022-03-06 08:18:40.268881+00:00
+    updated_at: 2022-03-06 08:18:40.276986+00:00
+    deleted: false
+    first_name: Sam
+    last_name: Dow
+    email: sam.dow@example.com
+    date_of_birth: 2001-06-16
+    phone_number: +91-9936963699
+    emergency_phone_number: +91-9936963699
+    address: South Apt, East block, west city
+    landmark: East block
+    ward: 10
+    facility: 1
+    gender: M
+    expired_time: null
+- model: arike_app.patient
+  pk: 2
+  fields:
+    created_at: 2022-03-06 08:19:33.337874+00:00
+    updated_at: 2022-03-06 08:29:46.086194+00:00
+    deleted: false
+    first_name: Ken
+    last_name: Sipes
+    email: ken.sipes@example.com
+    date_of_birth: 2001-06-16
+    phone_number: +91-9936963699
+    emergency_phone_number: +91-9936963699
+    address: South Apt, East block, west city
+    landmark: East block
+    ward: 13
+    facility: 1
+    gender: F
+    expired_time: null
+- model: arike_app.patient
+  pk: 3
+  fields:
+    created_at: 2022-03-06 08:20:44.584360+00:00
+    updated_at: 2022-03-06 08:30:32.150886+00:00
+    deleted: false
+    first_name: Jeffrey
+    last_name: Kono
+    email: jeffreykono@example.com
+    date_of_birth: 2001-06-16
+    phone_number: +91-9936963699
+    emergency_phone_number: +91-9936963699
+    address: South Apt, East block, west city
+    landmark: East block
+    ward: 7
+    facility: 1
+    gender: M
+    expired_time: null
+- model: arike_app.familydetail
+  pk: 1
+  fields:
+    created_at: 2022-03-06 08:22:20.860954+00:00
+    updated_at: 2022-03-06 08:22:20.867282+00:00
+    deleted: false
+    full_name: Jacquelyne Stiedemann
+    phone: "+919696969696"
+    date_of_birth: 2001-06-16
+    email: email@test.com
+    relation: Sister
+    address: South Apt, East block, west city
+    education: Post Graduate
+    occupation: Homemaker
+    remarks: ""
+    is_primary: true
+    patient: 1
+- model: arike_app.familydetail
+  pk: 2
+  fields:
+    created_at: 2022-03-06 08:23:11.614823+00:00
+    updated_at: 2022-03-06 08:23:11.625623+00:00
+    deleted: false
+    full_name: Amb. Marlene Ferry
+    phone: "+919696969696"
+    date_of_birth: 2001-06-16
+    email: email@test.com
+    relation: Sister
+    address: South Apt, East block, west city
+    education: Post Graduate
+    occupation: Homemaker
+    remarks: Gala Langosh IV
+    is_primary: false
+    patient: 1
+- model: arike_app.familydetail
+  pk: 3
+  fields:
+    created_at: 2022-03-06 08:22:20.860954+00:00
+    updated_at: 2022-03-06 08:22:20.867282+00:00
+    deleted: false
+    full_name: Jacquelyne Stiedemann
+    phone: "+919696969696"
+    date_of_birth: 2001-06-16
+    email: email@test.com
+    relation: Sister
+    address: South Apt, East block, west city
+    education: Post Graduate
+    occupation: Homemaker
+    remarks: ""
+    is_primary: true
+    patient: 2
+- model: arike_app.familydetail
+  pk: 4
+  fields:
+    created_at: 2022-03-06 08:23:11.614823+00:00
+    updated_at: 2022-03-06 08:23:11.625623+00:00
+    deleted: false
+    full_name: Amb. Marlene Ferry
+    phone: "+919696969696"
+    date_of_birth: 2001-06-16
+    email: email@test.com
+    relation: Sister
+    address: South Apt, East block, west city
+    education: Post Graduate
+    occupation: Homemaker
+    remarks: Gala Langosh IV
+    is_primary: false
+    patient: 2
+- model: arike_app.familydetail
+  pk: 5
+  fields:
+    created_at: 2022-03-06 08:22:20.860954+00:00
+    updated_at: 2022-03-06 08:22:20.867282+00:00
+    deleted: false
+    full_name: Jacquelyne Stiedemann
+    phone: "+919696969696"
+    date_of_birth: 2001-06-16
+    email: email@test.com
+    relation: Sister
+    address: South Apt, East block, west city
+    education: Post Graduate
+    occupation: Homemaker
+    remarks: ""
+    is_primary: true
+    patient: 3
+- model: arike_app.familydetail
+  pk: 6
+  fields:
+    created_at: 2022-03-06 08:23:11.614823+00:00
+    updated_at: 2022-03-06 08:23:11.625623+00:00
+    deleted: false
+    full_name: Amb. Marlene Ferry
+    phone: "+919696969696"
+    date_of_birth: 2001-06-16
+    email: email@test.com
+    relation: Sister
+    address: South Apt, East block, west city
+    education: Post Graduate
+    occupation: Homemaker
+    remarks: Gala Langosh IV
+    is_primary: false
+    patient: 3
+- model: arike_app.patientdisease
+  pk: 1
+  fields:
+    created_at: 2022-03-06 08:25:29.709614+00:00
+    updated_at: 2022-03-06 08:25:29.716241+00:00
+    deleted: false
+    patient: 1
+    disease: 2
+    note:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+- model: arike_app.patientdisease
+  pk: 2
+  fields:
+    created_at: 2022-03-06 08:26:16.590766+00:00
+    updated_at: 2022-03-06 08:26:16.605527+00:00
+    deleted: false
+    patient: 1
+    disease: 3
+    note:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+- model: arike_app.patientdisease
+  pk: 3
+  fields:
+    created_at: 2022-03-06 08:25:29.709614+00:00
+    updated_at: 2022-03-06 08:25:29.716241+00:00
+    deleted: false
+    patient: 2
+    disease: 2
+    note:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+- model: arike_app.patientdisease
+  pk: 4
+  fields:
+    created_at: 2022-03-06 08:26:16.590766+00:00
+    updated_at: 2022-03-06 08:26:16.605527+00:00
+    deleted: false
+    patient: 2
+    disease: 3
+    note:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+- model: arike_app.patientdisease
+  pk: 5
+  fields:
+    created_at: 2022-03-06 08:25:29.709614+00:00
+    updated_at: 2022-03-06 08:25:29.716241+00:00
+    deleted: false
+    patient: 3
+    disease: 2
+    note:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+- model: arike_app.patientdisease
+  pk: 6
+  fields:
+    created_at: 2022-03-06 08:26:16.590766+00:00
+    updated_at: 2022-03-06 08:26:16.605527+00:00
+    deleted: false
+    patient: 3
+    disease: 3
+    note:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+- model: arike_app.treatment
+  pk: 1
+  fields:
+    created_at: 2022-03-06 08:27:53.459718+00:00
+    updated_at: 2022-03-06 08:27:53.473799+00:00
+    deleted: false
+    description:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+    care_type_and_sub_type: 56
+    patient: 1
+    treatment_notes: null
+- model: arike_app.treatment
+  pk: 2
+  fields:
+    created_at: 2022-03-06 08:28:51.033578+00:00
+    updated_at: 2022-03-06 08:28:51.041970+00:00
+    deleted: false
+    description:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+    care_type_and_sub_type: 40
+    patient: 1
+    treatment_notes: null
+- model: arike_app.treatment
+  pk: 3
+  fields:
+    created_at: 2022-03-06 08:27:53.459718+00:00
+    updated_at: 2022-03-06 08:27:53.473799+00:00
+    deleted: false
+    description:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+    care_type_and_sub_type: 56
+    patient: 2
+    treatment_notes: null
+- model: arike_app.treatment
+  pk: 4
+  fields:
+    created_at: 2022-03-06 08:28:51.033578+00:00
+    updated_at: 2022-03-06 08:28:51.041970+00:00
+    deleted: false
+    description:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+    care_type_and_sub_type: 40
+    patient: 2
+    treatment_notes: null
+- model: arike_app.treatment
+  pk: 5
+  fields:
+    created_at: 2022-03-06 08:27:53.459718+00:00
+    updated_at: 2022-03-06 08:27:53.473799+00:00
+    deleted: false
+    description:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+    care_type_and_sub_type: 56
+    patient: 3
+    treatment_notes: null
+- model: arike_app.treatment
+  pk: 6
+  fields:
+    created_at: 2022-03-06 08:28:51.033578+00:00
+    updated_at: 2022-03-06 08:28:51.041970+00:00
+    deleted: false
+    description:
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+      numquam blanditiis harum quisquam eius sed
+    care_type_and_sub_type: 40
+    patient: 3
+    treatment_notes: null
