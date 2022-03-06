@@ -11,7 +11,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <div class="flex flex-row">
-        <div class="p-2">{% include 'generic/button.html' with label='Cancel' type='button' onClick="location.href='../'"%}</div>
+        <div class="p-2">{% include 'generic/button.html' with label='Cancel' type='button' onClick="location.href='../'" style="outlined"%}</div>
         <div class="p-2">{% include 'generic/button.html' with label='Delete'%}</div>
       </div>
     </form>
