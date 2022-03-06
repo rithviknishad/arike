@@ -2,6 +2,10 @@
 
 {% block head_title %}Schedule{% endblock head_title %}
 
+{% block action_buttons %}
+  {% include 'generic/button.html' with label="Agenda" onClick="location.href='agenda'" %}
+{% endblock action_buttons %}
+
 {% block filters_form %}
 <div class="bg-white rounded-xl p-6">
   <div class="flex flex-row gap-4">
