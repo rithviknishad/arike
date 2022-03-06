@@ -46,8 +46,15 @@ class Delete(__ScheduleViewsMixin, GenericModelDeleteView):
 
 
 class VisitPatient(__ScheduleViewsMixin, GenericModelDetailView):
-    model = VisitDetails
+    model = VisitSchedule
     view_type = "visit"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Voluntarily overriding to hide button. TODO: update template instead of context
+        context["has_update_perm"] = False
+        context["has_delete_perm"] = False
+        return context
 
 
 class HealthInformation(__ScheduleViewsMixin, GenericModelUpdateView):
