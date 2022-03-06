@@ -6,7 +6,7 @@
     <div class="flex-none text-3xl font-bold">{% block head_title %}Details Base{% endblock head_title %}</div>
     <div class="flex-1"></div>
     {% if has_delete_perm %}
-      <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" %}</div>
+      <div class="px-1">{% include 'generic/button.html' with label="Delete" onClick="location.href='delete'" style="outlined"%}</div>
     {% endif %}
     {% if has_update_perm %}
       <div class="px-1">{% include 'generic/button.html' with label="Edit" onClick="location.href='edit'" %}</div>
