@@ -1,15 +1,10 @@
-<button class="rounded-xl items bg-white hover:bg-slate-200" onClick="location.href='create/{{object.id}}'">
+<button class="text-left rounded-xl bg-white border-white hover:border-slate-900 border-4" onClick="location.href='{{object.id}}'">
   <div class="p-4">
-    <p class="p-2 text-slate-900">{{object}}</p>
-    <div class="flex flex-row">
-      <div class="flex-1"></div>
-      <p class="p-2 text-slate-600">{{object.get_role_display}}</p>
-      {% if object.is_verified %}
-        <div class="p-3 px-5 ml-3 rounded-3xl text-sm text-white bg-green-600">Verified</div>
-      {% else %}
-        <div class="p-3 px-5 ml-3 rounded-3xl text-sm text-white bg-red-600">Not Verified</div>
-      {% endif %}
-      <div class="flex-1"></div>
-    </div>
+    <p class="py-0.5 text-slate-900 font-bold">{{object}}</p>
+    <ul class="list-disc list-inside pt-1">
+      {% for treatment in object.active_treatments %}
+        <li class="py-0.5 text-slate-700 text-sm">{{treatment}}</li>
+      {% endfor %}
+    </ul>
   </div>
 </button>
