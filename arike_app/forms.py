@@ -4,7 +4,6 @@ from django.contrib.auth import forms as auth_forms
 from django.forms import ModelForm, ValidationError, HiddenInput, DateInput, DateTimeInput
 from arike_app.models import *
 from arike_app.mixins import CustomFormStyleMixin
-from arike_app.views.schedule import VisitPatient
 
 
 class LoginForm(CustomFormStyleMixin, AuthenticationForm):
