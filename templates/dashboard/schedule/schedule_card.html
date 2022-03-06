@@ -1,10 +1,16 @@
-<button class="rounded-xl items bg-white hover:bg-slate-200" onClick="location.href='../visit/{{object.id}}'">
-  <div class="p-4">
-    <p class="p-2 text-slate-900">{{object}}</p>
-    <div class="flex flex-row">
-      <div class="flex-1"></div>
-      <p class="p-2 text-slate-600">{{object.get_role_display}}</p>
-      <div class="flex-1"></div>
+<div class="text-left rounded-xl bg-white border-white">
+  <div class="p-5">
+    <p class="py-0.5 text-slate-900 font-bold">{{object.patient}}</p>
+    <p class="py-0.5 text-slate-700 text-sm">{{object.patient.address}} {{object.patient.ward}}</p>
+    <p class="py-0.5 text-slate-900 text-sm font-bold">{{object.patient.age}} Years Old</p>
+    <p class="py-0.5 text-cyan-600 text-sm font-bold">{{object.patient.phone_number}}</p>
+    <div class="flex flex-row gap-2 pt-4">
+      <button onClick="location.href='../{{object.id}}/delete/'" class="flex-none text-slate-900 bg-transparent border-2 border-slate-900 hover:bg-white focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-sm px-7 py-2.5 text-center">
+        Unschedule
+      </button>
+      <button onClick="location.href='../visit/{{object.id}}'" class="flex-none text-white bg-slate-900 border-2 border-slate-900 hover:bg-slate-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-sm px-7 py-2.5 text-center">
+        Visit
+      </button>
     </div>
   </div>
-</button>
+</div>
