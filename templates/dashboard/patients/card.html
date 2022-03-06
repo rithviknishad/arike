@@ -1,5 +1,8 @@
-<button class="rounded-xl bg-white hover:bg-slate-200" onClick="location.href='{{object.id}}'">
+<button class="text-left rounded-xl bg-white border-white hover:border-slate-900 border-4" onClick="location.href='{{object.id}}'">
   <div class="p-4">
-    <p class="text-slate-900">{{object}}</p>
+    <p class="py-0.5 text-slate-900 font-bold">{{object}}</p>
+    <p class="py-0.5 text-slate-700 text-sm">{{object.address}} {{object.ward}}</p>
+    <p class="py-0.5 text-slate-900 text-sm font-bold">{{object.age}} Years Old</p>
+    <p class="py-0.5 text-cyan-600 text-sm font-bold">{{object.phone_number}}</p>
   </div>
 </button>
