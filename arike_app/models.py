@@ -2,7 +2,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.http import HttpRequest
 
-from datetime import datetime
+from datetime import datetime, date
 
 
 class ArikeModelMixin(models.Model):
@@ -267,8 +267,14 @@ class Patient(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     expired_time = models.DateTimeField(null=True, blank=True)
 
     @property
-    def full_name(self):
+    def full_name(self) -> str:
         return f"{self.first_name} {self.last_name}"
+
+    @property
+    def age(self) -> int:
+        today = date.today()
+        dob = self.date_of_birth
+        return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
 
     def __str__(self):
         return f"{self.full_name}"
