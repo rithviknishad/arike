@@ -32,7 +32,7 @@ class Agenda(__ScheduleViewsMixin, GenericModelListView):
 
 
 class Delete(__ScheduleViewsMixin, GenericModelDeleteView):
-    pass
+    success_url = "../../agenda/"
 
 
 class VisitPatient(__ScheduleViewsMixin, GenericModelDetailView):
