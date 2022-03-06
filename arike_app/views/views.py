@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.views import PasswordChangeView
 from django.views.generic import TemplateView, UpdateView
-from arike_app.forms import ProfileForm
+from arike_app.forms import ProfileForm, PasswordChangeForm
 from arike_app.models import User
 
 from arike_app.views.mixins import DashboardTabViewMixin
@@ -27,6 +27,8 @@ class ProfileUpdateView(DashboardTabViewMixin, UpdateView):
 
 
 class ChangePasswordView(DashboardTabViewMixin, PasswordChangeView):
+    form_class = PasswordChangeForm
+
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.template_name = "dashboard/profile_change_password.html"
