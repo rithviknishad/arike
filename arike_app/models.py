@@ -1,3 +1,4 @@
+from typing import List
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.http import HttpRequest
@@ -265,6 +266,12 @@ class Patient(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     facility = models.ForeignKey(Facility, on_delete=models.PROTECT, null=True)
     gender = models.CharField(max_length=2, choices=Genders.choices)
     expired_time = models.DateTimeField(null=True, blank=True)
+
+    @property
+    def active_treatments(self) -> List[str]:
+        result = [str(x) for x in Treatment.objects.filter(patient=self, deleted=False)]
+        print(result)
+        return result
 
     @property
     def full_name(self) -> str:
