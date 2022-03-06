@@ -73,6 +73,7 @@ urlpatterns = [
     path("schedule/agenda/", schedule.Agenda.as_view()),
     path("schedule/visit/<pk>/", schedule.VisitPatient.as_view()),
     path("schedule/visit/health_info/<pk>/", schedule.UpdateHealthInformation.as_view()),
+    path("schedule/visit/treatment_notes/<pk>/", schedule.UpdateTreatmentNotes.as_view()),
     # Profile
     path("profile/", ProfileUpdateView.as_view()),
 ]

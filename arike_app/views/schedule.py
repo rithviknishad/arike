@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from arike_app.models import Patient, TreatmentNotes, VisitDetails, VisitSchedule
-from arike_app.forms import VisitDetailsForm
+from arike_app.forms import VisitDetailsForm, VisitTreatmentNotesForm
 from arike_app.views.generic import (
     GenericModelCreateView,
     GenericModelDeleteView,
@@ -72,3 +72,9 @@ class UpdateHealthInformation(__ScheduleViewsMixin, GenericModelUpdateView):
     model = VisitDetails
     view_type = "update_health_information"
     form_class = VisitDetailsForm
+
+
+class UpdateTreatmentNotes(__ScheduleViewsMixin, GenericModelUpdateView):
+    model = TreatmentNotes
+    view_type = "udpate_treatment_notes"
+    form_class = VisitTreatmentNotesForm

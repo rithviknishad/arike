@@ -144,6 +144,12 @@ class VisitDetailsForm(CustomFormStyleMixin, ModelForm):
         ]
 
 
+class VisitTreatmentNotesForm(CustomFormStyleMixin, ModelForm):
+    class Meta:
+        model = TreatmentNotes
+        fields = ["note", "description"]
+
+
 class ProfileForm(CustomFormStyleMixin, ModelForm):
     class Meta:
         model = User
