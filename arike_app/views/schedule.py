@@ -19,12 +19,6 @@ class __ScheduleViewsMixin:
 class List(__ScheduleViewsMixin, GenericModelListView):
     model = Patient
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Overriding to disable New button from being shown, as create (schedule a visit) is done by clicking on the patient card.
-        context["has_create_perm"] = False
-        return context
-
     def get_queryset(self):
         return super().get_queryset().filter(facility=self.request.user.facility)
 
