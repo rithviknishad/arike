@@ -7,6 +7,12 @@ from arike_app.views.mixins import ModelTabViewMixin
 class GenericModelListView(ModelTabViewMixin, FilterView):
     view_type = "list"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if hasattr(self, "search_bar_label") and self.search_bar_label:
+            context["search_bar_label"] = self.search_bar_label
+        return context
+
     def get_queryset(self):
         return super().get_queryset().filter(deleted=False)
 

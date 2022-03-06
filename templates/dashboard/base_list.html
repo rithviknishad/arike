@@ -14,14 +14,14 @@
     <div class="py-8">
       <div class="py-2 flex flex-row">
         <div class="p-1">
-          {% include 'generic/search_bar.html' with label="Name" %}
+          {% include 'generic/search_bar.html' with label=search_bar_label %}
         </div>
         <div class="flex-1"></div>
         <div class="p-1">
-          {% include 'generic/expand_button.html' with label="Filters" %}
+          {% comment %} {% include 'generic/expand_button.html' with label="Filters" %} {% endcomment %}
         </div>
         <div class="p-1">
-          {% include 'generic/expand_button.html' with label="Sort" %}
+          {% comment %} {% include 'generic/expand_button.html' with label="Sort" %} {% endcomment %}
         </div>
       </div>
       {% block filters_form %}{{ filter.form.as_p }}{% endblock filters_form %}
