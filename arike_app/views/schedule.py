@@ -48,3 +48,8 @@ class Delete(__ScheduleViewsMixin, GenericModelDeleteView):
 class VisitPatient(__ScheduleViewsMixin, GenericModelDetailView):
     model = VisitDetails
     view_type = "visit"
+
+
+class HealthInformation(__ScheduleViewsMixin, GenericModelUpdateView):
+    model = VisitDetails
+    view_type = "health_info_update"
