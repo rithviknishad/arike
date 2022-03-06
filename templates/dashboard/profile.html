@@ -8,11 +8,10 @@
       <form action="" method="post">
         {% block form_view %}{{form.as_p}}{% endblock form_view %}
         {% csrf_token %}
-        <div class="mt-16">
-          <div class="p-2">{% include 'generic/button.html' with label="Change Password" onClick="location.href='change_password'" type="" %}</div>
-          <div class="p-2">{% include 'generic/button.html' with label="Update" %}</div>
-        </div>
+        <div class="p-4"></div>
+        <div class="my-4">{% include 'generic/button.html' with label="Update" %}</div>
       </form>
+      <div class="my-4">{% include 'generic/button.html' with label="Change Password" onClick="location.href='change_password'" type="" %}</div>
     </div>
   </div>
 </div>
