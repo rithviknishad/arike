@@ -704,8 +704,8 @@
     kind: PHC
     name: Govt Hospital
     address: Aikaranad Grama Panchayat, Kannur District
-    pincode: "670106"
-    phone: "+919696969696"
+    pincode: '670106'
+    phone: '+919696969696'
     ward: 17
 - model: arike_app.facility
   pk: 2
@@ -716,8 +716,8 @@
     kind: CHC
     name: St George Hospital
     address: Aikaranad Grama Panchayat, Kannur District
-    pincode: "670106"
-    phone: "+919696969696"
+    pincode: '670106'
+    phone: '+919696969696'
     ward: 12
 - model: arike_app.facility
   pk: 3
@@ -728,8 +728,8 @@
     kind: PHC
     name: Govt Hospital
     address: Aikaranad Grama Panchayat, Kannur District
-    pincode: "670106"
-    phone: "+919696969696"
+    pincode: '670106'
+    phone: '+919696969696'
     ward: 16
 - model: arike_app.lsgbody
   pk: 1
@@ -997,9 +997,9 @@
     created_at: 2022-03-01 03:44:48.730000+00:00
     updated_at: 2022-03-01 03:44:48.730000+00:00
     deleted: false
-    name: "Kalliasseri
+    name: 'Kalliasseri
 
-      Block Panchayat, Kannur District"
+      Block Panchayat, Kannur District'
     kind: 2
     lsg_body_code: B130200
     district: 4
@@ -1369,9 +1369,9 @@
     created_at: 2022-03-01 03:44:48.850000+00:00
     updated_at: 2022-03-01 03:44:48.850000+00:00
     deleted: false
-    name: "Panoor
+    name: 'Panoor
 
-      Block Panchayat, Kannur District"
+      Block Panchayat, Kannur District'
     kind: 2
     lsg_body_code: B130800
     district: 4
@@ -1629,8 +1629,8 @@
     last_login: 2022-03-02 11:12:51.322194+00:00
     is_superuser: true
     username: rithviknishad
-    first_name: ""
-    last_name: ""
+    first_name: ''
+    last_name: ''
     email: rithvikn2001@gmail.com
     is_staff: true
     is_active: true
@@ -1639,7 +1639,7 @@
     updated_at: 2022-02-28 16:05:28.135000+00:00
     deleted: false
     role: null
-    phone: "+919696969696"
+    phone: '+919696969696'
     is_verified: true
     district: null
     facility: null
@@ -1649,7 +1649,7 @@
   pk: 2
   fields:
     password: pbkdf2_sha256$320000$jsXuvquq4PC5sfPDjNO3VN$CJZbXL3DHex5espWSA5CD8j37oFRlyDXKeN37nJfmmE=
-    last_login: 2022-03-06 08:10:28.907279+00:00
+    last_login: 2022-03-06 13:15:04.968602+00:00
     is_superuser: false
     username: distadmin
     first_name: District Admin
@@ -1662,7 +1662,7 @@
     updated_at: 2022-03-01 07:04:18+00:00
     deleted: false
     role: 1
-    phone: "+919696969696"
+    phone: '+919696969696'
     is_verified: true
     district: 4
     facility: 1
@@ -1671,8 +1671,8 @@
 - model: arike_app.user
   pk: 3
   fields:
-    password: pbkdf2_sha256$320000$PXV97bVCWyDJ6wlqINvHcq$aRY1hOT1Ar2gwX6jtvNrZlUf0YkwfPCJ110kE1Q5UHU=
-    last_login: 2022-03-06 08:05:46.635496+00:00
+    password: pbkdf2_sha256$320000$I021E2nJgxskxzNfRxOJph$qHTRqNjg7fqp3rxFRq/z/184vtaPTjX0uhjECBboCQ4=
+    last_login: 2022-03-06 10:55:21.846825+00:00
     is_superuser: false
     username: primarynurse
     first_name: Primary Nurse
@@ -1682,10 +1682,10 @@
     is_active: true
     date_joined: 2022-03-01 07:08:39+00:00
     created_at: 2022-03-02 03:53:43.346000+00:00
-    updated_at: 2022-03-01 07:08:39+00:00
+    updated_at: 2022-03-06 16:37:20.151259+00:00
     deleted: false
     role: 3
-    phone: "+919696969696"
+    phone: '+919696969696'
     is_verified: true
     district: 4
     facility: 1
@@ -1708,7 +1708,7 @@
     updated_at: 2022-03-01 07:09:33+00:00
     deleted: false
     role: 4
-    phone: "+919696969696"
+    phone: '+919696969696'
     is_verified: true
     district: 4
     facility: 1
@@ -1937,14 +1937,14 @@
     updated_at: 2022-03-06 08:22:20.867282+00:00
     deleted: false
     full_name: Jacquelyne Stiedemann
-    phone: "+919696969696"
+    phone: '+919696969696'
     date_of_birth: 2001-06-16
     email: email@test.com
     relation: Sister
     address: South Apt, East block, west city
     education: Post Graduate
     occupation: Homemaker
-    remarks: ""
+    remarks: ''
     is_primary: true
     patient: 1
 - model: arike_app.familydetail
@@ -1954,7 +1954,7 @@
     updated_at: 2022-03-06 08:23:11.625623+00:00
     deleted: false
     full_name: Amb. Marlene Ferry
-    phone: "+919696969696"
+    phone: '+919696969696'
     date_of_birth: 2001-06-16
     email: email@test.com
     relation: Sister
@@ -1971,14 +1971,14 @@
     updated_at: 2022-03-06 08:22:20.867282+00:00
     deleted: false
     full_name: Jacquelyne Stiedemann
-    phone: "+919696969696"
+    phone: '+919696969696'
     date_of_birth: 2001-06-16
     email: email@test.com
     relation: Sister
     address: South Apt, East block, west city
     education: Post Graduate
     occupation: Homemaker
-    remarks: ""
+    remarks: ''
     is_primary: true
     patient: 2
 - model: arike_app.familydetail
@@ -1988,7 +1988,7 @@
     updated_at: 2022-03-06 08:23:11.625623+00:00
     deleted: false
     full_name: Amb. Marlene Ferry
-    phone: "+919696969696"
+    phone: '+919696969696'
     date_of_birth: 2001-06-16
     email: email@test.com
     relation: Sister
@@ -2005,14 +2005,14 @@
     updated_at: 2022-03-06 08:22:20.867282+00:00
     deleted: false
     full_name: Jacquelyne Stiedemann
-    phone: "+919696969696"
+    phone: '+919696969696'
     date_of_birth: 2001-06-16
     email: email@test.com
     relation: Sister
     address: South Apt, East block, west city
     education: Post Graduate
     occupation: Homemaker
-    remarks: ""
+    remarks: ''
     is_primary: true
     patient: 3
 - model: arike_app.familydetail
@@ -2022,7 +2022,7 @@
     updated_at: 2022-03-06 08:23:11.625623+00:00
     deleted: false
     full_name: Amb. Marlene Ferry
-    phone: "+919696969696"
+    phone: '+919696969696'
     date_of_birth: 2001-06-16
     email: email@test.com
     relation: Sister
@@ -2040,8 +2040,7 @@
     deleted: false
     patient: 1
     disease: 2
-    note:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    note: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
 - model: arike_app.patientdisease
@@ -2052,8 +2051,7 @@
     deleted: false
     patient: 1
     disease: 3
-    note:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    note: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
 - model: arike_app.patientdisease
@@ -2064,8 +2062,7 @@
     deleted: false
     patient: 2
     disease: 2
-    note:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    note: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
 - model: arike_app.patientdisease
@@ -2076,8 +2073,7 @@
     deleted: false
     patient: 2
     disease: 3
-    note:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    note: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
 - model: arike_app.patientdisease
@@ -2088,8 +2084,7 @@
     deleted: false
     patient: 3
     disease: 2
-    note:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    note: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
 - model: arike_app.patientdisease
@@ -2100,8 +2095,7 @@
     deleted: false
     patient: 3
     disease: 3
-    note:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    note: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
 - model: arike_app.treatment
@@ -2110,8 +2104,7 @@
     created_at: 2022-03-06 08:27:53.459718+00:00
     updated_at: 2022-03-06 08:27:53.473799+00:00
     deleted: false
-    description:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
     care_type_and_sub_type: 56
@@ -2123,8 +2116,7 @@
     created_at: 2022-03-06 08:28:51.033578+00:00
     updated_at: 2022-03-06 08:28:51.041970+00:00
     deleted: false
-    description:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
     care_type_and_sub_type: 40
@@ -2136,8 +2128,7 @@
     created_at: 2022-03-06 08:27:53.459718+00:00
     updated_at: 2022-03-06 08:27:53.473799+00:00
     deleted: false
-    description:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
     care_type_and_sub_type: 56
@@ -2149,8 +2140,7 @@
     created_at: 2022-03-06 08:28:51.033578+00:00
     updated_at: 2022-03-06 08:28:51.041970+00:00
     deleted: false
-    description:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
     care_type_and_sub_type: 40
@@ -2162,8 +2152,7 @@
     created_at: 2022-03-06 08:27:53.459718+00:00
     updated_at: 2022-03-06 08:27:53.473799+00:00
     deleted: false
-    description:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
     care_type_and_sub_type: 56
@@ -2175,10 +2164,47 @@
     created_at: 2022-03-06 08:28:51.033578+00:00
     updated_at: 2022-03-06 08:28:51.041970+00:00
     deleted: false
-    description:
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
       numquam blanditiis harum quisquam eius sed
     care_type_and_sub_type: 40
     patient: 3
     treatment_notes: null
+- model: arike_app.treatmentnotes
+  pk: 1
+  fields:
+    created_at: 2022-03-06 17:56:30.823728+00:00
+    updated_at: 2022-03-06 17:56:30.823745+00:00
+    deleted: false
+    note: null
+    description: null
+- model: arike_app.visitschedule
+  pk: 1
+  fields:
+    created_at: 2022-03-06 17:51:54.893393+00:00
+    updated_at: 2022-03-06 17:51:54.900668+00:00
+    deleted: false
+    schedule_time: 2022-03-24 23:21:00+00:00
+    duration: 00:30:00
+    patient: 1
+    nurse: 3
+- model: arike_app.visitdetails
+  pk: 1
+  fields:
+    created_at: 2022-03-06 17:56:30.826531+00:00
+    updated_at: 2022-03-06 17:56:30.826544+00:00
+    deleted: false
+    palliative_phase: null
+    blood_pressure: null
+    pulse: null
+    general_random_blood_sugar: null
+    personal_hygiene: null
+    mouth_hygiene: null
+    public_hygiene: null
+    systemic_examination: null
+    systemic_examination_details: null
+    patient_at_peace: null
+    pain: null
+    notes: null
+    visit_schedule: 1
+    treatment_notes: 1
