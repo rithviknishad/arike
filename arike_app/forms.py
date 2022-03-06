@@ -134,7 +134,6 @@ class VisitDetailsForm(CustomFormStyleMixin, ModelForm):
             "patient_at_peace",
             "pain",
             "notes",
-            "treatment_notes",
         ]
 
 
