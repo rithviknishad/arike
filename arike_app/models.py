@@ -324,8 +324,8 @@ class CareSubType(ArikeModelMixin, models.Model):
 
 
 class TreatmentNotes(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
-    note = models.TextField(blank=True)
-    description = models.TextField(blank=True)
+    note = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
 
 class Treatment(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
@@ -353,18 +353,18 @@ SystemicExamination = models.IntegerChoices("SystemicExamination", "STABLE UNSTA
 
 
 class VisitDetails(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
-    palliative_phase = models.IntegerField(choices=PalliativePhase.choices)
-    blood_pressure = models.CharField(max_length=255, blank=True)
-    pulse = models.CharField(max_length=255, blank=True)
-    general_random_blood_sugar = models.CharField(max_length=255, blank=True)
-    personal_hygiene = models.CharField(max_length=255, blank=True)
-    mouth_hygiene = models.CharField(max_length=255, blank=True)
-    public_hygiene = models.CharField(max_length=255, blank=True)
-    systemic_examination = models.IntegerField(choices=PalliativePhase.choices)
-    systemic_examination_details = models.TextField(blank=True)
-    patient_at_peace = models.BooleanField()
-    pain = models.BooleanField()
-    notes = models.TextField(blank=True)
+    palliative_phase = models.IntegerField(choices=PalliativePhase.choices, null=True)
+    blood_pressure = models.CharField(max_length=255, blank=True, null=True)
+    pulse = models.CharField(max_length=255, blank=True, null=True)
+    general_random_blood_sugar = models.CharField(max_length=255, blank=True, null=True)
+    personal_hygiene = models.CharField(max_length=255, blank=True, null=True)
+    mouth_hygiene = models.CharField(max_length=255, blank=True, null=True)
+    public_hygiene = models.CharField(max_length=255, blank=True, null=True)
+    systemic_examination = models.IntegerField(choices=PalliativePhase.choices, null=True)
+    systemic_examination_details = models.TextField(blank=True, null=True)
+    patient_at_peace = models.BooleanField(null=True)
+    pain = models.BooleanField(null=True)
+    notes = models.TextField(blank=True, null=True)
     visit_schedule = models.OneToOneField(VisitSchedule, on_delete=models.PROTECT)
     treatment_notes = models.OneToOneField(TreatmentNotes, on_delete=models.PROTECT)
 
