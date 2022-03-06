@@ -332,7 +332,7 @@ class Treatment(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     description = models.TextField(blank=True)
     care_type_and_sub_type = models.ForeignKey(CareSubType, on_delete=models.PROTECT)
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT, null=True)
-    treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT, null=True)
+    treatment_notes = models.OneToOneField(TreatmentNotes, on_delete=models.PROTECT, null=True)
 
     def __str__(self) -> str:
         return self.care_type_and_sub_type.care_sub_type
@@ -366,7 +366,7 @@ class VisitDetails(PatientDetailsPermsMixin, ArikeModelMixin, models.Model):
     pain = models.BooleanField()
     notes = models.TextField(blank=True)
     visit_schedule = models.OneToOneField(VisitSchedule, on_delete=models.PROTECT)
-    treatment_notes = models.ForeignKey(TreatmentNotes, on_delete=models.PROTECT)
+    treatment_notes = models.OneToOneField(TreatmentNotes, on_delete=models.PROTECT)
 
 
 class UserReportConfiguration(models.Model):
